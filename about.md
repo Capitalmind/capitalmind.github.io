@@ -1,4 +1,3 @@
 # About
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
-
+This blog is a public version of privately stored research notes and ideas covering A.I. tinkering and automation, cloud computing and more, all hinged around GNU/Linux tools and operating systems. If it's good Free Open Source Software, all the better.
