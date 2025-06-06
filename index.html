@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalmind - Open Source Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #cc785c 0%, #d4915c 25%, #cc785c 75%, #b8704a 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #cc785c;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #f7f3f0;
+            color: #744c2c;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .links a:hover {
+            transform: scale(1.2);
+        }
+
+        .contact-info {
+            text-align: center;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #cc785c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #b8704a;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill {
+            background: #f7f3f0;
+            color: #744c2c;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            border: 2px solid #e8d5c4;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Capitalmind</h1>
+            <p class="subtitle">Algorithmic Trader • AI Developer • Linux Systems Expert</p>
+            <div class="links">
+                <a href="https://github.com/Capitalmind" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:contact@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </header>
+
+        <div class="card">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>
+                Long-term Linux and Python hacker, AI developer, tech researcher, financial trader and data analyst. 
+                I'm an algorithmic trader with deep experience in systems architecture, security, and automation.
+            </p>
+            <p style="margin-top: 1rem;">
+                My expertise spans Linux/networking, security (pen testing), virtualization, and what today would be 
+                called DevOps. I'm passionate about project-specific analysis, fintech, automation, and AI applications 
+                in financial markets.
+            </p>
+            <div class="skills">
+                <span class="skill">Python</span>
+                <span class="skill">Linux</span>
+                <span class="skill">Algorithmic Trading</span>
+                <span class="skill">AI/ML</span>
+                <span class="skill">Data Analysis</span>
+                <span class="skill">Network Security</span>
+                <span class="skill">DevOps</span>
+                <span class="skill">Fintech</span>
+                <span class="skill">Automation</span>
+                <span class="skill">Virtualization</span>
+                <span class="skill">Penetration Testing</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-code"></i> Current Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Traffic Flow Optimization</h3>
+                    <p>Developing traffic flow optimization algorithms using a game engine to simulate and improve real-world traffic patterns.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Game Engine</span>
+                        <span class="tech-tag">Simulation</span>
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">Optimization</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Multi-Exchange Arbitrage System</h3>
+                    <p>Black box arbitrage analysis system operating across 12 exchanges, analyzing two different markets for profitable opportunities.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Trading APIs</span>
+                        <span class="tech-tag">Real-time Data</span>
+                        <span class="tech-tag">Algorithm Design</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>GPTHistory - OpenAI v1+ Fork</h3>
+                    <p>Updated the popular gpthistory tool for OpenAI API v1+ compatibility, fixing critical issues for the community.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">CLI Tools</span>
+                        <span class="tech-tag">Open Source</span>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://github.com/Capitalmind/gpthistory" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-chart-line"></i> Expertise Areas</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
+                    <p>Developing AI solutions for financial markets, data analysis, and automation. Focus on practical applications in trading and optimization.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3><i class="fas fa-coins"></i> Algorithmic Trading</h3>
+                    <p>Multi-exchange trading systems, arbitrage analysis, and quantitative research across various financial instruments.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3><i class="fas fa-shield-alt"></i> Systems & Security</h3>
+                    <p>Linux systems administration, network security, penetration testing, and infrastructure automation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><i class="fas fa-heart"></i> Open Source & Community</h2>
+            <p>
+                I believe in sharing knowledge and contributing to the developer community. My work focuses on solving 
+                real problems that others face, whether it's API compatibility issues, system automation, or financial analysis tools.
+            </p>
+            <p style="margin-top: 1rem;">
+                Check out my repositories to see various projects spanning network analysis, trading tools, AI implementations, 
+                and system utilities developed over years of hands-on experience.
+            </p>
+            <div style="margin-top: 1rem;">
+                <a href="https://github.com/Capitalmind" class="btn">View All Repositories</a>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <p>Let's connect and build something amazing together!</p>
+        </div>
+    </div>
+</body>
+</html>
