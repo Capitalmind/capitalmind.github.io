@@ -258,9 +258,9 @@
             </nav>
             
             <div class="links">
-                <a href="https://github.com/Capitalmind" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/Capitalmind" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 <a href="mailto:tech@skynode.one" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://x.com/Alt_Samman" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
             </div>
         </header>
 
@@ -397,11 +397,42 @@
                     <h3>xargs</h3>
                     <p>Command builder</p>
                 </div>
+
+                <div class="command-bubble" onclick="showDemo('glances', 'System monitoring', 'Real-time system performance monitoring')">
+                    <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>glances</h3>
+                    <p>System monitor</p>
+                </div>
+
+                <div class="command-bubble" onclick="showDemo('htop', 'Process viewer', 'Interactive process viewer and manager')">
+                    <div class="icon"><i class="fas fa-microchip"></i></div>
+                    <h3>htop</h3>
+                    <p>Process manager</p>
+                </div>
+
+                <div class="command-bubble" onclick="showDemo('fzf', 'Fuzzy finder', 'Command-line fuzzy finder for files and commands')">
+                    <div class="icon"><i class="fas fa-search-plus"></i></div>
+                    <h3>fzf</h3>
+                    <p>Fuzzy search</p>
+                </div>
+
+                <div class="command-bubble" onclick="showDemo('fd', 'Modern find', 'Simple, fast and user-friendly alternative to find')">
+                    <div class="icon"><i class="fas fa-rocket"></i></div>
+                    <h3>fd</h3>
+                    <p>Fast find</p>
+                </div>
+
+                <div class="command-bubble" onclick="showDemo('ncdu', 'Disk usage analyzer', 'Interactive disk usage analyzer with ncurses interface')">
+                    <div class="icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>ncdu</h3>
+                    <p>Disk analyzer</p>
+                </div>
             </div>
         </div>
 
         <div class="contact-info">
             <p>More tutorials coming soon! These demonstrations show practical usage patterns from 30+ years of Linux experience.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Now featuring 26 interactive command demonstrations including system monitoring, fuzzy finding, and modern CLI tools.</p>
         </div>
     </div>
 
