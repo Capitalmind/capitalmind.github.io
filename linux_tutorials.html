@@ -267,7 +267,7 @@
         <!-- Demo Display Area - Moved Above Content -->
         <div id="demo-display" class="demo-display active">
             <h3 id="demo-title">Welcome to Linux Tutorials</h3>
-            <img id="demo-gif" src="welcome-demo.gif" alt="Welcome to Linux tutorials">
+            <img id="demo-gif" src="assets/welcome-demo.gif" alt="Welcome to Linux tutorials">
             <div class="demo-description">
                 <p id="demo-description">Click on any command below to see a live demonstration. These recordings show practical usage from decades of Linux experience.</p>
             </div>
@@ -441,12 +441,19 @@
             const demoTitle = document.getElementById('demo-title');
             const demoGif = document.getElementById('demo-gif');
             const demoDescription = document.getElementById('demo-description');
+            const demoDisplay = document.getElementById('demo-display');
 
             // Set content
             demoTitle.textContent = title;
-            demoGif.src = `${command}-demo.gif`;
+            demoGif.src = `assets/${command}-demo.gif`;
             demoGif.alt = `${command} command demonstration`;
             demoDescription.textContent = description;
+
+            // Smooth scroll to demo player
+            demoDisplay.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
         }
 
         function closeDemo() {
@@ -456,7 +463,7 @@
             const demoDescription = document.getElementById('demo-description');
 
             demoTitle.textContent = 'Welcome to Linux Tutorials';
-            demoGif.src = 'welcome-demo.gif';
+            demoGif.src = 'assets/welcome-demo.gif';
             demoGif.alt = 'Welcome to Linux tutorials';
             demoDescription.textContent = 'Click on any command below to see a live demonstration. These recordings show practical usage from decades of Linux experience.';
         }
