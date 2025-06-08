@@ -449,11 +449,28 @@
             demoGif.alt = `${command} command demonstration`;
             demoDescription.textContent = description;
 
-            // Smooth scroll to demo player
-            demoDisplay.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start' 
-            });
+            // Multiple scroll methods for better browser compatibility
+            // Method 1: Modern scrollIntoView
+            if (demoDisplay.scrollIntoView) {
+                demoDisplay.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start',
+                    inline: 'nearest'
+                });
+            } else {
+                // Method 2: Fallback scroll to top
+                window.scrollTo({
+                    top: demoDisplay.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Method 3: Additional fallback for older browsers
+            setTimeout(() => {
+                if (window.pageYOffset > demoDisplay.offsetTop) {
+                    demoDisplay.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
         }
 
         function closeDemo() {
