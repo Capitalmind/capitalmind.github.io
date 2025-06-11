@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Theory Fundamentals - Machine Learning</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #f5f5f5;
+            background: #262725;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: #f5f5f5;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            color: #cc785c;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .links a {
+            color: #f5f5f5;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Back Navigation */
+        .back-nav {
+            margin-bottom: 2rem;
+        }
+
+        .back-nav a {
+            color: #cc785c;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #cc785c;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-nav a:hover {
+            background: #cc785c;
+            color: #f5f5f5;
+        }
+
+        /* Content Sections */
+        .section {
+            background: #262725;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid #3a3a3a;
+        }
+
+        .section h2 {
+            color: #cc785c;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: #cc785c;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .section h4 {
+            color: #cc785c;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .section ul, .section ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Code Blocks with Syntax Highlighting */
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #3a3a3a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            border-left: 4px solid #cc785c;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        .code-block .comment {
+            color: #98d982;
+            font-style: italic;
+        }
+
+        .code-block .keyword {
+            color: #cc785c;
+            font-weight: bold;
+        }
+
+        .code-block .string {
+            color: #87ceeb;
+        }
+
+        .code-block .function {
+            color: #dda0dd;
+        }
+
+        .code-block .number {
+            color: #ffa07a;
+        }
+
+        .code-block .variable {
+            color: #f0e68c;
+        }
+
+        .code-block .class-name {
+            color: #87ceeb;
+            font-weight: bold;
+        }
+
+        /* Interactive Visualizations */
+        .visualization-container {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .viz-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: #cc785c;
+            color: #f5f5f5;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #b8704a;
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Use Case Examples */
+        .use-case {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .use-case h5 {
+            color: #cc785c;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Algorithm Complexity Boxes */
+        .complexity-box {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .complexity-box h4 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .complexity-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .complexity-box th,
+        .complexity-box td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .complexity-box th {
+            background: #3a3a3a;
+            color: #cc785c;
+            font-weight: bold;
+        }
+
+        /* SVG Styling for Interactive Elements */
+        .node {
+            fill: #cc785c;
+            stroke: #f5f5f5;
+            stroke-width: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .node:hover {
+            fill: #b8704a;
+            transform: scale(1.1);
+        }
+
+        .edge {
+            stroke: #f5f5f5;
+            stroke-width: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .edge-label {
+            fill: #f5f5f5;
+            font-size: 12px;
+            text-anchor: middle;
+        }
+
+        .node-label {
+            fill: #f5f5f5;
+            font-size: 14px;
+            text-anchor: middle;
+            font-weight: bold;
+            pointer-events: none;
+        }
+
+        .visited-node {
+            fill: #4ecdc4;
+            animation: visited 0.5s ease-in-out;
+        }
+
+        .current-node {
+            fill: #ff6b6b;
+            animation: pulse 1s infinite;
+        }
+
+        .path-highlight {
+            stroke: #ff6b6b;
+            stroke-width: 4px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes visited {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #cc785c;
+        }
+
+        .toc h3 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: #f5f5f5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #cc785c;
+        }
+
+        .contact-info {
+            text-align: center;
+            color: #f5f5f5;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+
+            .viz-controls {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-nav">
+            <a href="machine-learning.html">
+                <i class="fas fa-arrow-left"></i> Back to ML Topics
+            </a>
+        </div>
+
+        <header class="header">
+            <h1><i class="fas fa-project-diagram"></i> Graph Theory Fundamentals</h1>
+            <p class="subtitle">The Mathematical Foundation of Networks, Neural Systems & Data Relationships</p>
+            
+            <div class="links">
+                <a href="https://github.com/Capitalmind" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="mailto:tech@skynode.one" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3><i class="fas fa-list"></i> What You'll Learn</h3>
+            <ul>
+                <li><a href="#introduction">• Introduction to Graph Theory</a></li>
+                <li><a href="#types">• Graph Types & Representations</a></li>
+                <li><a href="#traversal">• Traversal Algorithms (BFS, DFS)</a></li>
+                <li><a href="#pathfinding">• Pathfinding & Shortest Paths</a></li>
+                <li><a href="#applications">• Machine Learning Applications</a></li>
+                <li><a href="#implementation">• Complete Python Implementations</a></li>
+            </ul>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="section" id="introduction">
+            <h2><i class="fas fa-graduation-cap"></i> What is Graph Theory?</h2>
+            <p>
+                Graph theory is the mathematical study of networks—collections of objects (vertices) connected by relationships (edges). While seemingly abstract, graphs are everywhere in machine learning and computer science, from the neural networks that power AI to the social networks that connect billions of people.
+            </p>
+            
+            <p>
+                In machine learning, understanding graphs means understanding how data flows through neural networks, how recommendation systems find connections between users and items, and how search algorithms navigate complex problem spaces.
+            </p>
+
+            <div class="use-case">
+                <h5>Real-World Example: Your Brain</h5>
+                <p>
+                    Your brain is a graph with 86 billion neurons (vertices) connected by trillions of synapses (edges). Artificial neural networks mirror this structure, using graph theory principles to process information and learn patterns.
+                </p>
+            </div>
+
+            <h3>Mathematical Definition</h3>
+            <p>
+                A graph G = (V, E) consists of:
+            </p>
+            <ul>
+                <li><strong>V</strong>: A set of vertices (nodes) representing entities</li>
+                <li><strong>E</strong>: A set of edges connecting pairs of vertices</li>
+            </ul>
+
+            <div class="code-block"># <span class="comment">Basic Graph Implementation - Core data structure for ML applications</span>
+# <span class="comment">This class provides the foundation for neural networks, social networks, etc.</span>
+
+<span class="keyword">class</span> <span class="class-name">Graph</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, <span class="variable">directed</span>=<span class="keyword">False</span>):
+        <span class="variable">self</span>.<span class="variable">adjacency_list</span>[<span class="variable">from_vertex</span>].<span class="function">append</span>((<span class="variable">to_vertex</span>, <span class="variable">weight</span>))
+        <span class="variable">self</span>.<span class="variable">edge_count</span> += <span class="number">1</span>
+        
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">self</span>.<span class="variable">directed</span>:
+            <span class="variable">self</span>.<span class="variable">adjacency_list</span>[<span class="variable">to_vertex</span>].<span class="function">append</span>((<span class="variable">from_vertex</span>, <span class="variable">weight</span>))
+            <span class="variable">self</span>.<span class="variable">edge_count</span> += <span class="number">1</span>
+    
+    <span class="keyword">def</span> <span class="function">get_neighbors</span>(<span class="variable">self</span>, <span class="variable">vertex</span>: <span class="class-name">str</span>) -> <span class="class-name">List</span>[<span class="class-name">Tuple</span>[<span class="class-name">str</span>, <span class="class-name">float</span>]]:
+        <span class="string">"""Get all neighbors of a vertex with edge weights"""</span>
+        <span class="keyword">return</span> <span class="variable">self</span>.<span class="variable">adjacency_list</span>.<span class="function">get</span>(<span class="variable">vertex</span>, [])
+    
+    # <span class="comment">Traversal Algorithms</span>
+    
+    <span class="keyword">def</span> <span class="function">bfs</span>(<span class="variable">self</span>, <span class="variable">start_vertex</span>: <span class="class-name">str</span>) -> <span class="class-name">Tuple</span>[<span class="class-name">List</span>[<span class="class-name">str</span>], <span class="class-name">Dict</span>[<span class="class-name">str</span>, <span class="class-name">int</span>]]:
+        <span class="string">"""Breadth-First Search traversal"""</span>
+        <span class="variable">visited</span> = <span class="function">set</span>()
+        <span class="variable">queue</span> = <span class="function">deque</span>([<span class="variable">start_vertex</span>])
+        <span class="variable">visit_order</span> = []
+        <span class="variable">distances</span> = {<span class="variable">start_vertex</span>: <span class="number">0</span>}
+        
+        <span class="keyword">while</span> <span class="variable">queue</span>:
+            <span class="variable">vertex</span> = <span class="variable">queue</span>.<span class="function">popleft</span>()
+            
+            <span class="keyword">if</span> <span class="variable">vertex</span> <span class="keyword">not in</span> <span class="variable">visited</span>:
+                <span class="variable">visited</span>.<span class="function">add</span>(<span class="variable">vertex</span>)
+                <span class="variable">visit_order</span>.<span class="function">append</span>(<span class="variable">vertex</span>)
+                
+                <span class="keyword">for</span> <span class="variable">neighbor</span>, <span class="variable">_</span> <span class="keyword">in</span> <span class="variable">self</span>.<span class="function">get_neighbors</span>(<span class="variable">vertex</span>):
+                    <span class="keyword">if</span> <span class="variable">neighbor</span> <span class="keyword">not in</span> <span class="variable">visited</span>:
+                        <span class="variable">queue</span>.<span class="function">append</span>(<span class="variable">neighbor</span>)
+                        <span class="keyword">if</span> <span class="variable">neighbor</span> <span class="keyword">not in</span> <span class="variable">distances</span>:
+                            <span class="variable">distances</span>[<span class="variable">neighbor</span>] = <span class="variable">distances</span>[<span class="variable">vertex</span>] + <span class="number">1</span>
+        
+        <span class="keyword">return</span> <span class="variable">visit_order</span>, <span class="variable">distances</span>
+    
+    <span class="keyword">def</span> <span class="function">dijkstra</span>(<span class="variable">self</span>, <span class="variable">start_vertex</span>: <span class="class-name">str</span>) -> <span class="class-name">Tuple</span>[<span class="class-name">Dict</span>[<span class="class-name">str</span>, <span class="class-name">float</span>], <span class="class-name">Dict</span>[<span class="class-name">str</span>, <span class="class-name">str</span>]]:
+        <span class="string">"""Dijkstra's shortest path algorithm"""</span>
+        <span class="variable">distances</span> = {<span class="variable">vertex</span>: <span class="function">float</span>(<span class="string">'infinity'</span>) <span class="keyword">for</span> <span class="variable">vertex</span> <span class="keyword">in</span> <span class="variable">self</span>.<span class="variable">vertices</span>}
+        <span class="variable">distances</span>[<span class="variable">start_vertex</span>] = <span class="number">0</span>
+        <span class="variable">previous</span> = {}
+        <span class="variable">priority_queue</span> = [(<span class="number">0</span>, <span class="variable">start_vertex</span>)]
+        <span class="variable">visited</span> = <span class="function">set</span>()
+        
+        <span class="keyword">while</span> <span class="variable">priority_queue</span>:
+            <span class="variable">current_distance</span>, <span class="variable">current_vertex</span> = <span class="variable">heapq</span>.<span class="function">heappop</span>(<span class="variable">priority_queue</span>)
+            
+            <span class="keyword">if</span> <span class="variable">current_vertex</span> <span class="keyword">in</span> <span class="variable">visited</span>:
+                <span class="keyword">continue</span>
+            
+            <span class="variable">visited</span>.<span class="function">add</span>(<span class="variable">current_vertex</span>)
+            
+            <span class="keyword">for</span> <span class="variable">neighbor</span>, <span class="variable">weight</span> <span class="keyword">in</span> <span class="variable">self</span>.<span class="function">get_neighbors</span>(<span class="variable">current_vertex</span>):
+                <span class="variable">distance</span> = <span class="variable">current_distance</span> + <span class="variable">weight</span>
+                
+                <span class="keyword">if</span> <span class="variable">distance</span> < <span class="variable">distances</span>[<span class="variable">neighbor</span>]:
+                    <span class="variable">distances</span>[<span class="variable">neighbor</span>] = <span class="variable">distance</span>
+                    <span class="variable">previous</span>[<span class="variable">neighbor</span>] = <span class="variable">current_vertex</span>
+                    <span class="variable">heapq</span>.<span class="function">heappush</span>(<span class="variable">priority_queue</span>, (<span class="variable">distance</span>, <span class="variable">neighbor</span>))
+        
+        <span class="keyword">return</span> <span class="variable">distances</span>, <span class="variable">previous</span>
+    
+    <span class="keyword">def</span> <span class="function">has_cycle</span>(<span class="variable">self</span>) -> <span class="class-name">bool</span>:
+        <span class="string">"""Detect cycles in the graph"""</span>
+        <span class="keyword">if</span> <span class="variable">self</span>.<span class="variable">directed</span>:
+            <span class="keyword">return</span> <span class="variable">self</span>.<span class="function">_has_cycle_directed</span>()
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> <span class="variable">self</span>.<span class="function">_has_cycle_undirected</span>()
+    
+    <span class="keyword">def</span> <span class="function">_has_cycle_directed</span>(<span class="variable">self</span>) -> <span class="class-name">bool</span>:
+        <span class="string">"""Cycle detection for directed graphs using DFS"""</span>
+        <span class="variable">white</span> = <span class="function">set</span>(<span class="variable">self</span>.<span class="variable">vertices</span>)  # <span class="comment">Unvisited</span>
+        <span class="variable">gray</span> = <span class="function">set</span>()                # <span class="comment">Currently processing</span>
+        <span class="variable">black</span> = <span class="function">set</span>()               # <span class="comment">Fully processed</span>
+        
+        <span class="keyword">def</span> <span class="function">visit</span>(<span class="variable">vertex</span>):
+            <span class="keyword">if</span> <span class="variable">vertex</span> <span class="keyword">in</span> <span class="variable">gray</span>:
+                <span class="keyword">return</span> <span class="keyword">True</span>  # <span class="comment">Back edge found</span>
+            <span class="keyword">if</span> <span class="variable">vertex</span> <span class="keyword">in</span> <span class="variable">black</span>:
+                <span class="keyword">return</span> <span class="keyword">False</span>
+            
+            <span class="variable">white</span>.<span class="function">discard</span>(<span class="variable">vertex</span>)
+            <span class="variable">gray</span>.<span class="function">add</span>(<span class="variable">vertex</span>)
+            
+            <span class="keyword">for</span> <span class="variable">neighbor</span>, <span class="variable">_</span> <span class="keyword">in</span> <span class="variable">self</span>.<span class="function">get_neighbors</span>(<span class="variable">vertex</span>):
+                <span class="keyword">if</span> <span class="function">visit</span>(<span class="variable">neighbor</span>):
+                    <span class="keyword">return</span> <span class="keyword">True</span>
+            
+            <span class="variable">gray</span>.<span class="function">discard</span>(<span class="variable">vertex</span>)
+            <span class="variable">black</span>.<span class="function">add</span>(<span class="variable">vertex</span>)
+            <span class="keyword">return</span> <span class="keyword">False</span>
+        
+        <span class="keyword">return</span> <span class="function">any</span>(<span class="function">visit</span>(<span class="variable">v</span>) <span class="keyword">for</span> <span class="variable">v</span> <span class="keyword">in</span> <span class="function">list</span>(<span class="variable">white</span>))
+
+# <span class="comment">Example usage demonstrating all features</span>
+<span class="keyword">if</span> <span class="variable">__name__</span> == <span class="string">"__main__"</span>:
+    # <span class="comment">Create a directed graph for neural network representation</span>
+    <span class="variable">nn_graph</span> = <span class="function">MLGraph</span>(<span class="variable">directed</span>=<span class="keyword">True</span>)
+    
+    # <span class="comment">Add layers</span>
+    <span class="variable">layers</span> = [<span class="string">'input'</span>, <span class="string">'hidden1'</span>, <span class="string">'hidden2'</span>, <span class="string">'output'</span>]
+    <span class="keyword">for</span> <span class="variable">layer</span> <span class="keyword">in</span> <span class="variable">layers</span>:
+        <span class="variable">nn_graph</span>.<span class="function">add_vertex</span>(<span class="variable">layer</span>)
+    
+    # <span class="comment">Add connections with weights</span>
+    <span class="variable">nn_graph</span>.<span class="function">add_edge</span>(<span class="string">'input'</span>, <span class="string">'hidden1'</span>, <span class="number">0.8</span>)
+    <span class="variable">nn_graph</span>.<span class="function">add_edge</span>(<span class="string">'hidden1'</span>, <span class="string">'hidden2'</span>, <span class="number">0.6</span>)
+    <span class="variable">nn_graph</span>.<span class="function">add_edge</span>(<span class="string">'hidden2'</span>, <span class="string">'output'</span>, <span class="number">0.9</span>)
+    <span class="variable">nn_graph</span>.<span class="function">add_edge</span>(<span class="string">'input'</span>, <span class="string">'hidden2'</span>, <span class="number">0.3</span>)  # <span class="comment">Skip connection</span>
+    
+    # <span class="comment">Analyze the network</span>
+    <span class="function">print</span>(<span class="string">"Neural Network Graph Analysis:"</span>)
+    <span class="function">print</span>(<span class="string">f"Has cycles: {nn_graph.has_cycle()}"</span>)
+    
+    # <span class="comment">Find shortest path using Dijkstra</span>
+    <span class="variable">distances</span>, <span class="variable">previous</span> = <span class="variable">nn_graph</span>.<span class="function">dijkstra</span>(<span class="string">'input'</span>)
+    <span class="function">print</span>(<span class="string">f"Shortest distances from input: {distances}"</span>)</div>
+        </div>
+
+        <div class="contact-info">
+            <h3 style="color: #cc785c; margin-bottom: 1rem;"><i class="fas fa-graduation-cap"></i> Mastering Graph Theory for ML</h3>
+            <p>
+                Graph theory provides the mathematical foundation for understanding complex relationships in data, neural network architectures, and algorithmic problem-solving. These concepts are essential for advanced machine learning applications.
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <a href="machine-learning.html" style="color: #cc785c; text-decoration: none; border: 1px solid #cc785c; padding: 0.75rem 1.5rem; border-radius: 5px; transition: all 0.3s ease;">
+                    <i class="fas fa-arrow-left"></i> Back to ML Topics
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stepMode = false;
+        let currentAlgorithm = null;
+        let algorithmState = null;
+
+        // Graph Types Visualization Functions
+        function showUndirected() {
+            document.getElementById('undirected-graph').style.display = 'block';
+            document.getElementById('directed-graph').style.display = 'none';
+            document.getElementById('graph-explanation').innerHTML = 
+                '<strong>Undirected Graph:</strong> Edges have no direction. Represents symmetric relationships like friendship networks or physical connections.';
+        }
+
+        function showDirected() {
+            document.getElementById('undirected-graph').style.display = 'none';
+            document.getElementById('directed-graph').style.display = 'block';
+            document.getElementById('graph-explanation').innerHTML = 
+                '<strong>Directed Graph:</strong> Edges have direction, representing asymmetric relationships like web links, neural connections, or dependencies.';
+        }
+
+        function showWeighted() {
+            document.getElementById('graph-explanation').innerHTML = 
+                '<strong>Weighted Graph:</strong> Edges have associated weights representing costs, distances, similarities, or connection strengths. Essential for optimization and pathfinding.';
+        }
+
+        function showComplete() {
+            document.getElementById('graph-explanation').innerHTML = 
+                '<strong>Complete Graph:</strong> Every vertex is connected to every other vertex. Useful for analyzing worst-case scenarios and maximum connectivity.';
+        }
+
+        // Traversal Animation Functions
+        function resetTraversal() {
+            for (let i = 1; i <= 10; i++) {
+                const node = document.getElementById(`node-${i}`);
+                if (node) {
+                    node.classList.remove('visited-node', 'current-node');
+                }
+            }
+            
+            document.getElementById('current-algorithm').textContent = 'Choose an algorithm above';
+            document.getElementById('visit-order').textContent = '-';
+            document.getElementById('data-structure').textContent = '-';
+            document.getElementById('current-step').textContent = 'Ready to start';
+            
+            currentAlgorithm = null;
+            algorithmState = null;
+        }
+
+        async function animateBFS() {
+            resetTraversal();
+            currentAlgorithm = 'BFS';
+            
+            document.getElementById('current-algorithm').textContent = 'Breadth-First Search';
+            document.getElementById('data-structure').textContent = 'Queue (FIFO)';
+            
+            const bfsOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            let visitOrder = [];
+            
+            document.getElementById('bfs-btn').disabled = true;
+            document.getElementById('dfs-btn').disabled = true;
+            
+            for (let i = 0; i < bfsOrder.length; i++) {
+                await new Promise(resolve => setTimeout(resolve, 800));
+                
+                const nodeId = `node-${bfsOrder[i]}`;
+                const node = document.getElementById(nodeId);
+                if (node) {
+                    node.classList.add('visited-node');
+                    visitOrder.push(bfsOrder[i]);
+                    
+                    document.getElementById('visit-order').textContent = visitOrder.join(' → ');
+                    document.getElementById('current-step').textContent = `Visiting node ${bfsOrder[i]} (level-by-level exploration)`;
+                }
+            }
+            
+            document.getElementById('current-step').textContent = 'BFS completed - shortest paths found!';
+            document.getElementById('bfs-btn').disabled = false;
+            document.getElementById('dfs-btn').disabled = false;
+        }
+
+        async function animateDFS() {
+            resetTraversal();
+            currentAlgorithm = 'DFS';
+            
+            document.getElementById('current-algorithm').textContent = 'Depth-First Search';
+            document.getElementById('data-structure').textContent = 'Stack (LIFO)';
+            
+            const dfsOrder = [1, 2, 4, 8, 9, 5, 10, 3, 6, 7];
+            let visitOrder = [];
+            
+            document.getElementById('bfs-btn').disabled = true;
+            document.getElementById('dfs-btn').disabled = true;
+            
+            for (let i = 0; i < dfsOrder.length; i++) {
+                await new Promise(resolve => setTimeout(resolve, 800));
+                
+                const nodeId = `node-${dfsOrder[i]}`;
+                const node = document.getElementById(nodeId);
+                if (node) {
+                    node.classList.add('visited-node');
+                    visitOrder.push(dfsOrder[i]);
+                    
+                    document.getElementById('visit-order').textContent = visitOrder.join(' → ');
+                    document.getElementById('current-step').textContent = `Visiting node ${dfsOrder[i]} (depth-first exploration)`;
+                }
+            }
+            
+            document.getElementById('current-step').textContent = 'DFS completed - full exploration done!';
+            document.getElementById('bfs-btn').disabled = false;
+            document.getElementById('dfs-btn').disabled = false;
+        }
+
+        // Initialize with undirected graph
+        document.addEventListener('DOMContentLoaded', function() {
+            showUndirected();
+        });
+    </script>
+</body>
+</html> class="variable">directed</span> = <span class="variable">directed</span>              # <span class="comment">True for neural nets, False for social networks</span>
+        <span class="variable">self</span>.<span class="variable">adjacency_list</span> = {}              # <span class="comment">Memory-efficient storage: vertex -> [(neighbor, weight)]</span>
+        
+    <span class="keyword">def</span> <span class="function">add_vertex</span>(<span class="variable">self</span>, <span class="variable">vertex</span>):
+        # <span class="comment">Add a new node (neuron, person, city, etc.)</span>
+        <span class="keyword">if</span> <span class="variable">vertex</span> <span class="keyword">not in</span> <span class="variable">self</span>.<span class="variable">adjacency_list</span>:
+            <span class="variable">self</span>.<span class="variable">adjacency_list</span>[<span class="variable">vertex</span>] = []
+    
+    <span class="keyword">def</span> <span class="function">add_edge</span>(<span class="variable">self</span>, <span class="variable">vertex1</span>, <span class="variable">vertex2</span>, <span class="variable">weight</span>=<span class="number">1</span>):
+        # <span class="comment">Connect two nodes - weight represents strength/cost/distance</span>
+        <span class="variable">self</span>.<span class="function">add_vertex</span>(<span class="variable">vertex1</span>)
+        <span class="variable">self</span>.<span class="function">add_vertex</span>(<span class="variable">vertex2</span>)
+        
+        # <span class="comment">Add forward connection (always exists)</span>
+        <span class="variable">self</span>.<span class="variable">adjacency_list</span>[<span class="variable">vertex1</span>].<span class="function">append</span>((<span class="variable">vertex2</span>, <span class="variable">weight</span>))
+        
+        # <span class="comment">Add reverse connection only for undirected graphs</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">self</span>.<span class="variable">directed</span>:
+            <span class="variable">self</span>.<span class="variable">adjacency_list</span>[<span class="variable">vertex2</span>].<span class="function">append</span>((<span class="variable">vertex1</span>, <span class="variable">weight</span>))</div>
+        </div>
+
+        <!-- Graph Types Section -->
+        <div class="section" id="types">
+            <h2><i class="fas fa-sitemap"></i> Graph Types & Representations</h2>
+            
+            <h3>Fundamental Graph Types</h3>
+            
+            <div class="visualization-container">
+                <h4>Interactive Graph Types Comparison</h4>
+                <div class="viz-controls">
+                    <button class="btn" onclick="showUndirected()">Undirected Graph</button>
+                    <button class="btn" onclick="showDirected()">Directed Graph</button>
+                    <button class="btn" onclick="showWeighted()">Weighted Graph</button>
+                    <button class="btn" onclick="showComplete()">Complete Graph</button>
+                </div>
+                
+                <div style="text-align: center;">
+                    <svg width="500" height="300" id="graph-types-viz">
+                        <!-- Default: Undirected Graph -->
+                        <g id="undirected-graph">
+                            <line x1="100" y1="100" x2="200" y2="100" class="edge"/>
+                            <line x1="200" y1="100" x2="300" y2="100" class="edge"/>
+                            <line x1="100" y1="100" x2="150" y2="200" class="edge"/>
+                            <line x1="200" y1="100" x2="250" y2="200" class="edge"/>
+                            <line x1="150" y1="200" x2="250" y2="200" class="edge"/>
+                            <line x1="300" y1="100" x2="250" y2="200" class="edge"/>
+                            
+                            <circle cx="100" cy="100" r="15" class="node"/>
+                            <circle cx="200" cy="100" r="15" class="node"/>
+                            <circle cx="300" cy="100" r="15" class="node"/>
+                            <circle cx="150" cy="200" r="15" class="node"/>
+                            <circle cx="250" cy="200" r="15" class="node"/>
+                            
+                            <text x="100" y="105" class="node-label">A</text>
+                            <text x="200" y="105" class="node-label">B</text>
+                            <text x="300" y="105" class="node-label">C</text>
+                            <text x="150" y="205" class="node-label">D</text>
+                            <text x="250" y="205" class="node-label">E</text>
+                        </g>
+                        
+                        <!-- Directed Graph (hidden initially) -->
+                        <g id="directed-graph" style="display: none;">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                        refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#f5f5f5"/>
+                                </marker>
+                            </defs>
+                            <!-- Directed edges with arrows -->
+                            <line x1="100" y1="100" x2="190" y2="100" class="edge" marker-end="url(#arrowhead)"/>
+                            <line x1="210" y1="100" x2="290" y2="100" class="edge" marker-end="url(#arrowhead)"/>
+                            <line x1="100" y1="110" x2="140" y2="190" class="edge" marker-end="url(#arrowhead)"/>
+                            <line x1="200" y1="110" x2="240" y2="190" class="edge" marker-end="url(#arrowhead)"/>
+                            <line x1="160" y1="200" x2="240" y2="200" class="edge" marker-end="url(#arrowhead)"/>
+                            
+                            <circle cx="100" cy="100" r="15" class="node"/>
+                            <circle cx="200" cy="100" r="15" class="node"/>
+                            <circle cx="300" cy="100" r="15" class="node"/>
+                            <circle cx="150" cy="200" r="15" class="node"/>
+                            <circle cx="250" cy="200" r="15" class="node"/>
+                            
+                            <text x="100" y="105" class="node-label">A</text>
+                            <text x="200" y="105" class="node-label">B</text>
+                            <text x="300" y="105" class="node-label">C</text>
+                            <text x="150" y="205" class="node-label">D</text>
+                            <text x="250" y="205" class="node-label">E</text>
+                        </g>
+                    </svg>
+                </div>
+                
+                <div id="graph-explanation" style="margin-top: 1rem; padding: 1rem; background: #2a2a2a; border-radius: 5px;">
+                    <strong>Undirected Graph:</strong> Edges have no direction. Represents symmetric relationships like friendship networks or physical connections.
+                </div>
+            </div>
+
+            <h4>1. Undirected Graphs</h4>
+            <p>
+                Edges represent symmetric relationships. If A connects to B, then B connects to A. Common in social networks (mutual friendships), molecular structures, and transportation networks.
+            </p>
+
+            <div class="use-case">
+                <h5>ML Application: Collaborative Filtering</h5>
+                <p>
+                    In recommendation systems, undirected graphs can represent user similarity. If users A and B have similar preferences, there's an undirected edge between them, enabling collaborative filtering algorithms.
+                </p>
+            </div>
+
+            <h4>2. Directed Graphs (Digraphs)</h4>
+            <p>
+                Edges have direction, representing asymmetric relationships. Web pages linking to other pages, neural network connections, and dependency graphs are directed.
+            </p>
+
+            <div class="code-block"># <span class="comment">Neural Network as Directed Graph - AI systems are graphs!</span>
+# <span class="comment">Each neuron is a vertex, each connection is a weighted edge</span>
+
+<span class="keyword">class</span> <span class="class-name">NeuralNetworkGraph</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):
+        <span class="variable">self</span>.<span class="variable">layers</span> = []                      # <span class="comment">List of neuron layers (input, hidden, output)</span>
+        <span class="variable">self</span>.<span class="variable">connections</span> = {}                 # <span class="comment">source_neuron -> [(target_neuron, weight)]</span>
+    
+    <span class="keyword">def</span> <span class="function">add_connection</span>(<span class="variable">self</span>, <span class="variable">source</span>, <span class="variable">target</span>, <span class="variable">weight</span>):
+        # <span class="comment">Create weighted edge between neurons (like synapses in brain)</span>
+        <span class="keyword">if</span> <span class="variable">source</span> <span class="keyword">not in</span> <span class="variable">self</span>.<span class="variable">connections</span>:
+            <span class="variable">self</span>.<span class="variable">connections</span>[<span class="variable">source</span>] = []
+        <span class="variable">self</span>.<span class="variable">connections</span>[<span class="variable">source</span>].<span class="function">append</span>((<span class="variable">target</span>, <span class="variable">weight</span>))
+    
+    <span class="keyword">def</span> <span class="function">forward_pass</span>(<span class="variable">self</span>, <span class="variable">input_values</span>):
+        # <span class="comment">Process data through network in topological order</span>
+        # <span class="comment">This is graph traversal applied to neural computation!</span>
+        <span class="keyword">for</span> <span class="variable">layer</span> <span class="keyword">in</span> <span class="variable">self</span>.<span class="variable">layers</span>:
+            <span class="keyword">for</span> <span class="variable">neuron</span> <span class="keyword">in</span> <span class="variable">layer</span>:
+                <span class="variable">neuron</span>.<span class="function">compute_output</span>(<span class="variable">input_values</span>)</div>
+
+            <h4>3. Weighted Graphs</h4>
+            <p>
+                Edges have associated weights representing costs, distances, similarities, or connection strengths. Essential for pathfinding, neural networks, and optimization problems.
+            </p>
+
+            <h3>Graph Representation Methods</h3>
+            
+            <h4>Adjacency Matrix vs Adjacency List</h4>
+            <p>
+                Choosing the right representation affects performance and memory usage significantly.
+            </p>
+
+            <div class="code-block"># <span class="comment">Adjacency Matrix vs List - Choose the right tool for your data!</span>
+# <span class="comment">Matrix: Fast lookups, more memory. List: Memory efficient, good iteration</span>
+
+<span class="keyword">import</span> <span class="class-name">numpy</span> <span class="keyword">as</span> <span class="variable">np</span>
+
+# <span class="comment">ADJACENCY MATRIX - Best for dense graphs (social networks, complete graphs)</span>
+<span class="keyword">class</span> <span class="class-name">AdjacencyMatrix</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, <span class="variable">num_vertices</span>):
+        # <span class="comment">Create V×V matrix - every possible connection has a slot</span>
+        <span class="variable">self</span>.<span class="variable">matrix</span> = <span class="variable">np</span>.<span class="function">zeros</span>((<span class="variable">num_vertices</span>, <span class="variable">num_vertices</span>))
+        <span class="variable">self</span>.<span class="variable">vertex_map</span> = {}              # <span class="comment">Map names to matrix indices</span>
+        <span class="variable">self</span>.<span class="variable">next_index</span> = <span class="number">0</span>
+    
+    <span class="keyword">def</span> <span class="function">add_edge</span>(<span class="variable">self</span>, <span class="variable">v1</span>, <span class="variable">v2</span>, <span class="variable">weight</span>=<span class="number">1</span>):
+        # <span class="comment">O(1) edge addition - matrix[i][j] = weight</span>
+        <span class="variable">i</span>, <span class="variable">j</span> = <span class="variable">self</span>.<span class="function">_get_indices</span>(<span class="variable">v1</span>, <span class="variable">v2</span>)
+        <span class="variable">self</span>.<span class="variable">matrix</span>[<span class="variable">i</span>][<span class="variable">j</span>] = <span class="variable">weight</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">self</span>.<span class="variable">directed</span>:
+            <span class="variable">self</span>.<span class="variable">matrix</span>[<span class="variable">j</span>][<span class="variable">i</span>] = <span class="variable">weight</span>    # <span class="comment">Symmetric for undirected graphs</span>
+    
+    <span class="keyword">def</span> <span class="function">has_edge</span>(<span class="variable">self</span>, <span class="variable">v1</span>, <span class="variable">v2</span>):
+        # <span class="comment">LIGHTNING FAST: O(1) edge lookup!</span>
+        <span class="variable">i</span>, <span class="variable">j</span> = <span class="variable">self</span>.<span class="function">_get_indices</span>(<span class="variable">v1</span>, <span class="variable">v2</span>)
+        <span class="keyword">return</span> <span class="variable">self</span>.<span class="variable">matrix</span>[<span class="variable">i</span>][<span class="variable">j</span>] != <span class="number">0</span>
+
+# <span class="comment">ADJACENCY LIST - Best for sparse graphs (trees, road networks)</span>
+<span class="keyword">class</span> <span class="class-name">AdjacencyList</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):
+        # <span class="comment">Only store actual connections - saves massive memory!</span>
+        <span class="variable">self</span>.<span class="variable">graph</span> = <span class="function">defaultdict</span>(<span class="function">list</span>)    # <span class="comment">vertex -> [(neighbor, weight)]</span>
+    
+    <span class="keyword">def</span> <span class="function">add_edge</span>(<span class="variable">self</span>, <span class="variable">v1</span>, <span class="variable">v2</span>, <span class="variable">weight</span>=<span class="number">1</span>):
+        # <span class="comment">Just append to lists - very memory efficient</span>
+        <span class="variable">self</span>.<span class="variable">graph</span>[<span class="variable">v1</span>].<span class="function">append</span>((<span class="variable">v2</span>, <span class="variable">weight</span>))
+        <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">self</span>.<span class="variable">directed</span>:
+            <span class="variable">self</span>.<span class="variable">graph</span>[<span class="variable">v2</span>].<span class="function">append</span>((<span class="variable">v1</span>, <span class="variable">weight</span>))
+    
+    <span class="keyword">def</span> <span class="function">get_neighbors</span>(<span class="variable">self</span>, <span class="variable">vertex</span>):
+        # <span class="comment">Perfect for iteration - exactly what we need, nothing more</span>
+        <span class="keyword">return</span> <span class="variable">self</span>.<span class="variable">graph</span>[<span class="variable">vertex</span>]</div>
+
+            <div class="complexity-box">
+                <h4>Representation Complexity Comparison</h4>
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Adjacency Matrix</th>
+                        <th>Adjacency List</th>
+                    </tr>
+                    <tr>
+                        <td>Space</td>
+                        <td>O(V²)</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>Add Edge</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Check Edge</td>
+                        <td>O(1)</td>
+                        <td>O(degree)</td>
+                    </tr>
+                    <tr>
+                        <td>Iterate Neighbors</td>
+                        <td>O(V)</td>
+                        <td>O(degree)</td>
+                    </tr>
+                </table>
+                <p><strong>Rule of thumb:</strong> Use matrix for dense graphs (many edges), list for sparse graphs (few edges).</p>
+            </div>
+        </div>
+
+        <!-- Traversal Algorithms Section -->
+        <div class="section" id="traversal">
+            <h2><i class="fas fa-route"></i> Graph Traversal Algorithms</h2>
+            
+            <p>
+                Traversal algorithms systematically visit every vertex in a graph. They're fundamental to search, pathfinding, and many machine learning algorithms.
+            </p>
+
+            <div class="visualization-container">
+                <h4>Interactive Traversal Demonstration</h4>
+                <div class="viz-controls">
+                    <button class="btn" onclick="animateBFS()" id="bfs-btn">Run BFS</button>
+                    <button class="btn" onclick="animateDFS()" id="dfs-btn">Run DFS</button>
+                    <button class="btn" onclick="resetTraversal()">Reset</button>
+                </div>
+                
+                <div style="text-align: center;">
+                    <svg width="600" height="400" id="traversal-viz">
+                        <!-- Tree structure for clear demonstration -->
+                        <!-- Level 1 - Root -->
+                        <line x1="300" y1="50" x2="200" y2="120" class="edge" id="edge-1-2"/>
+                        <line x1="300" y1="50" x2="400" y2="120" class="edge" id="edge-1-3"/>
+                        
+                        <!-- Level 2 -->
+                        <line x1="200" y1="120" x2="150" y2="190" class="edge" id="edge-2-4"/>
+                        <line x1="200" y1="120" x2="250" y2="190" class="edge" id="edge-2-5"/>
+                        <line x1="400" y1="120" x2="350" y2="190" class="edge" id="edge-3-6"/>
+                        <line x1="400" y1="120" x2="450" y2="190" class="edge" id="edge-3-7"/>
+                        
+                        <!-- Level 3 -->
+                        <line x1="150" y1="190" x2="100" y2="260" class="edge" id="edge-4-8"/>
+                        <line x1="150" y1="190" x2="200" y2="260" class="edge" id="edge-4-9"/>
+                        <line x1="250" y1="190" x2="300" y2="260" class="edge" id="edge-5-10"/>
+                        
+                        <!-- Nodes -->
+                        <circle cx="300" cy="50" r="20" class="node" id="node-1"/>
+                        <circle cx="200" cy="120" r="20" class="node" id="node-2"/>
+                        <circle cx="400" cy="120" r="20" class="node" id="node-3"/>
+                        <circle cx="150" cy="190" r="20" class="node" id="node-4"/>
+                        <circle cx="250" cy="190" r="20" class="node" id="node-5"/>
+                        <circle cx="350" cy="190" r="20" class="node" id="node-6"/>
+                        <circle cx="450" cy="190" r="20" class="node" id="node-7"/>
+                        <circle cx="100" cy="260" r="20" class="node" id="node-8"/>
+                        <circle cx="200" cy="260" r="20" class="node" id="node-9"/>
+                        <circle cx="300" cy="260" r="20" class="node" id="node-10"/>
+                        
+                        <!-- Labels -->
+                        <text x="300" y="55" class="node-label">1</text>
+                        <text x="200" y="125" class="node-label">2</text>
+                        <text x="400" y="125" class="node-label">3</text>
+                        <text x="150" y="195" class="node-label">4</text>
+                        <text x="250" y="195" class="node-label">5</text>
+                        <text x="350" y="195" class="node-label">6</text>
+                        <text x="450" y="195" class="node-label">7</text>
+                        <text x="100" y="265" class="node-label">8</text>
+                        <text x="200" y="265" class="node-label">9</text>
+                        <text x="300" y="265" class="node-label">10</text>
+                    </svg>
+                </div>
+                
+                <div id="traversal-info" style="margin-top: 1rem; padding: 1rem; background: #2a2a2a; border-radius: 5px;">
+                    <div><strong>Algorithm:</strong> <span id="current-algorithm">Choose an algorithm above</span></div>
+                    <div><strong>Order:</strong> <span id="visit-order">-</span></div>
+                    <div><strong>Data Structure:</strong> <span id="data-structure">-</span></div>
+                    <div><strong>Current Step:</strong> <span id="current-step">Ready to start</span></div>
+                </div>
+            </div>
+
+            <h3>Breadth-First Search (BFS)</h3>
+            <p>
+                BFS explores neighbors level by level, like ripples spreading in a pond. It uses a queue (first-in, first-out) and guarantees finding the shortest path in unweighted graphs.
+            </p>
+
+            <div class="code-block"># <span class="comment">BREADTH-FIRST SEARCH - The "Ripple Effect" Algorithm</span>
+# <span class="comment">Like ripples in a pond: explore all neighbors before going deeper</span>
+# <span class="comment">GUARANTEES shortest path in unweighted graphs!</span>
+
+<span class="keyword">from</span> <span class="class-name">collections</span> <span class="keyword">import</span> <span class="function">deque</span>
+
+<span class="keyword">def</span> <span class="function">bfs</span>(<span class="variable">graph</span>, <span class="variable">start_vertex</span>):
+    <span class="string">"""
+    Find shortest paths from start to all reachable vertices
+    Returns: (visit_order, distances_from_start)
+    """</span>
+    <span class="variable">visited</span> = <span class="function">set</span>()                        # <span class="comment">Track what we've seen</span>
+    <span class="variable">queue</span> = <span class="function">deque</span>([<span class="variable">start_vertex</span>])           # <span class="comment">FIFO queue - first in, first out</span>
+    <span class="variable">visit_order</span> = []
+    <span class="variable">distances</span> = {<span class="variable">start_vertex</span>: <span class="number">0</span>}           # <span class="comment">Distance from start to each vertex</span>
+    
+    <span class="keyword">while</span> <span class="variable">queue</span>:                           # <span class="comment">Process until queue is empty</span>
+        <span class="variable">vertex</span> = <span class="variable">queue</span>.<span class="function">popleft</span>()            # <span class="comment">Take from FRONT of queue (FIFO)</span>
+        
+        <span class="keyword">if</span> <span class="variable">vertex</span> <span class="keyword">not in</span> <span class="variable">visited</span>:
+            <span class="variable">visited</span>.<span class="function">add</span>(<span class="variable">vertex</span>)
+            <span class="variable">visit_order</span>.<span class="function">append</span>(<span class="variable">vertex</span>)
+            
+            # <span class="comment">Add ALL unvisited neighbors to queue (explore breadth-first)</span>
+            <span class="keyword">for</span> <span class="variable">neighbor</span>, <span class="variable">weight</span> <span class="keyword">in</span> <span class="variable">graph</span>.<span class="function">get_neighbors</span>(<span class="variable">vertex</span>):
+                <span class="keyword">if</span> <span class="variable">neighbor</span> <span class="keyword">not in</span> <span class="variable">visited</span>:
+                    <span class="variable">queue</span>.<span class="function">append</span>(<span class="variable">neighbor</span>)
+                    <span class="keyword">if</span> <span class="variable">neighbor</span> <span class="keyword">not in</span> <span class="variable">distances</span>:
+                        # <span class="comment">Distance = parent's distance + 1</span>
+                        <span class="variable">distances</span>[<span class="variable">neighbor</span>] = <span class="variable">distances</span>[<span class="variable">vertex</span>] + <span class="number">1</span>
+    
+    <span class="keyword">return</span> <span class="variable">visit_order</span>, <span class="variable">distances</span></div>
+
+            <h3>Depth-First Search (DFS)</h3>
+            <p>
+                DFS explores as deep as possible before backtracking. It uses a stack (last-in, first-out) and is essential for topological sorting, cycle detection, and maze solving.
+            </p>
+
+            <div class="code-block"># <span class="comment">DEPTH-FIRST SEARCH - The "Deep Dive" Algorithm</span>
+# <span class="comment">Goes as deep as possible before backtracking</span>
+# <span class="comment">Perfect for: cycle detection, topological sorting, maze solving</span>
+
+<span class="keyword">def</span> <span class="function">dfs_iterative</span>(<span class="variable">graph</span>, <span class="variable">start_vertex</span>):
+    <span class="string">"""
+    Iterative DFS using explicit stack
+    Better for deep graphs - avoids Python recursion limit!
+    """</span>
+    <span class="variable">visited</span> = <span class="function">set</span>()
+    <span class="variable">stack</span> = [<span class="variable">start_vertex</span>]                # <span class="comment">LIFO stack - last in, first out</span>
+    <span class="variable">visit_order</span> = []
+    
+    <span class="keyword">while</span> <span class="variable">stack</span>:                         # <span class="comment">Process until stack is empty</span>
+        <span class="variable">vertex</span> = <span class="variable">stack</span>.<span class="function">pop</span>()              # <span class="comment">Take from TOP of stack (LIFO)</span>
+        
+        <span class="keyword">if</span> <span class="variable">vertex</span> <span class="keyword">not in</span> <span class="variable">visited</span>:
+            <span class="variable">visited</span>.<span class="function">add</span>(<span class="variable">vertex</span>)
+            <span class="variable">visit_order</span>.<span class="function">append</span>(<span class="variable">vertex</span>)
+            
+            # <span class="comment">Add neighbors in reverse order for consistent left-to-right traversal</span>
+            <span class="variable">neighbors</span> = <span class="function">list</span>(<span class="variable">graph</span>.<span class="function">get_neighbors</span>(<span class="variable">vertex</span>))
+            <span class="keyword">for</span> <span class="variable">neighbor</span>, <span class="variable">weight</span> <span class="keyword">in</span> <span class="function">reversed</span>(<span class="variable">neighbors</span>):
+                <span class="keyword">if</span> <span class="variable">neighbor</span> <span class="keyword">not in</span> <span class="variable">visited</span>:
+                    <span class="variable">stack</span>.<span class="function">append</span>(<span class="variable">neighbor</span>)
+    
+    <span class="keyword">return</span> <span class="variable">visit_order</span></div>
+
+            <div class="complexity-box">
+                <h4>BFS vs DFS Comparison</h4>
+                <table>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>BFS</th>
+                        <th>DFS</th>
+                    </tr>
+                    <tr>
+                        <td>Data Structure</td>
+                        <td>Queue (FIFO)</td>
+                        <td>Stack (LIFO)</td>
+                    </tr>
+                    <tr>
+                        <td>Time Complexity</td>
+                        <td>O(V + E)</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>Shortest Path</td>
+                        <td>✅ Guarantees shortest</td>
+                        <td>❌ No guarantee</td>
+                    </tr>
+                    <tr>
+                        <td>Use Cases</td>
+                        <td>Shortest path, level-order</td>
+                        <td>Topological sort, cycles</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="use-case">
+                <h5>ML Application: Neural Network Computation</h5>
+                <p>
+                    <strong>Forward Pass:</strong> Uses topological ordering (DFS-based) to ensure each neuron computes after its inputs are ready.<br>
+                    <strong>Backpropagation:</strong> Reverse topological order to propagate gradients from output to input layers.
+                </p>
+            </div>
+        </div>
+
+        <!-- Pathfinding Section -->
+        <div class="section" id="pathfinding">
+            <h2><i class="fas fa-map-marked-alt"></i> Pathfinding & Shortest Path Algorithms</h2>
+            
+            <p>
+                Finding optimal paths through graphs is crucial in machine learning for optimization, neural network training, and decision-making systems.
+            </p>
+
+            <h3>Dijkstra's Algorithm</h3>
+            <p>
+                Dijkstra's algorithm finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edge weights. It's the foundation of GPS navigation and network routing.
+            </p>
+
+            <div class="code-block"># <span class="comment">DIJKSTRA'S ALGORITHM - The GPS Navigation Algorithm</span>
+# <span class="comment">Finds shortest paths in weighted graphs - exactly what GPS uses!</span>
+# <span class="comment">Works with non-negative weights only (no "negative cost" roads)</span>
+
+<span class="keyword">import</span> <span class="class-name">heapq</span>
+
+<span class="keyword">def</span> <span class="function">dijkstra</span>(<span class="variable">graph</span>, <span class="variable">start_vertex</span>):
+    <span class="string">"""
+    Find shortest paths from start to ALL other vertices
+    Returns: (distances_dict, previous_vertices_dict)
+    """</span>
+    # <span class="comment">Initialize distances - start is 0, everything else is infinite</span>
+    <span class="variable">distances</span> = {<span class="variable">vertex</span>: <span class="function">float</span>(<span class="string">'infinity'</span>) <span class="keyword">for</span> <span class="variable">vertex</span> <span class="keyword">in</span> <span class="variable">graph</span>.<span class="variable">vertices</span>}
+    <span class="variable">distances</span>[<span class="variable">start_vertex</span>] = <span class="number">0</span>
+    <span class="variable">previous</span> = {}                         # <span class="comment">For path reconstruction</span>
+    
+    # <span class="comment">Priority queue: (distance, vertex) - always process closest vertex first!</span>
+    <span class="variable">priority_queue</span> = [(<span class="number">0</span>, <span class="variable">start_vertex</span>)]
+    <span class="variable">visited</span> = <span class="function">set</span>()
+    
+    <span class="keyword">while</span> <span class="variable">priority_queue</span>:
+        # <span class="comment">Get vertex with minimum distance (this is the magic!)</span>
+        <span class="variable">current_distance</span>, <span class="variable">current_vertex</span> = <span class="variable">heapq</span>.<span class="function">heappop</span>(<span class="variable">priority_queue</span>)
+        
+        <span class="keyword">if</span> <span class="variable">current_vertex</span> <span class="keyword">in</span> <span class="variable">visited</span>:
+            <span class="keyword">continue</span>                    # <span class="comment">Skip if already processed</span>
+        
+        <span class="variable">visited</span>.<span class="function">add</span>(<span class="variable">current_vertex</span>)
+        
+        # <span class="comment">Check all neighbors for potentially shorter paths</span>
+        <span class="keyword">for</span> <span class="variable">neighbor</span>, <span class="variable">weight</span> <span class="keyword">in</span> <span class="variable">graph</span>.<span class="function">get_neighbors</span>(<span class="variable">current_vertex</span>):
+            <span class="variable">distance</span> = <span class="variable">current_distance</span> + <span class="variable">weight</span>
+            
+            # <span class="comment">Found a shorter path to this neighbor!</span>
+            <span class="keyword">if</span> <span class="variable">distance</span> < <span class="variable">distances</span>[<span class="variable">neighbor</span>]:
+                <span class="variable">distances</span>[<span class="variable">neighbor</span>] = <span class="variable">distance</span>
+                <span class="variable">previous</span>[<span class="variable">neighbor</span>] = <span class="variable">current_vertex</span>
+                # <span class="comment">Add to queue with new priority</span>
+                <span class="variable">heapq</span>.<span class="function">heappush</span>(<span class="variable">priority_queue</span>, (<span class="variable">distance</span>, <span class="variable">neighbor</span>))
+    
+    <span class="keyword">return</span> <span class="variable">distances</span>, <span class="variable">previous</span></div>
+
+            <div class="complexity-box">
+                <h4>Pathfinding Algorithm Comparison</h4>
+                <table>
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Time Complexity</th>
+                        <th>Optimal</th>
+                        <th>Use Case</th>
+                    </tr>
+                    <tr>
+                        <td>BFS</td>
+                        <td>O(V + E)</td>
+                        <td>✅ Unweighted only</td>
+                        <td>Unweighted shortest path</td>
+                    </tr>
+                    <tr>
+                        <td>Dijkstra's</td>
+                        <td>O((V + E) log V)</td>
+                        <td>✅ Non-negative weights</td>
+                        <td>Weighted shortest path</td>
+                    </tr>
+                    <tr>
+                        <td>A*</td>
+                        <td>O(b^d)</td>
+                        <td>✅ With admissible heuristic</td>
+                        <td>Goal-directed pathfinding</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Applications Section -->
+        <div class="section" id="applications">
+            <h2><i class="fas fa-brain"></i> Machine Learning Applications</h2>
+            
+            <h3>Neural Networks as Computational Graphs</h3>
+            <p>
+                Every neural network is a directed acyclic graph (DAG) where neurons are vertices and weighted connections are edges. Understanding this graph structure is crucial for implementing backpropagation and designing new architectures.
+            </p>
+
+            <div class="code-block"># <span class="comment">Neural Network as Computational Graph</span>
+# <span class="comment">Every AI system is built on graph theory principles!</span>
+
+<span class="keyword">class</span> <span class="class-name">NeuralNetworkGraph</span>:
+    <span class="string">"""Neural network implemented as computational graph"""</span>
+    
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>):
+        <span class="variable">self</span>.<span class="variable">nodes</span> = {}           # <span class="comment">node_id -> computation function</span>
+        <span class="variable">self</span>.<span class="variable">edges</span> = {}           # <span class="comment">(from, to) -> weight</span>
+        <span class="variable">self</span>.<span class="variable">topology_order</span> = []  # <span class="comment">For forward/backward passes</span>
+    
+    <span class="keyword">def</span> <span class="function">add_layer</span>(<span class="variable">self</span>, <span class="variable">layer_id</span>, <span class="variable">size</span>, <span class="variable">activation</span>=<span class="string">'relu'</span>):
+        # <span class="comment">Add neurons as graph nodes</span>
+        <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="function">range</span>(<span class="variable">size</span>):
+            <span class="variable">node_id</span> = <span class="string">f"{layer_id}_{i}"</span>
+            <span class="variable">self</span>.<span class="variable">nodes</span>[<span class="variable">node_id</span>] = {
+                <span class="string">'type'</span>: <span class="string">'neuron'</span>,
+                <span class="string">'activation'</span>: <span class="variable">activation</span>,
+                <span class="string">'value'</span>: <span class="number">0.0</span>,
+                <span class="string">'gradient'</span>: <span class="number">0.0</span>
+            }
+    
+    <span class="keyword">def</span> <span class="function">forward_pass</span>(<span class="variable">self</span>, <span class="variable">inputs</span>):
+        # <span class="comment">Traverse graph in topological order</span>
+        <span class="keyword">for</span> <span class="variable">node_id</span> <span class="keyword">in</span> <span class="variable">self</span>.<span class="variable">topology_order</span>:
+            <span class="keyword">if</span> <span class="variable">node_id</span>.<span class="function">startswith</span>(<span class="string">'input'</span>):
+                <span class="variable">self</span>.<span class="variable">nodes</span>[<span class="variable">node_id</span>][<span class="string">'value'</span>] = <span class="variable">inputs</span>[<span class="variable">node_id</span>]
+            <span class="keyword">else</span>:
+                # <span class="comment">Compute weighted sum of inputs</span>
+                <span class="variable">weighted_sum</span> = <span class="number">0</span>
+                <span class="keyword">for</span> (<span class="variable">from_node</span>, <span class="variable">to_node</span>), <span class="variable">weight</span> <span class="keyword">in</span> <span class="variable">self</span>.<span class="variable">edges</span>.<span class="function">items</span>():
+                    <span class="keyword">if</span> <span class="variable">to_node</span> == <span class="variable">node_id</span>:
+                        <span class="variable">weighted_sum</span> += <span class="variable">self</span>.<span class="variable">nodes</span>[<span class="variable">from_node</span>][<span class="string">'value'</span>] * <span class="variable">weight</span>
+                
+                # <span class="comment">Apply activation function</span>
+                <span class="variable">self</span>.<span class="variable">nodes</span>[<span class="variable">node_id</span>][<span class="string">'value'</span>] = <span class="variable">self</span>.<span class="function">activate</span>(<span class="variable">weighted_sum</span>)</div>
+
+            <h3>Graph Neural Networks (GNNs)</h3>
+            <p>
+                GNNs operate directly on graph-structured data, making them powerful for social networks, molecular analysis, and knowledge graphs. They learn node representations by aggregating information from graph neighborhoods.
+            </p>
+
+            <div class="use-case">
+                <h5>Real-World Example: Drug Discovery</h5>
+                <p>
+                    In pharmaceutical research, molecules are represented as graphs where atoms are nodes and bonds are edges. GNNs can predict molecular properties, helping discover new drugs by analyzing the graph structure of chemical compounds.
+                </p>
+            </div>
+        </div>
+
+        <!-- Complete Implementation Section -->
+        <div class="section" id="implementation">
+            <h2><i class="fas fa-code"></i> Complete Python Implementation</h2>
+            
+            <p>
+                Here's a comprehensive graph library that implements all the concepts we've covered, suitable for both learning and practical machine learning applications.
+            </p>
+
+            <div class="code-block"># <span class="comment">COMPLETE GRAPH LIBRARY FOR MACHINE LEARNING</span>
+# <span class="comment">Production-ready implementation with all major algorithms</span>
+
+<span class="keyword">import</span> <span class="class-name">heapq</span>
+<span class="keyword">from</span> <span class="class-name">collections</span> <span class="keyword">import</span> <span class="function">defaultdict</span>, <span class="function">deque</span>
+<span class="keyword">from</span> <span class="class-name">typing</span> <span class="keyword">import</span> <span class="class-name">List</span>, <span class="class-name">Dict</span>, <span class="class-name">Set</span>, <span class="class-name">Tuple</span>, <span class="class-name">Optional</span>
+
+<span class="keyword">class</span> <span class="class-name">MLGraph</span>:
+    <span class="string">"""
+    Comprehensive graph implementation for machine learning applications
+    Supports both directed and undirected graphs with weighted edges
+    """</span>
+    
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="variable">self</span>, <span class="variable">directed</span>: <span class="class-name">bool</span> = <span class="keyword">False</span>):
+        <span class="variable">self</span>.<span class="variable">directed</span> = <span class="variable">directed</span>
+        <span class="variable">self</span>.<span class="variable">adjacency_list</span>: <span class="class-name">Dict</span>[<span class="class-name">str</span>, <span class="class-name">List</span>[<span class="class-name">Tuple</span>[<span class="class-name">str</span>, <span class="class-name">float</span>]]] = <span class="function">defaultdict</span>(<span class="function">list</span>)
+        <span class="variable">self</span>.<span class="variable">vertices</span>: <span class="class-name">Set</span>[<span class="class-name">str</span>] = <span class="function">set</span>()
+        <span class="variable">self</span>.<span class="variable">edge_count</span> = <span class="number">0</span>
+    
+    <span class="keyword">def</span> <span class="function">add_vertex</span>(<span class="variable">self</span>, <span class="variable">vertex</span>: <span class="class-name">str</span>) -> <span class="keyword">None</span>:
+        <span class="string">"""Add a vertex to the graph"""</span>
+        <span class="variable">self</span>.<span class="variable">vertices</span>.<span class="function">add</span>(<span class="variable">vertex</span>)
+        <span class="keyword">if</span> <span class="variable">vertex</span> <span class="keyword">not in</span> <span class="variable">self</span>.<span class="variable">adjacency_list</span>:
+            <span class="variable">self</span>.<span class="variable">adjacency_list</span>[<span class="variable">vertex</span>] = []
+    
+    <span class="keyword">def</span> <span class="function">add_edge</span>(<span class="variable">self</span>, <span class="variable">from_vertex</span>: <span class="class-name">str</span>, <span class="variable">to_vertex</span>: <span class="class-name">str</span>, <span class="variable">weight</span>: <span class="class-name">float</span> = <span class="number">1.0</span>) -> <span class="keyword">None</span>:
+        <span class="string">"""Add an edge between two vertices"""</span>
+        <span class="variable">self</span>.<span class="function">add_vertex</span>(<span class="variable">from_vertex</span>)
+        <span class="variable">self</span>.<span class="function">add_vertex</span>(<span class="variable">to_vertex</span>)
+        
+        <span class="variable">self</span>.<span

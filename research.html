@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Capitalmind</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/research.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <h1>Research & Studies</h1>
+            <p class="subtitle">Ongoing Research in Economics, Financial Systems & Expert Systems</p>
+            
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="linux-tutorials.html">>_ Linux Tutorials</a>
+                <a href="machine-learning.html"><i class="fas fa-brain"></i> Machine Learning</a>
+                <a href="projects.html">Projects</a>
+                <a href="trading.html">Trading</a>
+                <a href="research.html" class="active">Research</a>
+            </nav>
+            
+            <div class="links">
+                <a href="https://github.com/Capitalmind" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="mailto:tech@skynode.one" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            </div>
+        </header>
+
+        <div class="intro-section">
+            <h2><i class="fas fa-microscope"></i> Current Research Focus</h2>
+            <p>
+                My research spans three interconnected domains: economic systems analysis, quantitative financial modeling, and symbolic reasoning frameworks. Each study combines theoretical rigor with practical implementation, drawing from decades of experience in systems architecture and data analysis.
+            </p>
+            <p style="margin-top: 1rem;">
+                Click on any research area below to explore detailed methodologies, current findings, and practical applications. Each study represents months of investigation with real-world implications for policy, technology, and decision-making systems.
+            </p>
+        </div>
+
+        <div class="research-container">
+            <!-- Expert Systems Research - Most Active -->
+            <div class="research-card available" onclick="openResearch('expert-systems')">
+                <div class="status-badge status-available">Available</div>
+                
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3 class="research-title">Ontology-Based Expert Systems</h3>
+                </div>
+                
+                <div class="research-meta">
+                    <span><i class="fas fa-clock"></i> Ongoing - Started Jan 2025</span>
+                    <span><i class="fas fa-chart-line"></i> Advanced</span>
+                    <span><i class="fas fa-code"></i> OWL, Prolog, Python</span>
+                </div>
+                
+                <p class="research-description">
+                    Developing comprehensive frameworks for building ontology-driven expert systems that can encode complex rule sets from games, legal standards, and regulatory compliance. This research focuses on creating deterministic, explainable AI systems that bridge symbolic reasoning with natural language interfaces.
+                </p>
+                
+                <div class="research-importance">
+                    <h4>Research Significance:</h4>
+                    <p>Expert systems represent the future of trustworthy AI—deterministic, explainable, and auditable. Unlike black box models, these systems provide transparent reasoning chains essential for legal, medical, and regulatory applications.</p>
+                </div>
+                
+                <div class="preview-content">
+                    <div class="code-preview">
+# Ontology-driven rule engine framework
+class ExpertSystem:
+    def __init__(self, ontology_path, rules_path):
+        self.ontology = load_owl_ontology(ontology_path)
+        self.rules = parse_rule_set(rules_path)
+        self.inference_engine = build_inference_engine()
+    
+    def query(self, question, context):
+        # Convert natural language to structured query
+        structured_query = self.nl_to_logic(question, context)
+        
+        # Apply rules with full traceability
+        result = self.inference_engine.solve(structured_query)
+        
+        # Return answer with explanation chain
+        return {
+            'answer': result.conclusion,
+            'confidence': result.certainty,
+            'reasoning': result.trace_path,
+            'sources': result.applied_rules
+        }
+                    </div>
+                </div>
+                
+                <div class="tech-tags">
+                    <span class="tech-tag">Semantic Web</span>
+                    <span class="tech-tag">OWL Ontologies</span>
+                    <span class="tech-tag">Rule Engines</span>
+                    <span class="tech-tag">Legal Tech</span>
+                    <span class="tech-tag">Symbolic AI</span>
+                    <span class="tech-tag">Knowledge Graphs</span>
+                </div>
+                
+                <div class="click-hint">
+                    <i class="fas fa-mouse-pointer"></i> Click to explore the complete framework for building deterministic expert systems
+                </div>
+            </div>
+
+            <!-- Global Debt Analysis -->
+            <div class="research-card available" onclick="openResearch('debt-analysis')">
+                <div class="status-badge status-available">Available</div>
+                
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3 class="research-title">Global Debt Management Strategy</h3>
+                </div>
+                
+                <div class="research-meta">
+                    <span><i class="fas fa-clock"></i> 8 months deep dive</span>
+                    <span><i class="fas fa-chart-line"></i> Advanced</span>
+                    <span><i class="fas fa-code"></i> Python, R, Economics</span>
+                </div>
+                
+                <p class="research-description">
+                    Comprehensive economic analysis examining global sovereign debt patterns, sustainability metrics, and potential restructuring scenarios. This study combines macroeconomic theory with quantitative modeling to assess systemic risks and policy implications across major economies.
+                </p>
+                
+                <div class="research-importance">
+                    <h4>Economic Impact:</h4>
+                    <p>With global debt reaching unprecedented levels, understanding restructuring mechanisms and systemic risks is critical for policymakers, investors, and economists. This research provides data-driven insights into one of the most pressing challenges of our time.</p>
+                </div>
+                
+                <div class="preview-content">
+                    <div class="code-preview">
+# Sovereign debt sustainability analysis
+def analyze_debt_sustainability(country_data):
+    """
+    Multi-factor analysis of sovereign debt sustainability
+    Based on IMF frameworks and historical crisis patterns
+    """
+    metrics = {
+        'debt_to_gdp': calculate_debt_ratio(country_data),
+        'debt_service_ratio': calculate_service_burden(country_data),
+        'fiscal_space': assess_fiscal_capacity(country_data),
+        'external_vulnerability': analyze_external_debt(country_data)
+    }
+    
+    # Apply stress testing scenarios
+    stress_results = stress_test_scenarios(metrics, country_data)
+    
+    # Risk assessment using historical patterns
+    risk_score = calculate_composite_risk(metrics, stress_results)
+    
+    return {
+        'sustainability_score': risk_score,
+        'key_vulnerabilities': identify_risks(metrics),
+        'policy_recommendations': generate_recommendations(risk_score),
+        'scenario_outcomes': stress_results
+    }
+                    </div>
+                </div>
+                
+                <div class="tech-tags">
+                    <span class="tech-tag">Macroeconomics</span>
+                    <span class="tech-tag">Econometrics</span>
+                    <span class="tech-tag">Policy Analysis</span>
+                    <span class="tech-tag">Risk Assessment</span>
+                    <span class="tech-tag">Data Modeling</span>
+                    <span class="tech-tag">Sovereign Debt</span>
+                </div>
+                
+                <div class="click-hint">
+                    <i class="fas fa-mouse-pointer"></i> Click to explore comprehensive debt sustainability analysis and policy implications
+                </div>
+            </div>
+
+            <!-- Black Box Trading System -->
+            <div class="research-card available" onclick="openResearch('trading-system')">
+                <div class="status-badge status-available">Available</div>
+                
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-flask"></i></div>
+                    <h3 class="research-title">Black Box Trading System Analysis</h3>
+                </div>
+                
+                <div class="research-meta">
+                    <span><i class="fas fa-clock"></i> 6 months analysis</span>
+                    <span><i class="fas fa-chart-line"></i> Expert</span>
+                    <span><i class="fas fa-database"></i> 65GB+ Financial Data</span>
+                </div>
+                
+                <p class="research-description">
+                    Large-scale quantitative analysis of financial market data across multiple asset classes, exchanges, and timeframes. This research applies advanced statistical methods and machine learning techniques to identify patterns, inefficiencies, and algorithmic trading opportunities in complex financial systems.
+                </p>
+                
+                <div class="research-importance">
+                    <h4>Market Insights:</h4>
+                    <p>Processing massive datasets reveals market microstructure patterns invisible to traditional analysis. This research combines decades of trading experience with cutting-edge data science to understand market behavior at scale.</p>
+                </div>
+                
+                <div class="preview-content">
+                    <div class="code-preview">
+# High-frequency market data analysis pipeline
+class MarketDataAnalyzer:
+    def __init__(self, data_sources, timeframes):
+        self.data_sources = data_sources  # 12+ exchanges
+        self.timeframes = timeframes      # microsecond to daily
+        self.pattern_detector = AdvancedPatternEngine()
+        
+    def analyze_market_structure(self, symbol, date_range):
+        """
+        Comprehensive market microstructure analysis
+        Processes tick-by-tick data for pattern recognition
+        """
+        # Load and clean massive datasets
+        raw_data = self.load_market_data(symbol, date_range)
+        
+        # Multi-timeframe analysis
+        patterns = {}
+        for timeframe in self.timeframes:
+            aggregated_data = resample_data(raw_data, timeframe)
+            patterns[timeframe] = self.pattern_detector.find_patterns(
+                aggregated_data, min_confidence=0.85
+            )
+        
+        # Cross-timeframe correlation analysis
+        correlations = analyze_timeframe_correlations(patterns)
+        
+        # Statistical arbitrage opportunities
+        opportunities = identify_arbitrage_signals(
+            patterns, correlations, risk_threshold=0.02
+        )
+        
+        return {
+            'patterns': patterns,
+            'correlations': correlations,
+            'opportunities': opportunities,
+            'confidence_metrics': calculate_confidence(patterns)
+        }
+                    </div>
+                </div>
+                
+                <div class="tech-tags">
+                    <span class="tech-tag">Quantitative Finance</span>
+                    <span class="tech-tag">Big Data</span>
+                    <span class="tech-tag">Statistical Analysis</span>
+                    <span class="tech-tag">Algorithmic Trading</span>
+                    <span class="tech-tag">Market Microstructure</span>
+                    <span class="tech-tag">HFT Analysis</span>
+                </div>
+                
+                <div class="click-hint">
+                    <i class="fas fa-mouse-pointer"></i> Click to explore large-scale financial data analysis and trading system research
+                </div>
+            </div>
+        </div>
+
+        <div class="research-methodology">
+            <h2><i class="fas fa-flask"></i> Research Methodology</h2>
+            <div class="methodology-grid">
+                <div class="method-card">
+                    <h4><i class="fas fa-database"></i> Data-Driven Approach</h4>
+                    <p>All research is grounded in empirical data analysis, using statistical methods to validate hypotheses and ensure reproducible results.</p>
+                </div>
+                
+                <div class="method-card">
+                    <h4><i class="fas fa-code"></i> Open Implementation</h4>
+                    <p>Research includes working code implementations, allowing for verification, extension, and practical application of theoretical findings.</p>
+                </div>
+                
+                <div class="method-card">
+                    <h4><i class="fas fa-users"></i> Cross-Disciplinary</h4>
+                    <p>Combines insights from computer science, economics, mathematics, and domain expertise to address complex real-world problems.</p>
+                </div>
+                
+                <div class="method-card">
+                    <h4><i class="fas fa-chart-line"></i> Practical Applications</h4>
+                    <p>Each study targets actionable insights that can inform policy decisions, system design, or investment strategies.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3 style="color: #cc785c; margin-bottom: 1rem;"><i class="fas fa-envelope"></i> Research Collaboration</h3>
+            <p>
+                These research areas represent ongoing investigations with significant practical implications. I'm open to collaboration with academic institutions, policy organizations, and technology companies working on similar challenges.
+            </p>
+            <p style="margin-top: 1rem;">
+                Each study includes comprehensive documentation, reproducible methodologies, and open-source implementations where applicable. Contact me to discuss findings, methodologies, or potential collaboration opportunities.
+            </p>
+        </div>
+    </div>
+
+    <script src="js/research.js"></script>
+</body>
+</html>

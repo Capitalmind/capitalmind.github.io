@@ -1,0 +1,373 @@
+/* Expert Systems Research Page CSS - css/expert-systems.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #f5f5f5;
+    background: #262725;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    color: #cc785c;
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.links a {
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.links a:hover {
+    transform: scale(1.2);
+}
+
+/* Back Navigation */
+.back-nav {
+    margin-bottom: 2rem;
+}
+
+.back-nav a {
+    color: #cc785c;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #cc785c;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.back-nav a:hover {
+    background: #cc785c;
+    color: #f5f5f5;
+}
+
+/* Content Sections */
+.section {
+    background: #262725;
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid #3a3a3a;
+}
+
+.section h2 {
+    color: #cc785c;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section h3 {
+    color: #cc785c;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.section h4 {
+    color: #cc785c;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+.section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.section ul, .section ol {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Problem Statement Box */
+.problem-statement {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #ff6b6b;
+    border: 2px solid #ff6b6b;
+}
+
+.problem-statement h3 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.problem-statement .problem-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Code Blocks with Syntax Highlighting */
+.code-block {
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    border-left: 4px solid #cc785c;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.code-block .comment {
+    color: #98d982;
+    font-style: italic;
+}
+
+.code-block .keyword {
+    color: #cc785c;
+    font-weight: bold;
+}
+
+.code-block .string {
+    color: #87ceeb;
+}
+
+.code-block .function {
+    color: #dda0dd;
+}
+
+.code-block .number {
+    color: #ffa07a;
+}
+
+.code-block .variable {
+    color: #f0e68c;
+}
+
+.code-block .class-name {
+    color: #87ceeb;
+    font-weight: bold;
+}
+
+/* Use Case Examples */
+.use-case {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #cc785c;
+}
+
+.use-case h5 {
+    color: #cc785c;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Game Rules Display */
+.game-rules {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #cc785c;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.game-rules h4 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+.game-rules table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.game-rules th,
+.game-rules td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.game-rules th {
+    background: #2a2a2a;
+    color: #cc785c;
+    font-weight: bold;
+}
+
+/* Tools Comparison */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tool-card {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #cc785c;
+}
+
+.tool-card h4 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Interactive Demo Section */
+.interactive-demo {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #cc785c;
+}
+
+.demo-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: #cc785c;
+    color: #f5f5f5;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #b8704a;
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.demo-output {
+    background: #000;
+    border-radius: 5px;
+    padding: 1rem;
+    font-family: monospace;
+    color: #0f0;
+    min-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #3a3a3a;
+}
+
+/* Table of Contents */
+.toc {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #cc785c;
+}
+
+.toc h3 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toc a:hover {
+    color: #cc785c;
+}
+
+.contact-info {
+    text-align: center;
+    color: #f5f5f5;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .section {
+        padding: 1.5rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+}

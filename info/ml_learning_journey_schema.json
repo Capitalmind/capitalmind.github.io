@@ -1,0 +1,210 @@
+{
+  "Mathematics": {
+    "Linear Algebra": {
+      "Topics": [
+        "Vectors and vector spaces",
+        "Matrices and operations",
+        "Matrix multiplication",
+        "Determinants and inverses",
+        "Eigenvalues and eigenvectors",
+        "Singular Value Decomposition (SVD)"
+      ]
+    },
+    "Calculus": {
+      "Topics": [
+        "Limits and continuity",
+        "Derivatives and gradients",
+        "Partial derivatives",
+        "Chain rule",
+        "Integrals",
+        "Jacobian and Hessian matrices"
+      ]
+    },
+    "Probability and Statistics": {
+      "Topics": [
+        "Random variables",
+        "Probability distributions (Normal, Binomial, etc.)",
+        "Expectation and variance",
+        "Bayes' theorem",
+        "Conditional probability",
+        "Hypothesis testing"
+      ]
+    },
+    "Optimization": {
+      "Topics": [
+        "Gradient descent",
+        "Stochastic gradient descent",
+        "Convex vs. non-convex functions",
+        "Loss functions",
+        "Regularization (L1, L2)",
+        "Learning rate schedules"
+      ]
+    }
+  },
+  "Algorithms and Data Structures": {
+    "Graph Theory": {
+      "Topics": [
+        "Types of graphs (directed, undirected, weighted)",
+        "Depth First Search (DFS)",
+        "Breadth First Search (BFS)",
+        "Dijkstra's algorithm",
+        "A* Search",
+        "PageRank",
+        "Traveling Salesman Problem (TSP)"
+      ],
+      "Examples": [
+        {
+          "title": "A* Search",
+          "url": "https://www.youtube.com/watch?v=88I6IidylGc"
+        },
+        {
+          "title": "PageRank",
+          "url": "https://www.youtube.com/watch?v=JGQe4kiPnrU"
+        },
+        {
+          "title": "Traveling Salesman Problem",
+          "url": "https://www.youtube.com/watch?v=GiDsjIBOVoA"
+        },
+        {
+          "title": "Introduction to Graph Theory",
+          "url": "https://www.youtube.com/watch?v=LFKZLXVO-Dg"
+        },
+        {
+          "title": "DFS",
+          "url": "https://www.youtube.com/watch?v=PMMc4VsIacU"
+        },
+        {
+          "title": "BFS",
+          "url": "https://www.youtube.com/watch?v=xlVX7dXLS64"
+        }
+      ]
+    },
+    "Information Theory": {
+      "Topics": [
+        "Entropy",
+        "Huffman coding",
+        "Data compression",
+        "Signal encoding and decoding"
+      ],
+      "Examples": [
+        {
+          "title": "Huffman Codes",
+          "url": "https://www.youtube.com/watch?v=B3y0RsVCyrw"
+        },
+        {
+          "title": "How PNG Works",
+          "url": "https://www.youtube.com/watch?v=EFUYNoFRHQI"
+        },
+        {
+          "title": "JPEG Effectiveness",
+          "url": "https://www.youtube.com/watch?v=0me3guauqOU"
+        }
+      ]
+    },
+    "Fourier Analysis": {
+      "Topics": [
+        "Discrete Fourier Transform (DFT)",
+        "Fast Fourier Transform (FFT)",
+        "Frequency domain analysis",
+        "Convolution theorem"
+      ],
+      "Examples": [
+        {
+          "title": "DFT",
+          "url": "https://www.youtube.com/watch?v=yYEMxqreA10"
+        },
+        {
+          "title": "FFT",
+          "url": "https://www.youtube.com/watch?v=h7apO7q16V0"
+        },
+        {
+          "title": "FFT Example",
+          "url": "https://www.youtube.com/watch?v=Ty0JcR6Dvis"
+        }
+      ]
+    },
+    "Recursion and Dynamic Programming": {
+      "Topics": [
+        "Recursive problem solving",
+        "Memoization",
+        "Tabulation",
+        "Time complexity in recursion"
+      ],
+      "Examples": [
+        {
+          "title": "Towers of Hanoi",
+          "url": "https://www.youtube.com/watch?v=rf6uf3jNjbo"
+        },
+        {
+          "title": "Solving Dynamic Programming Problems",
+          "url": "https://www.youtube.com/watch?v=aPQY__2H3tE"
+        },
+        {
+          "title": "Solving Any Recursive Problem",
+          "url": "https://www.youtube.com/watch?v=ngCos392W4w"
+        }
+      ]
+    },
+    "Data Structures": {
+      "Topics": [
+        "Arrays and dynamic arrays",
+        "Linked lists",
+        "Stacks and queues",
+        "Trees and graphs",
+        "Hash tables"
+      ],
+      "Examples": [
+        {
+          "title": "Efficient Dynamic Arrays",
+          "url": "https://www.youtube.com/watch?v=Ij7NQ-0mIVA"
+        },
+        {
+          "title": "Inventing a Dynamic Array",
+          "url": "https://www.youtube.com/watch?v=5AllG-i_yto"
+        },
+        {
+          "title": "What is a Data Structure?",
+          "url": "https://www.youtube.com/watch?v=VAt2mR7gY0k"
+        },
+        {
+          "title": "Preview for Data Structures and Algorithms",
+          "url": "https://www.youtube.com/watch?v=FtwF6cmzamo"
+        }
+      ]
+    },
+    "Computational Geometry": {
+      "Topics": [
+        "Collision detection",
+        "Marching squares",
+        "GJK Algorithm"
+      ],
+      "Examples": [
+        {
+          "title": "Collision Simulations",
+          "url": "https://www.youtube.com/watch?v=eED4bSkYCB8"
+        },
+        {
+          "title": "Marching Squares",
+          "url": "https://www.youtube.com/watch?v=6oMZb3yP_H8"
+        },
+        {
+          "title": "GJK Algorithm",
+          "url": "https://www.youtube.com/watch?v=ajv46BSqcK4"
+        }
+      ]
+    }
+  },
+  "Computer Science Fundamentals": {
+    "Topics": [
+      "Big O Notation",
+      "Complexity analysis",
+      "Algorithmic efficiency"
+    ],
+    "Examples": [
+      {
+        "title": "What Is Big O Notation?",
+        "url": "https://www.youtube.com/watch?v=Q_1M2JaijjQ"
+      }
+    ]
+  }
+}

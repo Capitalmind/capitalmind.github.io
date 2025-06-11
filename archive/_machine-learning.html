@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning - Capitalmind</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #f5f5f5;
+            background: #262725;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: #f5f5f5;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            color: #cc785c;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .nav-menu a {
+            color: #cc785c;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #cc785c;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            background: #cc785c;
+            color: #f5f5f5;
+        }
+
+        .nav-menu a.active {
+            background: #cc785c;
+            color: #f5f5f5;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .links a {
+            color: #f5f5f5;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .links a:hover {
+            transform: scale(1.2);
+        }
+
+        .card {
+            background: #262725;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            border: 1px solid #3a3a3a;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Blog-style article layout */
+        .article {
+            background: #262725;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid #3a3a3a;
+            transition: transform 0.3s ease;
+        }
+
+        .article:hover {
+            transform: translateY(-3px);
+        }
+
+        .article-header {
+            border-bottom: 2px solid #cc785c;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .article h3 {
+            color: #cc785c;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            color: #cc785c;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .article-content {
+            line-height: 1.8;
+        }
+
+        .article-content h4 {
+            color: #cc785c;
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.3rem;
+        }
+
+        .article-content h5 {
+            color: #cc785c;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #3a3a3a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            border-left: 4px solid #cc785c;
+        }
+
+        .algorithm-complexity {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .algorithm-complexity h5 {
+            color: #cc785c;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #f7f3f0;
+            color: #744c2c;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .intro-section {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid #cc785c;
+        }
+
+        .math-formula {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #cc785c;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+        }
+
+        .example-box {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .example-box h6 {
+            color: #cc785c;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-info {
+            text-align: center;
+            color: #f5f5f5;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .article {
+                padding: 1.5rem;
+            }
+
+            .article h3 {
+                font-size: 1.5rem;
+            }
+
+            .nav-menu {
+                gap: 0.5rem;
+            }
+
+            .nav-menu a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-brain"></i> Machine Learning</h1>
+            <p class="subtitle">Educational Algorithms & AI Fundamentals</p>
+            
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="linux-tutorials.html">Linux Tutorials</a>
+                <a href="machine-learning.html" class="active"><i class="fas fa-brain"></i> Machine Learning</a>
+                <a href="projects.html">Projects</a>
+                <a href="trading.html">Trading</a>
+                <a href="research.html">Research</a>
+            </nav>
+            
+            <div class="links">
+                <a href="https://github.com/Capitalmind" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="mailto:tech@skynode.one" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </header>
+
+        <div class="intro-section">
+            <h2><i class="fas fa-graduation-cap"></i> Foundations of Machine Learning</h2>
+            <p>
+                Understanding machine learning requires a solid grasp of fundamental mathematical and computational concepts. These in-depth articles explore the core building blocks that power modern AI systems, from graph theory that structures neural networks to linear algebra that enables high-dimensional data processing.
+            </p>
+            <p style="margin-top: 1rem;">
+                Each article provides both theoretical foundations and practical Python implementations, drawing from decades of hands-on experience in AI development, algorithmic trading, and systems architecture.
+            </p>
+        </div>
+
+        <!-- Graph Theory Fundamentals Article -->
+        <article class="article">
+            <div class="article-header">
+                <h3><i class="fas fa-project-diagram"></i> Graph Theory Fundamentals</h3>
+                <div class="article-meta">
+                    <span><i class="fas fa-calendar"></i> Mathematical Foundations</span>
+                    <span><i class="fas fa-clock"></i> 12 min read</span>
+                    <span><i class="fas fa-chart-line"></i> Intermediate</span>
+                </div>
+            </div>
+            
+            <div class="article-content">
+                <p>
+                    Graph theory forms the backbone of many machine learning algorithms and data structures. From neural networks to social network analysis, understanding graphs is essential for modeling relationships, dependencies, and complex data structures in AI systems.
+                </p>
+
+                <h4>What Are Graphs?</h4>
+                <p>
+                    A graph G = (V, E) consists of a set of vertices (nodes) V and a set of edges E that connect these vertices. This simple mathematical structure can represent complex relationships in data, making it fundamental to machine learning applications.
+                </p>
+
+                <h5>Types of Graphs</h5>
+                <ul>
+                    <li><strong>Undirected Graphs:</strong> Edges have no direction (friendship networks, molecular structures)</li>
+                    <li><strong>Directed Graphs (Digraphs):</strong> Edges have direction (web links, neural network connections)</li>
+                    <li><strong>Weighted Graphs:</strong> Edges have associated weights (distance maps, similarity scores)</li>
+                    <li><strong>Unweighted Graphs:</strong> All edges are equal (simple relationship networks)</li>
+                </ul>
+
+                <div class="code-block">
+# Basic Graph Implementation in Python
+class Graph:
+    def __init__(self, directed=False):
+        self.directed = directed
+        self.adjacency_list = {}
+        
+    def add_vertex(self, vertex):
+        if vertex not in self.adjacency_list:
+            self.adjacency_list[vertex] = []
+    
+    def add_edge(self, vertex1, vertex2, weight=1):
+        self.add_vertex(vertex1)
+        self.add_vertex(vertex2)
+        
+        # Add edge from vertex1 to vertex2
+        self.adjacency_list[vertex1].append((vertex2, weight))
+        
+        # If undirected, add reverse edge
+        if not self.directed:
+            self.adjacency_list[vertex2].append((vertex1, weight))
+    
+    def get_neighbors(self, vertex):
+        return self.adjacency_list.get(vertex, [])
+    
+    def display(self):
+        for vertex in self.adjacency_list:
+            print(f"{vertex}: {self.adjacency_list[vertex]}")
+
+# Example usage
+g = Graph()
+g.add_edge('A', 'B', 3)
+g.add_edge('B', 'C', 2)
+g.add_edge('A', 'C', 5)
+g.display()
+                </div>
+
+                <h4>Graph Representation Methods</h4>
+
+                <h5>1. Adjacency Matrix</h5>
+                <p>
+                    A 2D matrix where entry (i,j) indicates whether there's an edge between vertex i and vertex j. Excellent for dense graphs and quick edge lookups.
+                </p>
+
+                <div class="code-block">
+import numpy as np
+
+class AdjacencyMatrix:
+    def __init__(self, num_vertices):
+        self.num_vertices = num_vertices
+        self.matrix = np.zeros((num_vertices, num_vertices))
+        self.vertex_map = {}  # Map vertex names to indices
+        self.next_index = 0
+    
+    def add_vertex(self, vertex):
+        if vertex not in self.vertex_map:
+            self.vertex_map[vertex] = self.next_index
+            self.next_index += 1
+    
+    def add_edge(self, vertex1, vertex2, weight=1):
+        self.add_vertex(vertex1)
+        self.add_vertex(vertex2)
+        
+        i = self.vertex_map[vertex1]
+        j = self.vertex_map[vertex2]
+        
+        self.matrix[i][j] = weight
+        self.matrix[j][i] = weight  # For undirected graph
+    
+    def has_edge(self, vertex1, vertex2):
+        i = self.vertex_map[vertex1]
+        j = self.vertex_map[vertex2]
+        return self.matrix[i][j] != 0
+                </div>
+
+                <div class="algorithm-complexity">
+                    <h5>Adjacency Matrix Complexity</h5>
+                    <p><strong>Space:</strong> O(V²) - Always uses V² space regardless of edge count</p>
+                    <p><strong>Edge Lookup:</strong> O(1) - Direct array access</p>
+                    <p><strong>Add Edge:</strong> O(1) - Direct assignment</p>
+                    <p><strong>Best For:</strong> Dense graphs, frequent edge queries</p>
+                </div>
+
+                <h5>2. Adjacency List</h5>
+                <p>
+                    Each vertex maintains a list of its neighbors. More space-efficient for sparse graphs and allows easy neighbor iteration.
+                </p>
+
+                <div class="algorithm-complexity">
+                    <h5>Adjacency List Complexity</h5>
+                    <p><strong>Space:</strong> O(V + E) - Space proportional to actual edges</p>
+                    <p><strong>Edge Lookup:</strong> O(degree) - Must search neighbor list</p>
+                    <p><strong>Add Edge:</strong> O(1) - Append to list</p>
+                    <p><strong>Best For:</strong> Sparse graphs, iterating neighbors</p>
+                </div>
+
+                <h4>Graph Traversal Algorithms</h4>
+
+                <h5>Depth-First Search (DFS)</h5>
+                <p>
+                    Explores as far as possible along each branch before backtracking. Essential for topological sorting, cycle detection, and connected components analysis.
+                </p>
+
+                <div class="code-block">
+def dfs(graph, start, visited=None):
+    """
+    Depth-First Search implementation
+    Returns list of vertices in DFS order
+    """
+    if visited is None:
+        visited = set()
+    
+    visited.add(start)
+    path = [start]
+    
+    for neighbor, weight in graph.get_neighbors(start):
+        if neighbor not in visited:
+            path.extend(dfs(graph, neighbor, visited))
+    
+    return path
+
+def dfs_iterative(graph, start):
+    """
+    Iterative DFS using explicit stack
+    """
+    visited = set()
+    stack = [start]
+    path = []
+    
+    while stack:
+        vertex = stack.pop()
+        if vertex not in visited:
+            visited.add(vertex)
+            path.append(vertex)
+            
+            # Add neighbors to stack
+            for neighbor, weight in graph.get_neighbors(vertex):
+                if neighbor not in visited:
+                    stack.append(neighbor)
+    
+    return path
+                </div>
+
+                <h5>Breadth-First Search (BFS)</h5>
+                <p>
+                    Explores all neighbors at the current depth before moving to the next level. Guarantees shortest path in unweighted graphs and is crucial for level-order processing.
+                </p>
+
+                <div class="code-block">
+from collections import deque
+
+def bfs(graph, start):
+    """
+    Breadth-First Search implementation
+    Returns list of vertices in BFS order
+    """
+    visited = set()
+    queue = deque([start])
+    path = []
+    
+    while queue:
+        vertex = queue.popleft()
+        if vertex not in visited:
+            visited.add(vertex)
+            path.append(vertex)
+            
+            # Add unvisited neighbors to queue
+            for neighbor, weight in graph.get_neighbors(vertex):
+                if neighbor not in visited:
+                    queue.append(neighbor)
+    
+    return path
+
+def shortest_path_bfs(graph, start, end):
+    """
+    Find shortest path using BFS
+    """
+    if start == end:
+        return [start]
+    
+    visited = set()
+    queue = deque([(start, [start])])
+    
+    while queue:
+        vertex, path = queue.popleft()
+        
+        if vertex not in visited:
+            visited.add(vertex)
+            
+            for neighbor, weight in graph.get_neighbors(vertex):
+                if neighbor == end:
+                    return path + [neighbor]
+                
+                if neighbor not in visited:
+                    queue.append((neighbor, path + [neighbor]))
+    
+    return None  # No path found
+                </div>
+
+                <div class="algorithm-complexity">
+                    <h5>Traversal Complexity</h5>
+                    <p><strong>DFS Time:</strong> O(V + E) - Visits each vertex and edge once</p>
+                    <p><strong>DFS Space:</strong> O(V) - Recursion stack or explicit stack</p>
+                    <p><strong>BFS Time:</strong> O(V + E) - Visits each vertex and edge once</p>
+                    <p><strong>BFS Space:</strong> O(V) - Queue storage</p>
+                </div>
+
+                <h4>Advanced Graph Algorithms</h4>
+
+                <h5>Dijkstra's Algorithm (Shortest Path)</h5>
+                <p>
+                    Finds shortest paths from a source vertex to all other vertices in weighted graphs with non-negative edge weights.
+                </p>
+
+                <div class="code-block">
+import heapq
+
+def dijkstra(graph, start):
+    """
+    Dijkstra's shortest path algorithm
+    Returns distances and previous vertices
+    """
+    distances = {vertex: float('infinity') for vertex in graph.adjacency_list}
+    distances[start] = 0
+    previous = {}
+    priority_queue = [(0, start)]
+    visited = set()
+    
+    while priority_queue:
+        current_distance, current_vertex = heapq.heappop(priority_queue)
+        
+        if current_vertex in visited:
+            continue
+            
+        visited.add(current_vertex)
+        
+        for neighbor, weight in graph.get_neighbors(current_vertex):
+            distance = current_distance + weight
+            
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                previous[neighbor] = current_vertex
+                heapq.heappush(priority_queue, (distance, neighbor))
+    
+    return distances, previous
+
+def reconstruct_path(previous, start, end):
+    """
+    Reconstruct shortest path from previous dictionary
+    """
+    path = []
+    current = end
+    
+    while current is not None:
+        path.append(current)
+        current = previous.get(current)
+    
+    path.reverse()
+    return path if path[0] == start else None
+                </div>
+
+                <h5>Topological Sort</h5>
+                <p>
+                    Orders vertices in a directed acyclic graph (DAG) such that for every directed edge (u,v), vertex u comes before v. Essential for task scheduling and dependency resolution.
+                </p>
+
+                <div class="code-block">
+def topological_sort_dfs(graph):
+    """
+    Topological sort using DFS
+    """
+    visited = set()
+    stack = []
+    
+    def dfs_util(vertex):
+        visited.add(vertex)
+        
+        for neighbor, weight in graph.get_neighbors(vertex):
+            if neighbor not in visited:
+                dfs_util(neighbor)
+        
+        stack.append(vertex)
+    
+    # Visit all vertices
+    for vertex in graph.adjacency_list:
+        if vertex not in visited:
+            dfs_util(vertex)
+    
+    return stack[::-1]  # Reverse to get topological order
+
+def topological_sort_kahn(graph):
+    """
+    Kahn's algorithm for topological sorting
+    """
+    # Calculate in-degrees
+    in_degree = {vertex: 0 for vertex in graph.adjacency_list}
+    
+    for vertex in graph.adjacency_list:
+        for neighbor, weight in graph.get_neighbors(vertex):
+            in_degree[neighbor] += 1
+    
+    # Initialize queue with vertices having no incoming edges
+    queue = deque([vertex for vertex in in_degree if in_degree[vertex] == 0])
+    result = []
+    
+    while queue:
+        vertex = queue.popleft()
+        result.append(vertex)
+        
+        # Remove this vertex from graph
+        for neighbor, weight in graph.get_neighbors(vertex):
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
+    
+    # Check for cycles
+    if len(result) != len(graph.adjacency_list):
+        raise ValueError("Graph contains a cycle")
+    
+    return result
+                </div>
+
+                <h4>Machine Learning Applications</h4>
+
+                <h5>Neural Networks as Graphs</h5>
+                <p>
+                    Neural networks are directed acyclic graphs where nodes represent neurons and edges represent weighted connections. Understanding graph theory helps in:
+                </p>
+                <ul>
+                    <li>Network architecture design</li>
+                    <li>Backpropagation algorithm (reverse topological order)</li>
+                    <li>Graph neural networks (GNNs)</li>
+                    <li>Computational graph optimization</li>
+                </ul>
+
+                <h5>Social Network Analysis</h5>
+                <ul>
+                    <li><strong>Centrality Measures:</strong> Identifying influential nodes</li>
+                    <li><strong>Community Detection:</strong> Finding clusters in networks</li>
+                    <li><strong>Link Prediction:</strong> Predicting future connections</li>
+                    <li><strong>Recommendation Systems:</strong> Graph-based collaborative filtering</li>
+                </ul>
+
+                <h5>Knowledge Graphs</h5>
+                <p>
+                    Represent entities and relationships in AI systems, enabling semantic reasoning and information retrieval.
+                </p>
+
+                <div class="example-box">
+                    <h6>Real-World Example: Page Rank Algorithm</h6>
+                    <p>
+                        Google's PageRank algorithm treats the web as a directed graph where pages are vertices and links are edges. The algorithm uses graph traversal principles to rank web pages based on their link structure and authority.
+                    </p>
+                </div>
+
+                <h4>Implementation Considerations</h4>
+
+                <h5>Choosing the Right Representation</h5>
+                <ul>
+                    <li><strong>Dense graphs (many edges):</strong> Use adjacency matrix</li>
+                    <li><strong>Sparse graphs (few edges):</strong> Use adjacency list</li>
+                    <li><strong>Frequent edge queries:</strong> Adjacency matrix</li>
+                    <li><strong>Dynamic graphs:</strong> Adjacency list</li>
+                </ul>
+
+                <h5>Performance Optimization</h5>
+                <ul>
+                    <li>Use appropriate data structures (heaps for Dijkstra)</li>
+                    <li>Consider graph properties (directed vs undirected)</li>
+                    <li>Implement early termination when possible</li>
+                    <li>Use bidirectional search for shortest paths</li>
+                </ul>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Graph Theory</span>
+                    <span class="tech-tag">Data Structures</span>
+                    <span class="tech-tag">Algorithms</span>
+                    <span class="tech-tag">Neural Networks</span>
+                    <span class="tech-tag">Network Analysis</span>
+                    <span class="tech-tag">Traversal</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Linear Algebra for Machine Learning Article -->
+        <article class="article">
+            <div class="article-header">
+                <h3><i class="fas fa-calculator"></i> Linear Algebra for Machine Learning</h3>
+                <div class="article-meta">
+                    <span><i class="fas fa-calendar"></i> Mathematical Foundations</span>
+                    <span><i class="fas fa-clock"></i> 15 min read</span>
+                    <span><i class="fas fa-chart-line"></i> Intermediate</span>
+                </div>
+            </div>
+            
+            <div class="article-content">
+                <p>
+                    Linear algebra forms the mathematical foundation of virtually all machine learning algorithms. From representing data in high-dimensional spaces to optimizing neural networks, understanding vectors, matrices, and their operations is essential for any serious machine learning practitioner.
+                </p>
+
+                <h4>Why Linear Algebra Matters in ML</h4>
+                <p>
+                    Machine learning operates on data represented as vectors and matrices. Every image, document, or data point becomes a vector in a high-dimensional space. Linear algebra provides the tools to manipulate, transform, and extract insights from this data efficiently.
+                </p>
+
+                <h4>Vectors: The Building Blocks</h4>
+                <p>
+                    A vector is an ordered list of numbers that represents both magnitude and direction in space. In machine learning, vectors represent data points, features, weights, and gradients.
+                </p>
+
+                <div class="math-formula">
+                    v = [v₁, v₂, v₃, ..., vₙ]
+                </div>
+
+                <div class="code-block">
+import numpy as np
+import matplotlib.pyplot as plt
+
+class Vector:
+    def __init__(self, data):
+        self.data = np.array(data, dtype=float)
+        self.dimension = len(data)
+    
+    def __str__(self):
+        return f"Vector({self.data})"
+    
+    def magnitude(self):
+        """Calculate the magnitude (length) of the vector"""
+        return np.sqrt(np.sum(self.data ** 2))
+    
+    def normalize(self):
+        """Return a unit vector in the same direction"""
+        mag = self.magnitude()
+        if mag == 0:
+            return Vector(self.data)
+        return Vector(self.data / mag)
+    
+    def dot_product(self, other):
+        """Calculate dot product with another vector"""
+        if self.dimension != other.dimension:
+            raise ValueError("Vectors must have same dimension")
+        return np.sum(self.data * other.data)
+    
+    def angle_between(self, other):
+        """Calculate angle between two vectors in radians"""
+        dot_prod = self.dot_product(other)
+        magnitudes = self.magnitude() * other.magnitude()
+        
+        if magnitudes == 0:
+            return 0
+        
+        cos_angle = dot_prod / magnitudes
+        # Handle numerical errors
+        cos_angle = np.clip(cos_angle, -1.0, 1.0)
+        return np.arccos(cos_angle)
+    
+    def add(self, other):
+        """Vector addition"""
+        return Vector(self.data + other.data)
+    
+    def subtract(self, other):
+        """Vector subtraction"""
+        return Vector(self.data - other.data)
+    
+    def scale(self, scalar):
+        """Scalar multiplication"""
+        return Vector(self.data * scalar)
+
+# Example usage
+v1 = Vector([3, 4])
+v2 = Vector([1, 2])
+
+print(f"v1: {v1}")
+print(f"v2: {v2}")
+print(f"Magnitude of v1: {v1.magnitude():.2f}")
+print(f"Dot product: {v1.dot_product(v2)}")
+print(f"Angle between vectors: {np.degrees(v1.angle_between(v2)):.2f}°")
+                </div>
+
+                <h5>Vector Operations in ML Context</h5>
+                <ul>
+                    <li><strong>Dot Product:</strong> Measures similarity between vectors (cosine similarity)</li>
+                    <li><strong>Vector Addition:</strong> Combining features or gradients</li>
+                    <li><strong>Scalar Multiplication:</strong> Scaling learning rates or weights</li>
+                    <li><strong>Normalization:</strong> Standardizing feature scales</li>
+                </ul>
+
+                <div class="example-box">
+                    <h6>ML Example: Document Similarity</h6>
+                    <p>
+                        In text analysis, documents are represented as vectors where each dimension corresponds to a word's frequency. The cosine similarity (based on dot product) measures how similar two documents are, regardless of their length.
+                    </p>
+                </div>
+
+                <h4>Matrices: Data in Higher Dimensions</h4>
+                <p>
+                    Matrices are 2D arrays that can represent datasets, transformations, and relationships between variables. In ML, matrices store entire datasets, weight matrices in neural networks, and covariance matrices in statistics.
+                </p>
+
+                <div class="math-formula">
+                    A = [a₁₁ a₁₂ a₁₃]
+                        [a₂₁ a₂₂ a₂₃]
+                        [a₃₁ a₃₂ a₃₃]
+                </div>
+
+                <div class="code-block">
+class Matrix:
+    def __init__(self, data):
+        self.data = np.array(data, dtype=float)
+        self.rows, self.cols = self.data.shape
+    
+    def __str__(self):
+        return f"Matrix:\n{self.data}"
+    
+    def transpose(self):
+        """Return the transpose of the matrix"""
+        return Matrix(self.data.T)
+    
+    def multiply(self, other):
+        """Matrix multiplication"""
+        if isinstance(other, Matrix):
+            if self.cols != other.rows:
+                raise ValueError(f"Cannot multiply {self.rows}x{self.cols} and {other.rows}x{other.cols} matrices")
+            return Matrix(np.dot(self.data, other.data))
+        else:
+            # Scalar multiplication
+            return Matrix(self.data * other)
+    
+    def add(self, other):
+        """Matrix addition"""
+        if self.data.shape != other.data.shape:
+            raise ValueError("Matrices must have same dimensions for addition")
+        return Matrix(self.data + other.data)
+    
+    def determinant(self):
+        """Calculate determinant (for square matrices)"""
+        if self.rows != self.cols:
+            raise ValueError("Determinant only defined for square matrices")
+        return np.linalg.det(self.data)
+    
+    def inverse(self):
+        """Calculate matrix inverse"""
+        if self.rows != self.cols:
+            raise ValueError("Inverse only defined for square matrices")
+        
+        det = self.determinant()
+        if abs(det) < 1e-10:
+            raise ValueError("Matrix is singular (not invertible)")
+        
+        return Matrix(np.linalg.inv(self.data))
+    
+    def eigenvalues_and_vectors(self):
+        """Calculate eigenvalues and eigenvectors"""
+        if self.rows != self.cols:
+            raise ValueError("Eigenvalues only defined for square matrices")
+        
+        eigenvals, eigenvecs = np.linalg.eig(self.data)
+        return eigenvals, eigenvecs
+
+# Example: Dataset as matrix
+# Rows = samples, Columns = features
+dataset = Matrix([
+    [1.0, 2.0, 3.0],  # Sample 1: features [1, 2, 3]
+    [4.0, 5.0, 6.0],  # Sample 2: features [4, 5, 6]  
+    [7.0, 8.0, 9.0]   # Sample 3: features [7, 8, 9]
+])
+
+print("Dataset:")
+print(dataset)
+print(f"\nDataset shape: {dataset.rows} samples, {dataset.cols} features")
+                </div>
+
+                <h4>Matrix Multiplication: The Heart of ML</h4>
+                <p>
+                    Matrix multiplication is the fundamental operation in machine learning, from computing neural network outputs to solving linear regression. Understanding the mechanics is crucial for optimization and debugging.
+                </p>
+
+                <div class="code-block">
+def matrix_multiply_detailed(A, B):
+    """
+    Detailed matrix multiplication showing the process
+    """
+    if A.shape[1] != B.shape[0]:
+        raise ValueError(f"Cannot multiply matrices: {A.shape} × {B.shape}")
+    
+    result = np.zeros((A.shape[0], B.shape[1]))
+    
+    for i in range(A.shape[0]):
+        for j in range(B.shape[1]):
+            # Dot product of row i from A and column j from B
+            for k in range(A.shape[1]):
+                result[i, j] += A[i, k] * B[k, j]
+            
+            print(f"result[{i},{j}] = {result[i, j]}")
+    
+    return result
+
+# Example: Neural network layer computation
+# X: input data (samples × features)
+# W: weights (features × neurons)
+# b: bias (neurons)
+
+X = np.array([[1, 2], [3, 4], [5, 6]])  # 3 samples, 2 features
+W = np.array([[0.1, 0.2], [0.3, 0.4]])  # 2 features, 2 neurons
+b = np.array([0.1, 0.1])                 # 2 biases
+
+# Forward pass: Y = XW + b
+Y = np.dot(X, W) + b
+print("Neural network output:")
+print(Y)
+                </div>
+
+                <h4>Eigenvalues and Eigenvectors: Understanding Data Structure</h4>
+                <p>
+                    Eigenvalues and eigenvectors reveal the fundamental structure of data. They're essential for Principal Component Analysis (PCA), understanding covariance matrices, and analyzing system stability.
+                </p>
+
+                <div class="math-formula">
+                    Av = λv
+                    where A is matrix, v is eigenvector, λ is eigenvalue
+                </div>
+
+                <div class="code-block">
+def analyze_data_structure(data):
+    """
+    Analyze the structure of data using eigendecomposition
+    """
+    # Calculate covariance matrix
+    data_centered = data - np.mean(data, axis=0)
+    cov_matrix = np.cov(data_centered.T)
+    
+    # Find eigenvalues and eigenvectors
+    eigenvals, eigenvecs = np.linalg.eig(cov_matrix)
+    
+    # Sort by eigenvalue magnitude
+    idx = np.argsort(eigenvals)[::-1]
+    eigenvals = eigenvals[idx]
+    eigenvecs = eigenvecs[:, idx]
+    
+    print("Covariance Matrix:")
+    print(cov_matrix)
+    print(f"\nEigenvalues: {eigenvals}")
+    print(f"Eigenvectors:\n{eigenvecs}")
+    
+    # Explained variance ratio
+    explained_variance = eigenvals / np.sum(eigenvals)
+    print(f"\nExplained variance ratio: {explained_variance}")
+    
+    return eigenvals, eigenvecs, explained_variance
+
+# Example: 2D dataset analysis
+np.random.seed(42)
+data = np.random.multivariate_normal([0, 0], [[2, 1], [1, 1]], 100)
+
+eigenvals, eigenvecs, explained_var = analyze_data_structure(data)
+                </div>
+
+                <h5>PCA Implementation Using Eigendecomposition</h5>
+                <div class="code-block">
+def pca_from_scratch(X, n_components):
+    """
+    Principal Component Analysis implementation
+    """
+    # Step 1: Center the data
+    X_centered = X - np.mean(X, axis=0)
+    
+    # Step 2: Calculate covariance matrix
+    cov_matrix = np.cov(X_centered.T)
+    
+    # Step 3: Find eigenvalues and eigenvectors
+    eigenvals, eigenvecs = np.linalg.eig(cov_matrix)
+    
+    # Step 4: Sort by eigenvalue magnitude
+    idx = np.argsort(eigenvals)[::-1]
+    eigenvals = eigenvals[idx]
+    eigenvecs = eigenvecs[:, idx]
+    
+    # Step 5: Select top n_components
+    principal_components = eigenvecs[:, :n_components]
+    
+    # Step 6: Transform data
+    X_pca = np.dot(X_centered, principal_components)
+    
+    # Calculate explained variance
+    explained_variance = eigenvals[:n_components] / np.sum(eigenvals)
+    
+    return X_pca, principal_components, explained_variance
+
+# Example: Reduce 3D data to 2D
+X_3d = np.random.randn(100, 3)
+X_2d, components, explained_var = pca_from_scratch(X_3d, 2)
+
+print(f"Original shape: {X_3d.shape}")
+print(f"Reduced shape: {X_2d.shape}")
+print(f"Explained variance: {explained_var}")
+print(f"Total variance captured: {np.sum(explained_var):.2%}")
+                </div>
+
+                <h4>Linear Transformations and Feature Engineering</h4>
+                <p>
+                    Linear transformations change coordinate systems and can reveal hidden patterns in data. Understanding these transformations is key to feature engineering and data preprocessing.
+                </p>
+
+                <h5>Common Linear Transformations in ML</h5>
+
+                <div class="code-block">
+def linear_transformations_demo():
+    """
+    Demonstrate common linear transformations
+    """
+    # Original 2D points
+    points = np.array([[1, 1], [2, 1], [1, 2], [2, 2]]).T
+    
+    # 1. Scaling transformation
+    scale_matrix = np.array([[2, 0], [0, 0.5]])
+    scaled_points = np.dot(scale_matrix, points)
+    
+    # 2. Rotation transformation (45 degrees)
+    angle = np.pi / 4
+    rotation_matrix = np.array([
+        [np.cos(angle), -np.sin(angle)],
+        [np.sin(angle), np.cos(angle)]
+    ])
+    rotated_points = np.dot(rotation_matrix, points)
+    
+    # 3. Shear transformation
+    shear_matrix = np.array([[1, 0.5], [0, 1]])
+    sheared_points = np.dot(shear_matrix, points)
+    
+    # 4. Reflection across y-axis
+    reflection_matrix = np.array([[-1, 0], [0, 1]])
+    reflected_points = np.dot(reflection_matrix, points)
+    
+    print("Original points:")
+    print(points.T)
+    print("\nScaled points:")
+    print(scaled_points.T)
+    print("\nRotated points:")
+    print(rotated_points.T)
+
+linear_transformations_demo()
+                </div>
+
+                <h4>Singular Value Decomposition (SVD)</h4>
+                <p>
+                    SVD is one of the most important matrix factorizations in machine learning, used in dimensionality reduction, recommendation systems, and data compression.
+                </p>
+
+                <div class="math-formula">
+                    A = UΣV^T
+                    where U and V are orthogonal matrices, Σ is diagonal
+                </div>
+
+                <div class="code-block">
+def svd_analysis(matrix):
+    """
+    Perform SVD and analyze the decomposition
+    """
+    U, sigma, Vt = np.linalg.svd(matrix)
+    
+    print(f"Original matrix shape: {matrix.shape}")
+    print(f"U shape: {U.shape}")
+    print(f"Sigma shape: {sigma.shape}")
+    print(f"V^T shape: {Vt.shape}")
+    
+    # Reconstruct matrix
+    Sigma = np.zeros_like(matrix)
+    np.fill_diagonal(Sigma, sigma)
+    reconstructed = np.dot(U, np.dot(Sigma, Vt))
+    
+    print(f"\nReconstruction error: {np.linalg.norm(matrix - reconstructed):.10f}")
+    
+    # Low-rank approximation
+    k = min(3, len(sigma))  # Use top k singular values
+    Sigma_k = np.zeros_like(matrix)
+    np.fill_diagonal(Sigma_k, sigma)
+    Sigma_k[:, k:] = 0
+    Sigma_k[k:, :] = 0
+    
+    approximation = np.dot(U, np.dot(Sigma_k, Vt))
+    approximation_error = np.linalg.norm(matrix - approximation)
+    
+    print(f"Rank-{k} approximation error: {approximation_error:.6f}")
+    
+    return U, sigma, Vt
+
+# Example: SVD on a data matrix
+np.random.seed(42)
+data_matrix = np.random.randn(6, 4)
+U, sigma, Vt = svd_analysis(data_matrix)
+                </div>
+
+                <h4>Solving Linear Systems: The Foundation of Optimization</h4>
+                <p>
+                    Many ML algorithms reduce to solving linear systems. Understanding different solution methods helps in choosing appropriate optimization strategies.
+                </p>
+
+                <div class="code-block">
+def solve_linear_system(A, b, method='numpy'):
+    """
+    Solve Ax = b using different methods
+    """
+    if method == 'numpy':
+        # NumPy's optimized solver
+        x = np.linalg.solve(A, b)
+    
+    elif method == 'inverse':
+        # Using matrix inverse (less stable)
+        A_inv = np.linalg.inv(A)
+        x = np.dot(A_inv, b)
+    
+    elif method == 'lstsq':
+        # Least squares (works for overdetermined systems)
+        x, residuals, rank, s = np.linalg.lstsq(A, b, rcond=None)
+    
+    elif method == 'gradient_descent':
+        # Iterative gradient descent
+        x = np.zeros(A.shape[1])
+        learning_rate = 0.01
+        iterations = 1000
+        
+        for i in range(iterations):
+            # Gradient of ||Ax - b||^2
+            gradient = 2 * np.dot(A.T, np.dot(A, x) - b)
+            x = x - learning_rate * gradient
+    
+    return x
+
+# Example: Linear regression normal equations
+# X^T X β = X^T y
+np.random.seed(42)
+X = np.random.randn(100, 3)
+true_beta = np.array([1.5, -2.0, 0.5])
+y = np.dot(X, true_beta) + 0.1 * np.random.randn(100)
+
+# Normal equations: (X^T X) β = X^T y
+XtX = np.dot(X.T, X)
+Xty = np.dot(X.T, y)
+
+beta_solved = solve_linear_system(XtX, Xty)
+print(f"True beta: {true_beta}")
+print(f"Solved beta: {beta_solved}")
+print(f"Error: {np.linalg.norm(true_beta - beta_solved):.6f}")
+                </div>
+
+                <div class="algorithm-complexity">
+                    <h5>Linear Algebra Complexity</h5>
+                    <p><strong>Matrix Multiplication:</strong> O(n³) for n×n matrices</p>
+                    <p><strong>Matrix Inversion:</strong> O(n³) using Gaussian elimination</p>
+                    <p><strong>Eigendecomposition:</strong> O(n³) for dense matrices</p>
+                    <p><strong>SVD:</strong> O(mn²) for m×n matrix where m≥n</p>
+                    <p><strong>Linear System Solving:</strong> O(n³) direct, O(n²) per iteration for iterative</p>
+                </div>
+
+                <h4>Practical Applications in Machine Learning</h4>
+
+                <h5>1. Neural Networks</h5>
+                <ul>
+                    <li>Forward pass: Matrix multiplications of inputs with weights</li>
+                    <li>Backpropagation: Computing gradients using chain rule and matrix operations</li>
+                    <li>Weight updates: Vector operations on parameter matrices</li>
+                </ul>
+
+                <h5>2. Linear Regression</h5>
+                <ul>
+                    <li>Normal equations: Solving linear systems for optimal weights</li>
+                    <li>Gradient descent: Vector operations for iterative optimization</li>
+                    <li>Regularization: Adding penalty terms using matrix norms</li>
+                </ul>
+
+                <h5>3. Dimensionality Reduction</h5>
+                <ul>
+                    <li>PCA: Eigendecomposition of covariance matrices</li>
+                    <li>SVD: Low-rank approximations for data compression</li>
+                    <li>t-SNE: Distance calculations in high-dimensional spaces</li>
+                </ul>
+
+                <h5>4. Recommendation Systems</h5>
+                <ul>
+                    <li>Matrix factorization: Decomposing user-item interaction matrices</li>
+                    <li>Collaborative filtering: Computing user and item similarities</li>
+                    <li>Content-based filtering: Vector similarity in feature spaces</li>
+                </ul>
+
+                <div class="example-box">
+                    <h6>Real-World Example: Image Processing</h6>
+                    <p>
+                        In computer vision, images are represented as matrices where each element is a pixel intensity. Convolution operations (used in CNNs) are matrix operations that detect features like edges and textures. Image transformations like rotation, scaling, and perspective changes are linear transformations applied to pixel coordinate matrices.
+                    </p>
+                </div>
+
+                <h4>Performance Considerations and Best Practices</h4>
+
+                <h5>Numerical Stability</h5>
+                <ul>
+                    <li>Avoid matrix inversion when possible; use solving methods instead</li>
+                    <li>Use SVD for rank-deficient matrices</li>
+                    <li>Consider condition numbers for stability assessment</li>
+                    <li>Apply regularization to prevent overfitting and improve conditioning</li>
+                </ul>
+
+                <h5>Computational Efficiency</h5>
+                <ul>
+                    <li>Use specialized libraries (BLAS, LAPACK) for optimized operations</li>
+                    <li>Exploit matrix structure (sparse, symmetric, positive definite)</li>
+                    <li>Consider iterative methods for large systems</li>
+                    <li>Use GPU acceleration for parallel matrix operations</li>
+                </ul>
+
+                <div class="code-block">
+# Performance optimization example
+import scipy.sparse as sp
+from scipy.sparse.linalg import spsolve
+
+def optimized_linear_algebra():
+    """
+    Demonstrate performance optimizations
+    """
+    # Use sparse matrices for memory efficiency
+    n = 1000
+    density = 0.01  # 1% non-zero elements
+    
+    # Create sparse matrix
+    A_sparse = sp.random(n, n, density=density, format='csr')
+    b = np.random.randn(n)
+    
+    # Solve using sparse methods
+    x_sparse = spsolve(A_sparse, b)
+    
+    # For positive definite matrices, use Cholesky decomposition
+    A_pd = np.dot(A_sparse.T, A_sparse) + sp.eye(n) * 0.1
+    x_chol = spsolve(A_pd, b)
+    
+    print(f"Sparse matrix density: {A_sparse.nnz / (n*n):.4f}")
+    print(f"Memory savings: ~{(1 - A_sparse.nnz / (n*n)) * 100:.1f}%")
+
+optimized_linear_algebra()
+                </div>
+
+                <div class="tech-tags">
+                    <span class="tech-tag">Linear Algebra</span>
+                    <span class="tech-tag">Vectors</span>
+                    <span class="tech-tag">Matrices</span>
+                    <span class="tech-tag">Eigenvalues</span>
+                    <span class="tech-tag">SVD</span>
+                    <span class="tech-tag">PCA</span>
+                    <span class="tech-tag">Optimization</span>
+                    <span class="tech-tag">Neural Networks</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="contact-info">
+            <p>These foundational articles provide the mathematical and computational groundwork for advanced machine learning concepts. More deep-dives into optimization algorithms, probability theory, and specialized ML techniques coming soon!</p>
+        </div>
+    </div>
+</body>
+</html>
