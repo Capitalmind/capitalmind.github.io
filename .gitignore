@@ -1,0 +1,6 @@
+# Exclude large archive files
+# Exclude large archive files
+*.zip
+*.tar.gz
+*.rar
+

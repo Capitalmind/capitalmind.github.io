@@ -1,0 +1,177 @@
+graph TB
+    %% Core Game Classes
+    GameState[GameState<br/>📊 Game Instance<br/>2-6 Players]
+    Player[Player<br/>👤 Game Participant]
+    Company[Company<br/>🏢 Stock Company]
+    Broker[Broker<br/>🏦 Share Manager<br/>10 shares/company]
+    
+    %% Initialization Classes
+    GameInitialization[Game Setup<br/>🎯 8-Step Process]
+    TurnOrderSystem[Turn Order<br/>🔄 Color Sequence]
+    DiceSystem[Dice System<br/>🎲 Number + Color]
+    
+    %% Game Flow Classes
+    TurnPhase[TurnPhase<br/>⏱️ Turn Phases]
+    TradingPhase[Trading Phase<br/>💰 Buy/Sell/Hold<br/>Before Dice Only]
+    DiceRollingPhase[Dice Rolling<br/>🎲 Number + Color]
+    PegMovementPhase[Peg Movement<br/>🔄 Move by Number]
+    ActionSequence[Turn Sequence<br/>📋 4-Step Process]
+    
+    %% Player Management
+    PlayerState[Player State<br/>👤 Cash + Shares]
+    TradingRules[Trading Rules<br/>📜 When to Buy/Sell]
+    
+    %% Special Game Elements
+    SpecialPosition[SpecialPosition<br/>⭐ Board Positions]
+    MarketCard[MarketCard<br/>📋 Event Cards]
+    CardEffect[CardEffect<br/>⚡ Card Actions]
+    
+    %% Game Events
+    RoundEndEvent[RoundEndEvent<br/>🏁 Round Complete]
+    BonusSharesEvent[BonusSharesEvent<br/>💎 Bonus Shares]
+    BankruptcyEvent[BankruptcyEvent<br/>💥 Company Bankrupt]
+    
+    %% Game Rules
+    DividendRule[DividendRule<br/>💵 Dividend Calc]
+    WinCondition[WinCondition<br/>🏆 Victory Rules]
+    ValidationRule[ValidationRule<br/>✅ State Validation]
+    
+    %% Game Actions
+    GameAction[GameAction<br/>🎯 Player Actions]
+    BuySharesAction[BuySharesAction<br/>📈 Purchase Shares]
+    SellSharesAction[SellSharesAction<br/>📉 Sell Shares]
+    RollDiceAction[RollDiceAction<br/>🎲 Dice Roll]
+    
+    %% Specific Companies
+    FairfitFurniture[Fairfit Furniture<br/>🪑 Yellow Company]
+    AtomicAirways[Atomic Airways<br/>✈️ Red Company]
+    EasygoingEngineering[Easygoing Engineering<br/>⚙️ Blue Company]
+    DiggersDiamond[Diggers Diamond<br/>💎 Green Company]
+    BluebottleBrewery[Bluebottle Brewery<br/>🍺 Black Company]
+    CaptivatingCosmetics[Captivating Cosmetics<br/>💄 White Company]
+    
+    %% Special Positions
+    SlumpPosition[Slump Position<br/>📉 Fall 6 Spaces]
+    MarketNewsPosition[Market News<br/>📰 Draw Card]
+    MMarkerPositions[M-Marker Positions<br/>➡️ Go to Market News]
+    
+    %% Card Effects
+    TravelerAdvance[Traveler Advance<br/>⬆️ Move Up]
+    TravelerRetreat[Traveler Retreat<br/>⬇️ Move Down]
+    ParentMove[Parent Move<br/>🔄 Share Price Change]
+    DividendPayout[Dividend Payout<br/>💰 Cash Payment]
+    AntiSlumpProtection[Anti-Slump<br/>🛡️ Protection Card]
+    
+    %% Dividend Rules
+    TopBoardDividend[Top Board<br/>20% + 2 Up]
+    FifteenPercentDividend[Position 180-189<br/>15% + 1 Up]
+    TenPercentDividend[Position 170-179<br/>10% + 1 Up]
+    FivePercentDividend[Position 160-169<br/>5% + 1 Up]
+    
+    %% Win Conditions
+    NetWorthWin[Net Worth Win<br/>💰 £600+ Total]
+    SurvivalWin[Survival Win<br/>🏃 Last Company]
+    
+    %% Relationships
+    GameState -->|hasPlayers| PlayerState
+    GameState -->|hasCompanies| Company
+    GameState -->|hasBroker| Broker
+    GameState -.->|currentPhase| TurnPhase
+    GameState -->|initializesWith| GameInitialization
+    GameState -->|usesTurnOrder| TurnOrderSystem
+    GameState -->|usesDice| DiceSystem
+    
+    PlayerState -->|ownsShares| Company
+    PlayerState -->|followsRules| TradingRules
+    Broker -->|managesShares| Company
+    
+    GameInitialization -->|establishes| TurnOrderSystem
+    GameInitialization -->|distributes| PlayerState
+    GameInitialization -->|issues| Broker
+    
+    TurnPhase -->|subClassOf| TradingPhase
+    TurnPhase -->|subClassOf| DiceRollingPhase
+    TurnPhase -->|subClassOf| PegMovementPhase
+    TurnPhase -->|follows| ActionSequence
+    
+    TradingPhase -->|governedBy| TradingRules
+    DiceRollingPhase -->|uses| DiceSystem
+    
+    Company -->|instance| FairfitFurniture
+    Company -->|instance| AtomicAirways
+    Company -->|instance| EasygoingEngineering
+    Company -->|instance| DiggersDiamond
+    Company -->|instance| BluebottleBrewery
+    Company -->|instance| CaptivatingCosmetics
+    
+    SpecialPosition -->|instance| SlumpPosition
+    SpecialPosition -->|instance| MarketNewsPosition
+    SpecialPosition -->|instance| MMarkerPositions
+    
+    CardEffect -->|instance| TravelerAdvance
+    CardEffect -->|instance| TravelerRetreat
+    CardEffect -->|instance| ParentMove
+    CardEffect -->|instance| DividendPayout
+    CardEffect -->|instance| AntiSlumpProtection
+    
+    MarketCard -->|hasEffect| CardEffect
+    
+    DividendRule -->|instance| TopBoardDividend
+    DividendRule -->|instance| FifteenPercentDividend
+    DividendRule -->|instance| TenPercentDividend
+    DividendRule -->|instance| FivePercentDividend
+    
+    WinCondition -->|instance| NetWorthWin
+    WinCondition -->|instance| SurvivalWin
+    
+    GameAction -->|subClassOf| BuySharesAction
+    GameAction -->|subClassOf| SellSharesAction
+    GameAction -->|subClassOf| RollDiceAction
+    
+    %% Game Flow
+    GameInitialization -.->|leads to| TradingPhase
+    TradingPhase -.->|nextPhase| DiceRollingPhase
+    DiceRollingPhase -.->|nextPhase| PegMovementPhase
+    PegMovementPhase -.->|checkPosition| SpecialPosition
+    SpecialPosition -.->|mayTrigger| RoundEndEvent
+    RoundEndEvent -.->|mayTrigger| BonusSharesEvent
+    RoundEndEvent -.->|mayTrigger| BankruptcyEvent
+    RoundEndEvent -.->|checkCondition| WinCondition
+    
+    %% Setup Flow
+    GameInitialization -.->|step1| TurnOrderSystem
+    GameInitialization -.->|step2| PlayerState  
+    GameInitialization -.->|step3| Broker
+    
+    %% Special Triggers
+    SlumpPosition -.->|canPrevent| AntiSlumpProtection
+    MarketNewsPosition -.->|drawCard| MarketCard
+    
+    %% Turn Order Flow
+    TurnOrderSystem -.->|determines| PlayerState
+    ActionSequence -.->|governs| TradingPhase
+    
+    %% Validation Flow
+    GameState -.->|validates| ValidationRule
+    GameAction -.->|validates| ValidationRule
+    
+    %% Color Coding
+    classDef gameCore fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef initialization fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    classDef turnFlow fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef companies fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef special fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef events fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef rules fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+    classDef actions fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef playerMgmt fill:#f9fbe7,stroke:#827717,stroke-width:2px
+    
+    class GameState,Company,Broker gameCore
+    class GameInitialization,TurnOrderSystem,DiceSystem initialization
+    class TurnPhase,TradingPhase,DiceRollingPhase,PegMovementPhase,ActionSequence turnFlow
+    class FairfitFurniture,AtomicAirways,EasygoingEngineering,DiggersDiamond,BluebottleBrewery,CaptivatingCosmetics companies
+    class SpecialPosition,SlumpPosition,MarketNewsPosition,MMarkerPositions,MarketCard,CardEffect special
+    class RoundEndEvent,BonusSharesEvent,BankruptcyEvent events
+    class DividendRule,WinCondition,ValidationRule,TopBoardDividend,FifteenPercentDividend,TenPercentDividend,FivePercentDividend,NetWorthWin,SurvivalWin rules
+    class GameAction,BuySharesAction,SellSharesAction,RollDiceAction,TravelerAdvance,TravelerRetreat,ParentMove,DividendPayout,AntiSlumpProtection actions
+    class Player,PlayerState,TradingRules playerMgmt

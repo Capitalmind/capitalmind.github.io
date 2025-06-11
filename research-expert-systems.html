@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expert Systems Research - Ontology-Based Rule Systems</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/expert-systems.css">
+    <link rel="stylesheet" href="css/research-expert-systems.css">
 </head>
 <body>
     <div class="container">
@@ -57,10 +57,10 @@
                 Expert systems represent a fundamental approach to artificial intelligence that prioritizes transparency, explainability, and deterministic reasoning. Unlike neural networks that operate as "black boxes," expert systems provide complete audit trails from input through reasoning to conclusion.
             </p>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
-                <div style="background: #2a2a2a; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #cc785c;">
-                    <h4 style="color: #cc785c; margin-bottom: 1rem;"><i class="fas fa-eye"></i> Black Box AI</h4>
-                    <ul style="margin: 0; padding-left: 1.5rem; font-size: 0.9rem;">
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-eye"></i> Black Box AI</h4>
+                    <ul>
                         <li>Probabilistic outputs (85% confident)</li>
                         <li>No explanation of reasoning</li>
                         <li>Cannot guarantee consistency</li>
@@ -69,9 +69,9 @@
                     </ul>
                 </div>
                 
-                <div style="background: #2a2a2a; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #cc785c;">
-                    <h4 style="color: #cc785c; margin-bottom: 1rem;"><i class="fas fa-microscope"></i> Expert Systems</h4>
-                    <ul style="margin: 0; padding-left: 1.5rem; font-size: 0.9rem;">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-microscope"></i> Expert Systems</h4>
+                    <ul>
                         <li>Deterministic outputs (100% confident)</li>
                         <li>Complete reasoning chains</li>
                         <li>Guaranteed consistency</li>
@@ -110,14 +110,14 @@
             <div class="game-rules">
                 <h4><i class="fas fa-gamepad"></i> Flutter Stock Exchange - Core Rules</h4>
                 
-                <div style="margin: 1rem 0;">
-                    <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Game Objective</h5>
-                    <p style="font-size: 0.9rem;">Each player starts with £300. Win by reaching £600 total value (cash + shares at market prices) through strategic trading and dividend collection.</p>
+                <div class="rule-section">
+                    <h5>Game Objective</h5>
+                    <p>Each player starts with £300. Win by reaching £600 total value (cash + shares at market prices) through strategic trading and dividend collection.</p>
                 </div>
 
-                <div style="margin: 1rem 0;">
-                    <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Key Components</h5>
-                    <ul style="font-size: 0.9rem; margin: 0; padding-left: 1.5rem;">
+                <div class="rule-section">
+                    <h5>Key Components</h5>
+                    <ul>
                         <li><strong>Six Companies:</strong> Fairfit Furniture, Atomic Airways, Easygoing Engineering, Diggers Diamond Mines, Bluebottle Brewery, Captivating Cosmetics</li>
                         <li><strong>Two Pegs per Company:</strong> Parent peg (market price) and Traveller peg (moves up board)</li>
                         <li><strong>Share Certificates:</strong> Each represents 100 shares, starting value £100 PAR</li>
@@ -125,9 +125,9 @@
                     </ul>
                 </div>
 
-                <div style="margin: 1rem 0;">
-                    <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Trading Rules (Rule 8)</h5>
-                    <ul style="font-size: 0.9rem; margin: 0; padding-left: 1.5rem;">
+                <div class="rule-section">
+                    <h5>Trading Rules (Rule 8)</h5>
+                    <ul>
                         <li>Players may only buy/sell shares immediately before throwing dice</li>
                         <li>Shares bought/sold in multiples of 100 only</li>
                         <li>Purchase price = market price + £5 brokerage fee</li>
@@ -136,8 +136,8 @@
                     </ul>
                 </div>
 
-                <div style="margin: 1rem 0;">
-                    <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Dividend Payouts (Rule 11)</h5>
+                <div class="rule-section">
+                    <h5>Dividend Payouts (Rule 11)</h5>
                     <table>
                         <tr>
                             <th>Traveller Peg Position</th>
@@ -177,9 +177,9 @@
                     </table>
                 </div>
 
-                <div style="margin: 1rem 0;">
-                    <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Special Events</h5>
-                    <ul style="font-size: 0.9rem; margin: 0; padding-left: 1.5rem;">
+                <div class="rule-section">
+                    <h5>Special Events</h5>
+                    <ul>
                         <li><strong>Bonus Shares (Rule 12):</strong> When parent peg reaches £200, issue 1:1 bonus shares, reset price to £100</li>
                         <li><strong>Bankruptcy (Rule 13):</strong> Parent peg reaches bottom = company ceases trading, shares worthless</li>
                         <li><strong>Slump (Rule 10):</strong> Traveller peg at "SLUMP" position drops back 6 spaces automatically</li>
@@ -210,10 +210,10 @@
                 Before writing any code, we must understand the domain deeply. This means identifying all entities, relationships, and rules that govern the system.
             </p>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
-                <div style="background: #2a2a2a; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #cc785c;">
-                    <h5 style="color: #cc785c; margin-bottom: 1rem;">1. Identify Core Entities</h5>
-                    <ul style="margin: 0; padding-left: 1.5rem;">
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h5>1. Identify Core Entities</h5>
+                    <ul>
                         <li><strong>GameState:</strong> Complete game instance</li>
                         <li><strong>Player:</strong> Participants with money and shares</li>
                         <li><strong>Company:</strong> Tradeable entities with stock prices</li>
@@ -222,9 +222,9 @@
                     </ul>
                 </div>
                 
-                <div style="background: #2a2a2a; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #cc785c;">
-                    <h5 style="color: #cc785c; margin-bottom: 1rem;">2. Map Relationships</h5>
-                    <ul style="margin: 0; padding-left: 1.5rem;">
+                <div class="analysis-card">
+                    <h5>2. Map Relationships</h5>
+                    <ul>
                         <li><strong>Player → owns → Shares</strong></li>
                         <li><strong>Company → has → StockPrice</strong></li>
                         <li><strong>GameState → contains → Players</strong></li>
@@ -234,9 +234,25 @@
                 </div>
             </div>
 
-            <h4>Phase 2: Formal Ontology Structure</h4>
+            <h4>Phase 2: Visual Ontology Mapping</h4>
             <p>
-                With our domain analysis complete, we create the formal ontology using JSON-LD format. This captures all relationships we've identified in machine-readable form:
+                Complex ontologies benefit from visual representation. The complete Flutter game ontology can be viewed as an interactive diagram that shows all entities, relationships, and rule flows.
+            </p>
+            
+            <div class="ontology-visual">
+                <h5><i class="fas fa-sitemap"></i> Complete Flutter Game Ontology Diagram</h5>
+                <p>The full ontology contains 60+ interconnected entities representing every aspect of the game system:</p>
+                <div class="diagram-preview">
+                    <button class="btn" onclick="openOntologyDiagram()">
+                        <i class="fas fa-external-link-alt"></i> View Interactive Ontology Diagram
+                    </button>
+                    <p class="diagram-note">Opens comprehensive mermaid diagram showing all game entities, relationships, and rule flows</p>
+                </div>
+            </div>
+
+            <h4>Phase 3: Formal Implementation</h4>
+            <p>
+                With visual mapping complete, we translate the structure into machine-readable JSON-LD format that captures every rule and relationship from the diagram.
             </p>
         </div>
 
@@ -246,66 +262,183 @@
             
             <h3>JSON-LD Ontology: Flutter Stock Exchange Game</h3>
             <p>
-                Here's how we translate our knowledge into machine-readable format using real data from the Flutter game ontology:
+                This comprehensive ontology captures the complete Flutter game system from our visual diagram, encoding every entity, relationship, and rule for zero-error expert system implementation:
             </p>
 
             <div class="code-block"># JSON-LD Ontology: Flutter Stock Exchange Game
-# Real example from comprehensive game rule system
+# Complete formal representation of game entities, rules, and relationships
 
 {
+  # Context defines vocabularies and namespaces
   "@context": {
-    "@vocab": "http://example.org/flutterGame#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "owl": "http://www.w3.org/2002/07/owl#"
+    "@vocab": "http://example.org/flutterGame#",    # Default vocabulary
+    "xsd": "http://www.w3.org/2001/XMLSchema#",     # XML Schema datatypes
+    "owl": "http://www.w3.org/2002/07/owl#"         # Web Ontology Language
   },
+  
+  # Graph contains all game entities and their relationships
   "@graph": [
+    
+    # === CORE GAME STATE ===
+    # Central game instance with configuration and current state
     {
-      // Core Game State - contains all game parameters
       "@id": "gameInstance",
       "@type": "GameState",
-      "startingMoney": {"@value": 300, "@type": "xsd:integer"},
-      "defaultWinTarget": {"@value": 600, "@type": "xsd:integer"},
-      "brokerageFee": {"@value": 5, "@type": "xsd:integer"},
-      "maxPlayers": {"@value": 6, "@type": "xsd:integer"},
-      "turnOrder": ["yellow", "red", "blue", "green", "black", "white"],
-      "hasCompanies": ["fairfitFurniture", "atomicAirways", "easygoingEngineering"]
+      "startingMoney": {"@value": 300, "@type": "xsd:integer"},      # Each player starts with £300
+      "defaultWinTarget": {"@value": 600, "@type": "xsd:integer"},   # Win condition: £600 net worth
+      "brokerageFee": {"@value": 5, "@type": "xsd:integer"},         # Trading fee per transaction
+      "maxPlayers": {"@value": 6, "@type": "xsd:integer"},           # Support 2-6 players
+      "turnOrder": ["yellow", "red", "blue", "green", "black", "white"], # Player sequence
+      "currentPhase": "tradingPhase",                                # Current game phase
+      "hasPlayers": ["player1", "player2", "player3"],              # Active players
+      "hasCompanies": [                                              # Six companies in game
+        "fairfitFurniture", "atomicAirways", "easygoingEngineering", 
+        "diggersDiamond", "bluebottleBrewery", "captivatingCosmetics"
+      ],
+      "hasBroker": "centralBroker",                                  # Share trading broker
+      "usesDice": "gameDiceSystem",                                  # Dice system for movement
+      "specialPositions": ["slumpPosition", "marketNewsPosition", "mMarkerPositions"]
     },
+
+    # === GAME COMPANIES ===
+    # Six companies with stock prices and trading status
     {
-      // Company entities with specific properties
       "@id": "fairfitFurniture",
       "@type": "Company",
-      "companyId": "yellow",
-      "companyName": "Fairfit Furniture Company",
+      "companyId": "yellow",                                         # Color identifier
+      "companyName": "Fairfit Furniture Company",                   # Display name
+      "parentPosition": {"@value": 100, "@type": "xsd:integer"},    # Current stock price (£)
+      "travelerPosition": {"@value": 100, "@type": "xsd:integer"},  # Board position
+      "isActive": {"@value": true, "@type": "xsd:boolean"},         # Trading status
+      "availableCertificates": {"@value": 10, "@type": "xsd:integer"}, # Shares for sale
+      "icon": "🪑"                                                  # Visual representation
+    },
+    
+    {
+      "@id": "atomicAirways",
+      "@type": "Company", 
+      "companyId": "red",
+      "companyName": "Atomic Airways",
       "parentPosition": {"@value": 100, "@type": "xsd:integer"},
       "travelerPosition": {"@value": 100, "@type": "xsd:integer"},
       "isActive": {"@value": true, "@type": "xsd:boolean"},
-      "availableCertificates": {"@value": 10, "@type": "xsd:integer"}
+      "availableCertificates": {"@value": 10, "@type": "xsd:integer"},
+      "icon": "✈️"
     },
+
+    # === TRADING SYSTEM ===
+    # Central broker manages all share transactions
     {
-      // Trading rules encoded as formal logic
-      "@id": "BuySharesAction",
-      "@type": "GameAction",
-      "actionType": "buy_shares",
-      "ruleReference": "Rule 8b-8e",
-      "requiredValidations": [
-        "target_company_active",
-        "certificates_available",
-        "sufficient_cash"
+      "@id": "centralBroker",
+      "@type": "Broker",
+      "managesShares": [                                             # Companies under management
+        "fairfitFurniture", "atomicAirways", "easygoingEngineering",
+        "diggersDiamond", "bluebottleBrewery", "captivatingCosmetics"
       ],
-      "cost": "share_price + brokerage_fee"
+      "certificatesPerCompany": {"@value": 10, "@type": "xsd:integer"}, # Total shares per company
+      "sharesPerCertificate": {"@value": 100, "@type": "xsd:integer"}   # Shares per certificate
+    },
+
+    # === TURN PHASES ===
+    # Game flow through structured phases
+    {
+      "@id": "tradingPhase",
+      "@type": "TurnPhase",
+      "phaseType": "trading",                                        # Phase identifier
+      "description": "Buy/Sell/Hold before dice roll",              # Phase purpose
+      "nextPhase": "diceRollingPhase",                              # Sequence flow
+      "governedBy": "tradingRules",                                 # Applicable rules
+      "allowedActions": ["buyShares", "sellShares", "holdPosition"] # Valid player actions
+    },
+
+    # === SPECIAL BOARD POSITIONS ===
+    # Positions that trigger special effects
+    {
+      "@id": "slumpPosition",
+      "@type": "SpecialPosition",
+      "positionName": "SLUMP",                                      # Position name
+      "effect": "fall_6_spaces",                                   # Automatic effect
+      "canPrevent": "antiSlumpProtection",                         # Prevention mechanism
+      "description": "Traveler peg falls back 6 spaces automatically" # Rule explanation
+    },
+
+    # === DIVIDEND RULES ===
+    # Position-based dividend calculations (Rule 11)
+    {
+      "@id": "topBoardDividend",
+      "@type": "DividendRule",
+      "positionRange": "200+",                                      # Trigger condition
+      "dividendAmount": {"@value": 20, "@type": "xsd:integer"},     # £20 per 100 shares
+      "parentPegMovement": {"@value": 2, "@type": "xsd:integer"},   # Stock price increase
+      "description": "20% dividend + parent peg up 2 spaces"       # Rule summary
+    },
+    
+    {
+      "@id": "fifteenPercentDividend", 
+      "@type": "DividendRule",
+      "positionRange": "180-189",                                   # 15% zone
+      "dividendAmount": {"@value": 15, "@type": "xsd:integer"},     # £15 per 100 shares
+      "parentPegMovement": {"@value": 1, "@type": "xsd:integer"},   # Stock price up 1
+      "description": "15% dividend + parent peg up 1 space"
+    },
+
+    # === WIN CONDITIONS ===
+    # Victory conditions for game end
+    {
+      "@id": "netWorthWin",
+      "@type": "WinCondition",
+      "winType": "net_worth",                                       # Primary win condition
+      "targetAmount": {"@value": 600, "@type": "xsd:integer"},      # £600 target
+      "calculation": "cash + (shares × current_market_price)",      # Net worth formula
+      "description": "Reach £600 total value"                      # Win description
+    },
+
+    # === PLAYER ACTIONS ===
+    # Validated actions players can perform
+    {
+      "@id": "buySharesAction",
+      "@type": "GameAction",
+      "actionType": "buy_shares",                                   # Action identifier
+      "ruleReference": "Rule 8b-8e",                               # Official rule reference
+      "requiredValidations": [                                      # Pre-action checks
+        "company_active", "certificates_available", "sufficient_cash",
+        "trading_phase_active", "multiples_of_100_only"
+      ],
+      "costCalculation": "share_price + brokerage_fee",             # Cost formula
+      "timing": "before_dice_roll_only"                            # When action allowed
+    },
+
+    # === MARKET EVENTS ===
+    # Random events that affect company performance
+    {
+      "@id": "travelerAdvanceCard",
+      "@type": "MarketCard",
+      "cardType": "traveler_advance",                               # Card category
+      "effect": "move_traveler_up",                                # Card effect
+      "description": "Move traveler peg up specified spaces"       # Effect description
+    },
+
+    # === SPECIAL EVENTS ===
+    # Triggered events with major game impact
+    {
+      "@id": "bonusSharesEvent",
+      "@type": "BonusSharesEvent",
+      "triggerCondition": "parent_peg_reaches_200",                 # When triggered
+      "effect": "issue_1_to_1_bonus_shares",                       # What happens
+      "priceReset": {"@value": 100, "@type": "xsd:integer"},       # Price after bonus
+      "ruleReference": "Rule 12"                                   # Official rule
     }
+    
+    # ... Additional entities (60+ total) following same pattern
   ]
 }</div>
 
             <h3>Expert System Implementation</h3>
             <p>
-                The ontology provides the structure, but we need a rule engine to process logic. Here's how we implement the expert system:
+                The ontology provides the structure, but we need a rule engine to process logic. Here's how we implement the expert system that uses this comprehensive ontology for zero-error rule enforcement:
             </p>
 
-            <div class="code-block"># Expert System for Game Rule Enforcement
-# Demonstrates zero-error validation using ontology data
-
-class GameRuleExpert:
+            <div class="code-block">class GameRuleExpert:
     """Expert system for enforcing complex game rules with zero errors"""
     
     def __init__(self, ontology_path):
@@ -341,7 +474,7 @@ class GameRuleExpert:
         rule_chain.append(f"✓ Company {company_id} is active")
         
         # Rule 2: Sufficient certificates available (from broker)
-        broker = self.ontology['broker']
+        broker = self.ontology['centralBroker']
         available = self.get_available_shares(broker, company_id)
         if available < quantity:
             rule_chain.append(f"VIOLATION: Only {available} shares available, {quantity} requested")
@@ -362,7 +495,114 @@ class GameRuleExpert:
         rule_chain.append(f"✓ Player has £{player_cash}, cost £{total_cost}")
         rule_chain.append("✓ ALL VALIDATION RULES PASSED - Transaction allowed")
         
-        return (True, "Purchase approved", rule_chain)</div>
+        return (True, "Purchase approved", rule_chain)
+    
+    def calculate_dividend_payout(self, company_id, position):
+        """
+        Calculate dividend based on traveler peg position
+        Demonstrates how ontology rules translate to calculations
+        """
+        # Load dividend rules from ontology
+        dividend_rules = [
+            self.ontology['topBoardDividend'],
+            self.ontology['fifteenPercentDividend'], 
+            self.ontology['tenPercentDividend'],
+            self.ontology['fivePercentDividend']
+        ]
+        
+        # Find applicable rule based on position
+        for rule in dividend_rules:
+            if self.position_matches_range(position, rule['positionRange']):
+                dividend_amount = rule['dividendAmount']['@value']
+                parent_movement = rule['parentPegMovement']['@value']
+                
+                return {
+                    'dividend_per_100_shares': dividend_amount,
+                    'parent_peg_movement': parent_movement,
+                    'rule_applied': rule['description']
+                }
+        
+        # Below market news - no dividend, parent peg down
+        return {
+            'dividend_per_100_shares': 0,
+            'parent_peg_movement': -1,
+            'rule_applied': 'Below Market News - no dividend, parent peg down 1'
+        }
+    
+    def check_win_condition(self, player):
+        """
+        Evaluate if player has won using ontology win conditions
+        """
+        win_conditions = [
+            self.ontology['netWorthWin'],
+            self.ontology['survivalWin']
+        ]
+        
+        for condition in win_conditions:
+            if condition['winType'] == 'net_worth':
+                target_amount = condition['targetAmount']['@value']
+                
+                # Calculate net worth using ontology formula
+                cash = player['currentCash']['@value']
+                share_value = self.calculate_total_share_value(player)
+                net_worth = cash + share_value
+                
+                if net_worth >= target_amount:
+                    return {
+                        'has_won': True,
+                        'win_type': 'Net Worth Victory',
+                        'net_worth': net_worth,
+                        'target': target_amount,
+                        'margin': net_worth - target_amount
+                    }
+            
+            elif condition['winType'] == 'survival':
+                active_companies = self.count_active_companies()
+                if active_companies == 1:
+                    return {
+                        'has_won': True,
+                        'win_type': 'Survival Victory',
+                        'reason': 'Last remaining active company'
+                    }
+        
+        return {'has_won': False}
+
+    def apply_market_card_effect(self, card_id, target_company):
+        """
+        Apply market card effects using ontology definitions
+        """
+        card = self.ontology[card_id]
+        effect_type = card['cardType']
+        
+        if effect_type == 'traveler_advance':
+            return self.move_traveler_peg(target_company, 'up', card['spaces'])
+        elif effect_type == 'anti_slump_protection':
+            return self.set_slump_protection(target_company, True)
+        elif effect_type == 'dividend_payout':
+            return self.pay_immediate_dividend(target_company)
+        
+        # Return effect details for audit trail
+        return {
+            'card_applied': card['description'],
+            'effect_type': effect_type,
+            'target': target_company
+        }</div>
+
+            <h4>Key Implementation Features</h4>
+            <div class="use-case">
+                <h5>Zero-Error Validation</h5>
+                <p>Every action is validated against the formal ontology before execution. The system cannot make mistakes because all rules are explicitly encoded and checked against the comprehensive rule set.</p>
+            </div>
+
+            <div class="use-case">
+                <h5>Complete Audit Trails</h5>
+                <p>Every decision includes the full reasoning chain, referencing specific ontology entities and rules used to reach the conclusion. This provides legal-grade transparency.</p>
+            </div>
+
+            <div class="use-case">
+                <h5>Deterministic Outcomes</h5>
+                <p>Given identical inputs, the system always produces identical outputs. No probabilistic guessing—only logical rule application based on the formal ontology structure.</p>
+            </div>
         </div>
 
         <!-- Applications Section -->
@@ -426,21 +666,21 @@ class GameRuleExpert:
         </div>
 
         <div class="contact-info">
-            <h3 style="color: #cc785c; margin-bottom: 1rem;"><i class="fas fa-flask"></i> Research Applications</h3>
+            <h3><i class="fas fa-flask"></i> Research Applications</h3>
             <p>
                 This research represents a fundamental approach to building trustworthy AI systems. By combining formal ontologies with deterministic reasoning, we can create systems that provide transparent, auditable, and legally defensible decisions for critical applications.
             </p>
-            <p style="margin-top: 1rem;">
+            <p>
                 The methodologies developed here are applicable across any domain requiring precise rule enforcement—from financial regulation to game mechanics to safety standards. Each implementation maintains complete traceability from input through reasoning to conclusion.
             </p>
-            <div style="margin-top: 1.5rem;">
-                <a href="research.html" style="color: #cc785c; text-decoration: none; border: 1px solid #cc785c; padding: 0.75rem 1.5rem; border-radius: 5px; transition: all 0.3s ease;">
+            <div class="back-link">
+                <a href="research.html">
                     <i class="fas fa-arrow-left"></i> Back to Research Topics
                 </a>
             </div>
         </div>
     </div>
 
-    <script src="js/expert-systems.js"></script>
+    <script src="js/research-expert-systems.js"></script>
 </body>
 </html>

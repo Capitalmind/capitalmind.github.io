@@ -85,8 +85,8 @@ function showProject(projectKey) {
                 <a href="#" class="project-link">
                     <i class="fas fa-play"></i> Live Demo
                 </a>
-                <a href="#" class="project-link">
-                    <i class="fas fa-file-pdf"></i> Research Paper
+                <a href="research-expert-systems.html" class="project-link">
+                    <i class="fas fa-file-pdf"></i> Research
                 </a>
             `
         },

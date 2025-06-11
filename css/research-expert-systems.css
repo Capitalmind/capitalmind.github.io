@@ -1,0 +1,738 @@
+/* Expert Systems Research Page CSS - css/research-expert-systems.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #f5f5f5;
+    background: #262725;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    color: #cc785c;
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.links a {
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.links a:hover {
+    transform: scale(1.2);
+}
+
+/* Back Navigation */
+.back-nav {
+    margin-bottom: 2rem;
+}
+
+.back-nav a {
+    color: #cc785c;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #cc785c;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.back-nav a:hover {
+    background: #cc785c;
+    color: #f5f5f5;
+}
+
+/* Problem Statement */
+.problem-statement {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid #ff6b6b;
+    border: 2px solid #ff6b6b;
+}
+
+.problem-statement h3 {
+    color: #ff6b6b;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.problem-statement .problem-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Content Sections */
+.section {
+    background: #262725;
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid #3a3a3a;
+}
+
+.section h2 {
+    color: #cc785c;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section h3 {
+    color: #cc785c;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.section h4 {
+    color: #cc785c;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+.section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.section ul, .section ol {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Comparison Grid */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.comparison-card {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #cc785c;
+}
+
+.comparison-card h4 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+.comparison-card ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Analysis Grid */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.analysis-card {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #cc785c;
+}
+
+.analysis-card h5 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+/* Ontology Visual Section */
+.ontology-visual {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #cc785c;
+    text-align: center;
+}
+
+.ontology-visual h5 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.diagram-preview {
+    margin: 1.5rem 0;
+}
+
+.diagram-note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* Code Blocks with proper syntax highlighting */
+.code-block {
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    border-left: 4px solid #cc785c;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    position: relative;
+}
+
+/* Syntax Highlighting Colors */
+.code-block .comment {
+    color: #98d982;
+    font-style: italic;
+}
+
+.code-block .keyword {
+    color: #cc785c;
+    font-weight: bold;
+}
+
+.code-block .string {
+    color: #87ceeb;
+}
+
+.code-block .function {
+    color: #dda0dd;
+}
+
+.code-block .number {
+    color: #ffa07a;
+}
+
+.code-block .variable {
+    color: #f0e68c;
+}
+
+.code-block .class-name {
+    color: #87ceeb;
+    font-weight: bold;
+}
+
+/* Game Rules Table */
+.game-rules {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #cc785c;
+}
+
+.game-rules h4 {
+    color: #cc785c;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.rule-section {
+    margin: 1rem 0;
+}
+
+.rule-section h5 {
+    color: #cc785c;
+    margin-bottom: 0.5rem;
+}
+
+.rule-section p {
+    font-size: 0.9rem;
+}
+
+.rule-section ul {
+    font-size: 0.9rem;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.game-rules table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: #262725;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.game-rules th,
+.game-rules td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.game-rules th {
+    background: #3a3a3a;
+    color: #cc785c;
+    font-weight: bold;
+}
+
+.game-rules tr:hover {
+    background: #2a2a2a;
+}
+
+/* Use Case Examples */
+.use-case {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #cc785c;
+    transition: all 0.3s ease;
+}
+
+.use-case:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(204, 120, 92, 0.2);
+}
+
+.use-case h5 {
+    color: #cc785c;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Interactive Demo Section */
+.interactive-demo {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #cc785c;
+}
+
+.demo-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: #cc785c;
+    color: #f5f5f5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: #b8704a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(204, 120, 92, 0.3);
+}
+
+.btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.demo-output {
+    background: #262725;
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 200px;
+    border: 1px solid #3a3a3a;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+/* Tools Grid for Applications */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tool-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 4px solid #cc785c;
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(204, 120, 92, 0.2);
+}
+
+.tool-card h4 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool-card p {
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Table of Contents */
+.toc {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #cc785c;
+}
+
+.toc h3 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+.toc ul {
+    list-style: none;
+    margin: 0;
+}
+
+.toc li {
+    margin-bottom: 0.5rem;
+}
+
+.toc a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.25rem 0;
+    display: block;
+}
+
+.toc a:hover {
+    color: #cc785c;
+    padding-left: 0.5rem;
+}
+
+/* Contact Info */
+.contact-info {
+    text-align: center;
+    color: #f5f5f5;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #1a1a1a;
+    border-radius: 10px;
+    border-left: 4px solid #cc785c;
+}
+
+.contact-info h3 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+.back-link {
+    margin-top: 1.5rem;
+}
+
+.back-link a {
+    color: #cc785c;
+    text-decoration: none;
+    border: 1px solid #cc785c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-link a:hover {
+    background: #cc785c;
+    color: #f5f5f5;
+}
+
+/* Copy button for code blocks */
+.copy-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #cc785c;
+    color: #f5f5f5;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.code-block:hover .copy-btn {
+    opacity: 1;
+}
+
+.copy-btn:hover {
+    background: #b8704a;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #3a3a3a;
+    border-top: 3px solid #cc785c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal Styles for Ontology Diagram */
+.ontology-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 10000;
+}
+
+.modal-content {
+    background: #262725;
+    border-radius: 15px;
+    max-width: 95vw;
+    max-height: 95vh;
+    width: 1200px;
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 10001;
+    overflow: hidden;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #3a3a3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: #cc785c;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #cc785c;
+    color: #f5f5f5;
+}
+
+.modal-body {
+    padding: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.mermaid-container {
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin: 1rem;
+    padding: 1rem;
+    min-height: 600px;
+    overflow: auto;
+}
+
+#mermaid-diagram {
+    width: 100%;
+    min-height: 500px;
+}
+
+.diagram-details {
+    padding: 1.5rem;
+    background: #1a1a1a;
+    margin: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #cc785c;
+}
+
+.diagram-details h4 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+.diagram-details ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.diagram-details li {
+    margin: 0.5rem 0;
+    color: #f5f5f5;
+}
+
+.diagram-loading {
+    text-align: center;
+    padding: 2rem;
+    color: #cc785c;
+}
+
+.diagram-error {
+    text-align: center;
+    padding: 2rem;
+    color: #ff6b6b;
+    background: #2a1a1a;
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .section {
+        padding: 1.5rem;
+    }
+
+    .problem-statement {
+        padding: 1.5rem;
+    }
+
+    .problem-text {
+        font-size: 1rem;
+    }
+
+    .comparison-grid,
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-controls {
+        justify-content: center;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .code-block {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+
+    .modal-content {
+        width: 95vw;
+        max-height: 90vh;
+    }
+
+    .mermaid-container {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+}

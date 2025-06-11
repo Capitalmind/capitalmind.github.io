@@ -1,4 +1,4 @@
-// Graph Theory Interactive Visualizations
+// Graph Theory Interactive Visualizations - js/ml-graph-theory.js
 // Interactive demonstrations for graph algorithms and visualizations
 
 let stepMode = false;
@@ -112,102 +112,29 @@ async function animateDFS() {
     document.getElementById('dfs-btn').disabled = false;
 }
 
-// Dijkstra's Algorithm Animation Functions
-function resetDijkstra() {
-    const nodes = ['s', 'a', 'b', 'c', 'd', 'e', 'f', 't'];
-    nodes.forEach(node => {
-        const nodeElement = document.getElementById(`d-node-${node}`);
-        if (nodeElement) {
-            nodeElement.classList.remove('visited-node', 'current-node');
-        }
-        
-        const distElement = document.getElementById(`dist-${node}`);
-        if (distElement) {
-            if (node === 's') {
-                distElement.textContent = '0';
-            } else {
-                distElement.textContent = '∞';
-            }
-        }
-    });
-    
-    // Reset edge highlighting
-    for (let i = 1; i <= 11; i++) {
-        const edge = document.getElementById(`d-edge-${i}`);
-        if (edge) edge.classList.remove('path-highlight');
-    }
-    
-    document.getElementById('current-node').textContent = 'S (Start)';
-    document.getElementById('priority-queue').textContent = '[(0, S)]';
-    document.getElementById('shortest-path').textContent = 'Not found yet';
-    document.getElementById('total-distance').textContent = '-';
-}
-
-async function runDijkstra() {
-    resetDijkstra();
-    
-    document.getElementById('dijkstra-btn').disabled = true;
-    
-    const steps = [
-        {node: 's', dist: 0, visited: true, queue: '[(0, S)]'},
-        {node: 'b', dist: 2, update: true, queue: '[(2, B), (4, A)]'},
-        {node: 'b', dist: 2, visited: true, queue: '[(4, A)]'},
-        {node: 'd', dist: 3, update: true, queue: '[(4, A), (3, D)]'},
-        {node: 'd', dist: 3, visited: true, queue: '[(4, A)]'},
-        {node: 'a', dist: 4, visited: true, queue: '[]'},
-        {node: 'c', dist: 7, update: true, queue: '[(7, C)]'},
-        {node: 'e', dist: 6, update: true, queue: '[(6, E), (7, C)]'},
-        {node: 'e', dist: 6, visited: true, queue: '[(7, C)]'},
-        {node: 't', dist: 8, update: true, queue: '[(7, C), (8, T)]'},
-        {node: 't', dist: 8, visited: true, final: true}
-    ];
-    
-    for (const step of steps) {
-        await new Promise(resolve => setTimeout(resolve, 1200));
-        
-        if (step.update) {
-            const distElement = document.getElementById(`dist-${step.node}`);
-            if (distElement) {
-                distElement.textContent = step.dist;
-            }
-        }
-        
-        if (step.visited) {
-            const nodeElement = document.getElementById(`d-node-${step.node}`);
-            if (nodeElement) {
-                nodeElement.classList.add('visited-node');
-            }
-        }
-        
-        document.getElementById('current-node').textContent = step.node.toUpperCase();
-        if (step.queue) {
-            document.getElementById('priority-queue').textContent = step.queue;
-        }
-        
-        if (step.final) {
-            // Highlight shortest path: S → B → D → E → T
-            const pathEdges = ['d-edge-sb', 'd-edge-bd', 'd-edge-de', 'd-edge-et'];
-            pathEdges.forEach(edgeId => {
-                const edge = document.getElementById(edgeId);
-                if (edge) edge.classList.add('path-highlight');
-            });
-            
-            document.getElementById('shortest-path').textContent = 'S → B → D → E → T';
-            document.getElementById('total-distance').textContent = '8';
-        }
-    }
-    
-    document.getElementById('dijkstra-btn').disabled = false;
-}
-
-// Initialize page with default visualization
-function initializePage() {
-    // Set up default graph type
+// Initialize with undirected graph and set up page functionality
+function initializeGraphTheoryPage() {
     showUndirected();
     
-    // Set up any other default states
+    // Add smooth scrolling for TOC links
+    const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
     console.log('Graph Theory page initialized');
 }
 
-// Run initialization when page loads
-document.addEventListener('DOMContentLoaded', initializePage);
+// Initialize page when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeGraphTheoryPage);

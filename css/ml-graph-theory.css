@@ -1,4 +1,5 @@
-/* Graph Theory ML Page Styles */
+/* Graph Theory ML Page Styles - css/ml-graph-theory.css */
+
 * {
     margin: 0;
     padding: 0;
@@ -36,35 +37,6 @@ body {
     font-size: 1.2rem;
     opacity: 0.9;
     margin-bottom: 2rem;
-}
-
-/* Navigation Menu */
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin: 2rem 0;
-}
-
-.nav-menu a {
-    color: #cc785c;
-    text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid #cc785c;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.nav-menu a:hover {
-    background: #cc785c;
-    color: #f5f5f5;
-}
-
-.nav-menu a.active {
-    background: #cc785c;
-    color: #f5f5f5;
 }
 
 .links {
@@ -203,35 +175,6 @@ body {
     font-weight: bold;
 }
 
-/* Algorithm Complexity Boxes */
-.complexity-box {
-    background: #2a2a2a;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-left: 4px solid #cc785c;
-}
-
-.complexity-box h4 {
-    color: #cc785c;
-    margin-bottom: 1rem;
-}
-
-/* Use Case Examples */
-.use-case {
-    background: #2a2a2a;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-left: 4px solid #cc785c;
-}
-
-.use-case h5 {
-    color: #cc785c;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
 /* Interactive Visualizations */
 .visualization-container {
     background: #1a1a1a;
@@ -268,6 +211,54 @@ body {
     background: #666;
     cursor: not-allowed;
     transform: none;
+}
+
+/* Use Case Examples */
+.use-case {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #cc785c;
+}
+
+.use-case h5 {
+    color: #cc785c;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Algorithm Complexity Boxes */
+.complexity-box {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #cc785c;
+}
+
+.complexity-box h4 {
+    color: #cc785c;
+    margin-bottom: 1rem;
+}
+
+.complexity-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.complexity-box th,
+.complexity-box td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.complexity-box th {
+    background: #3a3a3a;
+    color: #cc785c;
+    font-weight: bold;
 }
 
 /* SVG Styling for Interactive Elements */
@@ -331,32 +322,6 @@ body {
     50% { opacity: 0.6; }
 }
 
-/* Problem Examples */
-.problem-box {
-    background: #1a1a1a;
-    border: 2px solid #cc785c;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-}
-
-.problem-box h4 {
-    color: #cc785c;
-    margin-bottom: 1rem;
-}
-
-.problem-solution {
-    background: #2a2a2a;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-top: 1rem;
-}
-
-.problem-solution h5 {
-    color: #cc785c;
-    margin-bottom: 0.5rem;
-}
-
 /* Table of Contents */
 .toc {
     background: #1a1a1a;
@@ -408,15 +373,6 @@ body {
     
     .section {
         padding: 1.5rem;
-    }
-
-    .nav-menu {
-        gap: 0.5rem;
-    }
-
-    .nav-menu a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
     }
 
     .viz-controls {
