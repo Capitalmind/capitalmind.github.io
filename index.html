@@ -5,212 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capitalmind - AI Developer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #f5f5f5;
-            background: #262725;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .header {
-            text-align: center;
-            color: #f5f5f5;
-            margin-bottom: 3rem;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-            color: #cc785c;
-        }
-
-        .header .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        /* Navigation Menu */
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-
-        .nav-menu a {
-            color: #cc785c;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid #cc785c;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-menu a:hover {
-            background: #cc785c;
-            color: #f5f5f5;
-        }
-
-        .nav-menu a.active {
-            background: #cc785c;
-            color: #f5f5f5;
-        }
-
-        .card {
-            background: #262725;
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-            border: 1px solid #3a3a3a;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h2 {
-            color: #cc785c;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: #262725;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            border: 1px solid #3a3a3a;
-        }
-
-        .project-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .project-card h3 {
-            color: #cc785c;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-card .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tech-tag {
-            background: #f7f3f0;
-            color: #744c2c;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .links a {
-            color: #f5f5f5;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .links a:hover {
-            transform: scale(1.2);
-        }
-
-        .contact-info {
-            text-align: center;
-            color: #f5f5f5;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #cc785c;
-            color: #f5f5f5;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-            margin: 0.5rem;
-        }
-
-        .btn:hover {
-            background: #b8704a;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .skill {
-            background: #f7f3f0;
-            color: #744c2c;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            border: 2px solid #e8d5c4;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-            
-            .links {
-                gap: 1rem;
-            }
-
-            .nav-menu {
-                gap: 0.5rem;
-            }
-
-            .nav-menu a {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <div class="container">
@@ -287,13 +82,15 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>YouTube Knowledge Synthesis</h3>
-                    <p>Parse YouTube video transcripts to create consolidated knowledge synthesis JSON for information extraction and analysis.</p>
+                    <h3>Multi-Source Knowledge Synthesis Platform</h3>
+                    <p>Systematized content analysis processing YouTube transcripts, community feeds, and technical articles to generate structured knowledge databases, social media summaries, and research data for AI/Robotics and Economic studies.</p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Transcript Analysis</span>
-                        <span class="tech-tag">Knowledge Graph</span>
-                        <span class="tech-tag">Data Mining</span>
-                        <span class="tech-tag">JSON</span>
+                        <span class="tech-tag">Content Parsing</span>
+                        <span class="tech-tag">Knowledge Synthesis</span>
+                        <span class="tech-tag">JSON5 Database</span>
+                        <span class="tech-tag">Social Media API</span>
+                        <span class="tech-tag">Multi-Platform</span>
+                        <span class="tech-tag">Research Analytics</span>
                     </div>
                 </div>
 
@@ -309,7 +106,7 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>Global Debt Reset Analysis</h3>
+                    <h3>Global Debt-Reset Whitepaper</h3>
                     <p>Economic study analyzing global debt patterns and reset scenarios using data-driven approaches and financial modeling.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Economic Analysis</span>

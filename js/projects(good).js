@@ -141,90 +141,87 @@ function showProject(projectKey) {
             `
         },
         'txtai-training': {
-            title: 'Expert System Framework for Legal & Regulatory Analysis',
+            title: 'Semantic Search & Embedding Framework Evaluation',
             content: `
                 <span class="status-badge status-active">Active Development</span>
                 
-                <p>Production-ready expert system implementation combining hierarchical document processing with formal rule engines and knowledge graphs for precise legal rule following, based on comprehensive research into legal AI architectures and Better Rules methodologies.</p>
+                <p>Comprehensive evaluation and testing of semantic search and embedding frameworks for domain-specific applications, with txtai as the primary candidate among multiple contenders for production deployment.</p>
 
-                <h4>🎯 System Architecture</h4>
+                <h4>🎯 Evaluation Objectives</h4>
                 <ul>
-                    <li><strong>Hybrid Knowledge Representation</strong> - Combine semantic document understanding with formal rule engines (Drools, Prolog) and ontological reasoning</li>
-                    <li><strong>Hierarchical Document Processing</strong> - Preserve legal document structure through specialized parsing (DocParser, GROBID)</li>
-                    <li><strong>Deterministic Rule Enforcement</strong> - Ensure auditability and explainability for legal applications with complete reasoning traces</li>
-                    <li><strong>Better Rules Integration</strong> - Implement Q-COE methodology (Questions, Considerations, Outcomes, Exceptions) for structured rule authoring</li>
+                    <li><strong>Framework Assessment</strong> - Test multiple semantic search solutions for domain-specific needs</li>
+                    <li><strong>Performance Benchmarking</strong> - Compare speed, accuracy, and scalability across platforms</li>
+                    <li><strong>Integration Analysis</strong> - Evaluate ease of deployment and maintenance requirements</li>
+                    <li><strong>Cost-Benefit Analysis</strong> - Balance managed services vs. self-hosted solutions</li>
                 </ul>
 
-                <h4>🏛️ Legal Domain Applications</h4>
+                <h4>🔧 Frameworks Under Evaluation</h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
                     <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Document Analysis</h5>
+                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Primary Candidate</h5>
                         <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li><strong>Contract Review</strong> - Automated clause analysis with rule validation</li>
-                            <li><strong>Regulatory Compliance</strong> - Cross-reference requirements with policies</li>
-                            <li><strong>Case Law Research</strong> - Semantic search with precedent reasoning</li>
+                            <li><strong>txtai</strong> - All-in-one framework with RAG, workflows, and agents</li>
                         </ul>
                     </div>
                     <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Rule Processing</h5>
+                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Alternative Contenders</h5>
                         <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li><strong>Policy Automation</strong> - Convert regulations to executable rules</li>
-                            <li><strong>Compliance Checking</strong> - Real-time validation against standards</li>
-                            <li><strong>Decision Support</strong> - Explainable AI with complete audit trails</li>
+                            <li><strong>Chroma</strong> - Simple, developer-friendly</li>
+                            <li><strong>Weaviate</strong> - Knowledge graphs + GraphQL</li>
+                            <li><strong>Qdrant</strong> - High-performance Rust-based</li>
+                            <li><strong>Pinecone</strong> - Fully managed service</li>
+                            <li><strong>FAISS</strong> - Facebook's similarity search</li>
                         </ul>
                     </div>
                 </div>
 
-                <h4>🔧 Technical Stack Integration</h4>
+                <h4>🔧 Technical Implementation</h4>
                 <div class="tech-stack">
-                    <span class="tech-tag">Better Rules</span>
-                    <span class="tech-tag">Drools Rules</span>
-                    <span class="tech-tag">Knowledge Graphs</span>
-                    <span class="tech-tag">Legal-BERT</span>
-                    <span class="tech-tag">OWL Ontologies</span>
-                    <span class="tech-tag">Expert Systems</span>
+                    <span class="tech-tag">txtai</span>
+                    <span class="tech-tag">Vector Embeddings</span>
+                    <span class="tech-tag">Semantic Search</span>
+                    <span class="tech-tag">RAG Systems</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Performance Testing</span>
                 </div>
 
-                <h4>🧠 Advanced Capabilities</h4>
+                <h4>📊 txtai Features Being Tested</h4>
                 <ul>
-                    <li><strong>Semantic + Symbolic Reasoning</strong> - Document understanding with Prolog logical inference and formal rule validation</li>
-                    <li><strong>Legal Knowledge Graphs</strong> - LKIF/LegalRuleML ontologies with Neo4j relationship modeling</li>
-                    <li><strong>Hierarchical Text Parsing</strong> - DocParser/GROBID integration maintaining document structure and legal hierarchy</li>
-                    <li><strong>Formal Verification</strong> - Alloy/Z3 model checking for rule consistency validation and mathematical guarantees</li>
-                    <li><strong>Explainable AI</strong> - Complete reasoning traces from document analysis to rule application with audit trails</li>
+                    <li><strong>Embeddings Database</strong> - Union of vector indexes, graph networks, and relational databases</li>
+                    <li><strong>LLM Orchestration</strong> - Support for Hugging Face, llama.cpp, OpenAI, Claude via LiteLLM</li>
+                    <li><strong>Workflows & Pipelines</strong> - Semantic workflows connecting multiple language models</li>
+                    <li><strong>Autonomous Agents</strong> - Built on smolagents framework for complex problem solving</li>
+                    <li><strong>RAG Capabilities</strong> - Retrieval augmented generation with source citations</li>
                 </ul>
 
-                <h4>⚖️ Legal AI Research Foundation</h4>
+                <h4>⚖️ Evaluation Criteria</h4>
                 <ul>
-                    <li><strong>Enterprise Rule Engines</strong> - Drools ReteOO algorithm handling 1.5M+ rules in production</li>
-                    <li><strong>Legal Ontologies</strong> - FIBO financial standards and LKIF deontic logic implementation</li>
-                    <li><strong>Document Processing</strong> - ETH Zurich DocParser achieving F1 > 0.92 for hierarchical structures</li>
-                    <li><strong>Verification Tools</strong> - Formal methods ensuring mathematical guarantees for critical decisions</li>
-                    <li><strong>Audit Compliance</strong> - Complete traceability from source documents to final conclusions</li>
+                    <li><strong>Performance</strong> - Query latency, indexing speed, memory usage</li>
+                    <li><strong>Scalability</strong> - Handling millions of vectors and concurrent queries</li>
+                    <li><strong>Feature Completeness</strong> - Built-in workflows, agent support, metadata filtering</li>
+                    <li><strong>Deployment Options</strong> - Self-hosted vs. managed service flexibility</li>
+                    <li><strong>Integration Ecosystem</strong> - LangChain, LlamaIndex, and framework compatibility</li>
                 </ul>
 
-                <h4>🎯 Implementation Focus Areas</h4>
+                <h4>🎯 Testing Applications</h4>
                 <ul>
-                    <li>Financial regulatory compliance with FIBO ontology integration</li>
-                    <li>Contract analysis combining semantic similarity with formal rule validation</li>
-                    <li>Multi-jurisdictional legal research with cross-reference reasoning</li>
-                    <li>Real-time compliance monitoring with automated policy checking</li>
-                    <li>Legal knowledge management with explainable AI decision support</li>
+                    <li>Legal document analysis and case law research</li>
+                    <li>Medical diagnosis support and clinical decision making</li>
+                    <li>Financial regulation compliance and risk assessment</li>
+                    <li>Technical documentation and knowledge base systems</li>
+                    <li>Multi-source content synthesis and research automation</li>
                 </ul>
 
-                <h4>📈 Production Readiness</h4>
-                <p>This expert system architecture addresses critical legal AI requirements identified through comprehensive research: combining Better Rules structured methodology with deterministic rule engines ensures both natural language understanding and formal logical precision for enterprise deployment.</p>
+                <h4>📈 Current Status</h4>
+                <p>txtai is leading the evaluation due to its comprehensive all-in-one approach, combining embeddings, pipelines, workflows, and agents in a single framework. Unlike specialized vector databases that require additional tooling, txtai provides RAG capabilities, LLM orchestration, and autonomous agents out of the box.</p>
                 
-                <p>The hybrid approach bridges the gap between foundational rule-writing frameworks (Better Rules Q-COE) and advanced automated interpretation systems, providing the explainability and auditability essential for legal applications while handling existing complex legal documents at scale.</p>
+                <p>Testing focuses on production-ready deployment scenarios with emphasis on maintenance overhead, feature completeness, and total cost of ownership compared to piecing together multiple specialized tools.</p>
 
-                <a href="research.html" class="project-link">
-                    <i class="fas fa-file-alt"></i> Full Research Paper
+                <a href="#" class="project-link">
+                    <i class="fas fa-chart-bar"></i> Performance Benchmarks
                 </a>
                 <a href="#" class="project-link">
-                    <i class="fas fa-code"></i> Architecture Implementation
-                </a>
-                <a href="#" class="project-link">
-                    <i class="fas fa-balance-scale"></i> Legal AI Framework
+                    <i class="fas fa-code"></i> Implementation Examples
                 </a>
             `
         },

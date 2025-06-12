@@ -95,222 +95,142 @@ function showProject(projectKey) {
             content: `
                 <span class="status-badge status-active">Active Development</span>
                 
-                <p>This project is focused on developing a domain-specific, voice-enabled mental health chatbot that combines intelligent conversational design with therapy-specific routing. Designed to support individuals experiencing stress, depression, or emotional crises, the system blends empathetic front-end personas with evidence-based therapeutic frameworks like CBT, DBT, and ACT. Its core innovation lies in adaptive routing—matching users to the most relevant support or module based on mood, language patterns, and inferred needs.</p>
+                <p>Developing an intelligent voice chatbot with automatic routing capabilities specifically designed for counseling and psychiatry expertise, focusing on mental health applications.</p>
 
                 <h4>🎯 Project Goals</h4>
                 <ul>
-                    <li><strong>Mental Health Support</strong> – Provide non-judgmental, 24/7 emotional support through guided conversation</li>
-                    <li><strong>Therapy-Aware Routing</strong> – Automatically identify and apply appropriate counselling methods (CBT, DBT, ACT, MI, etc.) based on conversation analysis</li>
-                    <li><strong>Voice Interface</strong> – Enable seamless, spoken interaction to improve accessibility and comfort for users in distress</li>
-                    <li><strong>Privacy-First</strong> – Uphold strict data protection principles, ensuring confidentiality and ethical data handling</li>
+                    <li><strong>Mental Health Support</strong> - Provide accessible mental health guidance</li>
+                    <li><strong>Expert Routing</strong> - Intelligently route conversations to appropriate specialists</li>
+                    <li><strong>Voice Interface</strong> - Natural speech interaction for better accessibility</li>
+                    <li><strong>Privacy-First</strong> - Secure, confidential conversation handling</li>
                 </ul>
 
                 <h4>🔧 Technical Architecture</h4>
                 <div class="tech-stack">
                     <span class="tech-tag">Voice Recognition</span>
                     <span class="tech-tag">Natural Language Processing</span>
-                    <span class="tech-tag">Therapy-Specific Routing</span>
-                    <span class="tech-tag">Persona Modeling</span>
-                    <span class="tech-tag">Sentiment & Risk Detection</span>
+                    <span class="tech-tag">Auto-Routing</span>
+                    <span class="tech-tag">Mental Health AI</span>
                     <span class="tech-tag">Privacy Engineering</span>
                 </div>
 
                 <h4>🧠 Intelligence Features</h4>
                 <ul>
-                    <li><strong>Sentiment & Emotion Analysis</strong> – Detect emotional state using tone, word choice, and conversational cues</li>
-                    <li><strong>Crisis Escalation</strong> – Immediately flag or redirect conversations that contain high-risk language (e.g. suicidality, harm)</li>
-                    <li><strong>Contextual Memory</strong> – Maintain session continuity to support ongoing care or mood tracking</li>
-                    <li><strong>Therapeutic Flashcards</strong> – Deploy structured mental health techniques (e.g., CBT ABCDE, DBT DEARMAN, ACT RAIN) through micro-interventions</li>
-                    <li><strong>Persona Selection Engine</strong> – Match user temperament to an empathetic chatbot style (e.g. Coach, Companion, Explorer, Sage)</li>
+                    <li><strong>Sentiment Analysis</strong> - Real-time emotional state assessment</li>
+                    <li><strong>Crisis Detection</strong> - Automatic escalation for urgent situations</li>
+                    <li><strong>Contextual Memory</strong> - Maintain conversation context across sessions</li>
+                    <li><strong>Specialist Matching</strong> - Route to counselors, psychiatrists, or crisis intervention</li>
                 </ul>
 
                 <h4>🎯 Use Cases</h4>
                 <ul>
-                    <li>Initial mental health screening and conversational triage</li>
-                    <li>Guided support during depressive or anxious episodes</li>
-                    <li>Integration into broader therapeutic systems (e.g., prep for live sessions, journaling follow-ups)</li>
-                    <li>Delivery of psychoeducation, coping techniques, and emotional literacy resources</li>
+                    <li>Initial mental health screening and triage</li>
+                    <li>24/7 crisis intervention and support</li>
+                    <li>Therapy session preparation and follow-up</li>
+                    <li>Mental health education and resource provision</li>
                 </ul>
 
-                <p>This project aims to redefine digital mental health interaction—offering structured, safe, and emotionally intelligent support that guides users toward healing, resilience, and when needed, professional care.</p>
+                <p>This project addresses the critical need for accessible mental health support by combining advanced AI with human expertise through intelligent routing systems.</p>
 
                 <a href="#" class="project-link">
                     <i class="fas fa-info-circle"></i> Documentation
                 </a>
-
             `
         },
         'txtai-training': {
-            title: 'Expert System Framework for Legal & Regulatory Analysis',
+            title: 'Domain-Specific Training with txtai',
             content: `
                 <span class="status-badge status-active">Active Development</span>
                 
-                <p>Production-ready expert system implementation combining hierarchical document processing with formal rule engines and knowledge graphs for precise legal rule following, based on comprehensive research into legal AI architectures and Better Rules methodologies.</p>
+                <p>Advanced domain-specific data training using structured rule embeddings with txtai for enhanced AI model performance in specialized knowledge domains.</p>
 
-                <h4>🎯 System Architecture</h4>
+                <h4>🎯 Project Objectives</h4>
                 <ul>
-                    <li><strong>Hybrid Knowledge Representation</strong> - Combine semantic document understanding with formal rule engines (Drools, Prolog) and ontological reasoning</li>
-                    <li><strong>Hierarchical Document Processing</strong> - Preserve legal document structure through specialized parsing (DocParser, GROBID)</li>
-                    <li><strong>Deterministic Rule Enforcement</strong> - Ensure auditability and explainability for legal applications with complete reasoning traces</li>
-                    <li><strong>Better Rules Integration</strong> - Implement Q-COE methodology (Questions, Considerations, Outcomes, Exceptions) for structured rule authoring</li>
+                    <li><strong>Domain Expertise</strong> - Train models on specialized knowledge areas</li>
+                    <li><strong>Rule-Based Embeddings</strong> - Structured approach to knowledge representation</li>
+                    <li><strong>Performance Enhancement</strong> - Improve accuracy for domain-specific queries</li>
+                    <li><strong>Scalable Architecture</strong> - Framework for multiple domain applications</li>
                 </ul>
 
-                <h4>🏛️ Legal Domain Applications</h4>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
-                    <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Document Analysis</h5>
-                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li><strong>Contract Review</strong> - Automated clause analysis with rule validation</li>
-                            <li><strong>Regulatory Compliance</strong> - Cross-reference requirements with policies</li>
-                            <li><strong>Case Law Research</strong> - Semantic search with precedent reasoning</li>
-                        </ul>
-                    </div>
-                    <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Rule Processing</h5>
-                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li><strong>Policy Automation</strong> - Convert regulations to executable rules</li>
-                            <li><strong>Compliance Checking</strong> - Real-time validation against standards</li>
-                            <li><strong>Decision Support</strong> - Explainable AI with complete audit trails</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>🔧 Technical Stack Integration</h4>
+                <h4>🔧 Technical Implementation</h4>
                 <div class="tech-stack">
-                    <span class="tech-tag">Better Rules</span>
-                    <span class="tech-tag">Drools Rules</span>
+                    <span class="tech-tag">txtai</span>
+                    <span class="tech-tag">Vector Embeddings</span>
+                    <span class="tech-tag">Domain Training</span>
                     <span class="tech-tag">Knowledge Graphs</span>
-                    <span class="tech-tag">Legal-BERT</span>
-                    <span class="tech-tag">OWL Ontologies</span>
-                    <span class="tech-tag">Expert Systems</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Machine Learning</span>
                 </div>
 
-                <h4>🧠 Advanced Capabilities</h4>
+                <h4>📊 Training Methodology</h4>
                 <ul>
-                    <li><strong>Semantic + Symbolic Reasoning</strong> - Document understanding with Prolog logical inference and formal rule validation</li>
-                    <li><strong>Legal Knowledge Graphs</strong> - LKIF/LegalRuleML ontologies with Neo4j relationship modeling</li>
-                    <li><strong>Hierarchical Text Parsing</strong> - DocParser/GROBID integration maintaining document structure and legal hierarchy</li>
-                    <li><strong>Formal Verification</strong> - Alloy/Z3 model checking for rule consistency validation and mathematical guarantees</li>
-                    <li><strong>Explainable AI</strong> - Complete reasoning traces from document analysis to rule application with audit trails</li>
+                    <li><strong>Structured Rules</strong> - Define domain-specific rules and relationships</li>
+                    <li><strong>Embedding Generation</strong> - Create high-quality vector representations</li>
+                    <li><strong>Similarity Matching</strong> - Advanced similarity algorithms for retrieval</li>
+                    <li><strong>Continuous Learning</strong> - Iterative improvement with new domain data</li>
                 </ul>
 
-                <h4>⚖️ Legal AI Research Foundation</h4>
+                <h4>🎯 Applications</h4>
                 <ul>
-                    <li><strong>Enterprise Rule Engines</strong> - Drools ReteOO algorithm handling 1.5M+ rules in production</li>
-                    <li><strong>Legal Ontologies</strong> - FIBO financial standards and LKIF deontic logic implementation</li>
-                    <li><strong>Document Processing</strong> - ETH Zurich DocParser achieving F1 > 0.92 for hierarchical structures</li>
-                    <li><strong>Verification Tools</strong> - Formal methods ensuring mathematical guarantees for critical decisions</li>
-                    <li><strong>Audit Compliance</strong> - Complete traceability from source documents to final conclusions</li>
+                    <li>Legal document analysis and case law research</li>
+                    <li>Medical diagnosis support and clinical decision making</li>
+                    <li>Financial regulation compliance and risk assessment</li>
+                    <li>Technical documentation and knowledge base systems</li>
                 </ul>
 
-                <h4>🎯 Implementation Focus Areas</h4>
-                <ul>
-                    <li>Financial regulatory compliance with FIBO ontology integration</li>
-                    <li>Contract analysis combining semantic similarity with formal rule validation</li>
-                    <li>Multi-jurisdictional legal research with cross-reference reasoning</li>
-                    <li>Real-time compliance monitoring with automated policy checking</li>
-                    <li>Legal knowledge management with explainable AI decision support</li>
-                </ul>
+                <p>This project demonstrates how modern embedding techniques can be enhanced with domain-specific rules to create more accurate and reliable AI systems for specialized applications.</p>
 
-                <h4>📈 Production Readiness</h4>
-                <p>This expert system architecture addresses critical legal AI requirements identified through comprehensive research: combining Better Rules structured methodology with deterministic rule engines ensures both natural language understanding and formal logical precision for enterprise deployment.</p>
-                
-                <p>The hybrid approach bridges the gap between foundational rule-writing frameworks (Better Rules Q-COE) and advanced automated interpretation systems, providing the explainability and auditability essential for legal applications while handling existing complex legal documents at scale.</p>
-
-                <a href="research.html" class="project-link">
-                    <i class="fas fa-file-alt"></i> Full Research Paper
-                </a>
                 <a href="#" class="project-link">
-                    <i class="fas fa-code"></i> Architecture Implementation
-                </a>
-                <a href="#" class="project-link">
-                    <i class="fas fa-balance-scale"></i> Legal AI Framework
+                    <i class="fas fa-code"></i> View Implementation
                 </a>
             `
         },
-        'knowledge-synthesis': {
-            title: 'Multi-Source Knowledge Synthesis Platform',
+        'youtube-synthesis': {
+            title: 'YouTube Knowledge Synthesis',
             content: `
                 <span class="status-badge status-active">Active Development</span>
                 
-                <p>Systematized content analysis processing YouTube transcripts, community feeds, and technical articles to generate structured knowledge databases, social media summaries, and research data for AI/Robotics and Economic studies.</p>
+                <p>Parse YouTube video transcripts to create consolidated knowledge synthesis JSON for information extraction and analysis across large video collections.</p>
 
-                <h4>🎯 Platform Overview</h4>
+                <h4>🎯 Project Overview</h4>
                 <ul>
-                    <li><strong>Multi-Source Ingestion</strong> - YouTube transcripts, technical communities, engineering blogs</li>
-                    <li><strong>Intelligent Processing</strong> - Content parsing, tagging, and hierarchical data organization</li>
-                    <li><strong>Structured Outputs</strong> - JSON5 knowledge databases, social media content, research datasets</li>
-                    <li><strong>Domain Focus</strong> - AI/Robotics and War/Economics analysis with specialized feeds</li>
+                    <li><strong>Transcript Processing</strong> - Automated extraction and parsing of YouTube transcripts</li>
+                    <li><strong>Knowledge Extraction</strong> - Identify key concepts, topics, and insights</li>
+                    <li><strong>JSON Synthesis</strong> - Structured data output for analysis and integration</li>
+                    <li><strong>Scalable Processing</strong> - Handle large collections of educational content</li>
                 </ul>
-
-                <h4>📥 Input Sources</h4>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
-                    <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">AI & Robotics Focus</h5>
-                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li>Lobste.rs (Strong)</li>
-                            <li>Reddit Communities (Very Strong)</li>
-                            <li>Robohub (Very Strong)</li>
-                            <li>Engineering Blogs (Strong)</li>
-                            <li>Techmeme (Strong)</li>
-                        </ul>
-                    </div>
-                    <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">War & Economics Focus</h5>
-                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li>Reddit Subreddits (Very Strong)</li>
-                            <li>Lemmy Communities (Moderate)</li>
-                            <li>Slashdot (Moderate)</li>
-                            <li>Specialized Forums</li>
-                            <li>Economic Analysis Sites</li>
-                        </ul>
-                    </div>
-                </div>
 
                 <h4>🔧 Technical Pipeline</h4>
                 <div class="tech-stack">
-                    <span class="tech-tag">Content Parsing</span>
-                    <span class="tech-tag">Knowledge Synthesis</span>
-                    <span class="tech-tag">JSON5 Database</span>
-                    <span class="tech-tag">Social Media API</span>
-                    <span class="tech-tag">Multi-Platform</span>
-                    <span class="tech-tag">Research Analytics</span>
+                    <span class="tech-tag">YouTube API</span>
+                    <span class="tech-tag">Transcript Analysis</span>
+                    <span class="tech-tag">Natural Language Processing</span>
+                    <span class="tech-tag">Knowledge Graphs</span>
+                    <span class="tech-tag">JSON Processing</span>
+                    <span class="tech-tag">Data Mining</span>
                 </div>
 
-                <h4>📊 Processing Capabilities</h4>
+                <h4>📊 Processing Features</h4>
                 <ul>
-                    <li><strong>YouTube Processing</strong> - Transcript extraction via Whisper/AssemblyAI, content categorization</li>
-                    <li><strong>Community Monitoring</strong> - Automated feeds from technical communities and forums</li>
-                    <li><strong>Content Tagging</strong> - AI-driven categorization by domain (AI/Robotics vs War/Economics)</li>
-                    <li><strong>Hierarchical Organization</strong> - Structured data logging with topic relationships</li>
-                    <li><strong>Knowledge Synthesis</strong> - Cross-source correlation and insight generation</li>
-                </ul>
-
-                <h4>📤 Output Channels</h4>
-                <ul>
-                    <li><strong>Social Media Distribution</strong> - X.com, Bluesky, Reddit automated posting</li>
-                    <li><strong>Content Publishing</strong> - Medium articles, website integration</li>
-                    <li><strong>Research Database</strong> - Comprehensive JSON5 knowledge base</li>
-                    <li><strong>White Paper Data</strong> - Structured datasets for academic research</li>
-                    <li><strong>Summary Generation</strong> - Daily/weekly synthesis reports</li>
+                    <li><strong>Topic Extraction</strong> - Identify main themes and subjects</li>
+                    <li><strong>Concept Mapping</strong> - Create relationships between ideas</li>
+                    <li><strong>Sentiment Analysis</strong> - Assess tone and perspective</li>
+                    <li><strong>Entity Recognition</strong> - Extract people, places, organizations</li>
+                    <li><strong>Time-based Indexing</strong> - Link concepts to specific video timestamps</li>
                 </ul>
 
                 <h4>🎯 Use Cases</h4>
                 <ul>
-                    <li>Real-time monitoring of AI/Robotics developments across multiple sources</li>
-                    <li>Economic and geopolitical trend analysis with automated content aggregation</li>
-                    <li>Social media content generation with domain-specific expertise</li>
-                    <li>Research paper preparation with comprehensive source material</li>
-                    <li>Knowledge graph construction for cross-domain insights</li>
+                    <li>Educational content curation and recommendation</li>
+                    <li>Research synthesis across multiple video sources</li>
+                    <li>Podcast and lecture analysis for academic purposes</li>
+                    <li>Content creator analytics and audience insights</li>
                 </ul>
 
-                <p>This platform transforms disparate technical communities and content sources into a unified knowledge synthesis system, enabling both immediate social media engagement and long-term research applications across AI/Robotics and Economic domains.</p>
+                <p>This system transforms hours of video content into structured, searchable knowledge bases that can be integrated into research workflows and educational platforms.</p>
 
                 <a href="#" class="project-link">
-                    <i class="fas fa-database"></i> Knowledge Database Examples
-                </a>
-                <a href="#" class="project-link">
-                    <i class="fas fa-share-alt"></i> Social Media Integration
+                    <i class="fas fa-database"></i> Data Examples
                 </a>
             `
         },
@@ -716,7 +636,7 @@ function initializeWelcomeContent() {
             <li><strong>AI & Machine Learning</strong> - Voice assistants, domain-tuned models, and systems for structured knowledge extraction</li>
             <li><strong>Financial Technology</strong> - Trading strategies, arbitrage tooling, and economic modeling frameworks</li>
             <li><strong>Simulation & Gaming</strong> - Interactive learning tools, decision-making models, and scenario testing environments</li>
-            <li><strong>Data Analysis & Knowledge Synthesis</strong> - Multi-source content analysis, systematized processing of technical communities, social media distribution, and research database generation</li>
+            <li><strong>Data Analysis</strong> - Workflow tools for structured transcript parsing, signal detection, and dataset-driven exploration</li>
             <li><strong>System Automation</strong> - Lightweight DevOps utilities, scripted infrastructure, and task orchestration pipelines</li>
         </ul>
 

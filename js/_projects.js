@@ -137,94 +137,53 @@ function showProject(projectKey) {
                 <a href="#" class="project-link">
                     <i class="fas fa-info-circle"></i> Documentation
                 </a>
-
             `
         },
         'txtai-training': {
-            title: 'Expert System Framework for Legal & Regulatory Analysis',
+            title: 'Domain-Specific Training with txtai',
             content: `
                 <span class="status-badge status-active">Active Development</span>
                 
-                <p>Production-ready expert system implementation combining hierarchical document processing with formal rule engines and knowledge graphs for precise legal rule following, based on comprehensive research into legal AI architectures and Better Rules methodologies.</p>
+                <p>Advanced domain-specific data training using structured rule embeddings with txtai for enhanced AI model performance in specialized knowledge domains.</p>
 
-                <h4>🎯 System Architecture</h4>
+                <h4>🎯 Project Objectives</h4>
                 <ul>
-                    <li><strong>Hybrid Knowledge Representation</strong> - Combine semantic document understanding with formal rule engines (Drools, Prolog) and ontological reasoning</li>
-                    <li><strong>Hierarchical Document Processing</strong> - Preserve legal document structure through specialized parsing (DocParser, GROBID)</li>
-                    <li><strong>Deterministic Rule Enforcement</strong> - Ensure auditability and explainability for legal applications with complete reasoning traces</li>
-                    <li><strong>Better Rules Integration</strong> - Implement Q-COE methodology (Questions, Considerations, Outcomes, Exceptions) for structured rule authoring</li>
+                    <li><strong>Domain Expertise</strong> - Train models on specialized knowledge areas</li>
+                    <li><strong>Rule-Based Embeddings</strong> - Structured approach to knowledge representation</li>
+                    <li><strong>Performance Enhancement</strong> - Improve accuracy for domain-specific queries</li>
+                    <li><strong>Scalable Architecture</strong> - Framework for multiple domain applications</li>
                 </ul>
 
-                <h4>🏛️ Legal Domain Applications</h4>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
-                    <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Document Analysis</h5>
-                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li><strong>Contract Review</strong> - Automated clause analysis with rule validation</li>
-                            <li><strong>Regulatory Compliance</strong> - Cross-reference requirements with policies</li>
-                            <li><strong>Case Law Research</strong> - Semantic search with precedent reasoning</li>
-                        </ul>
-                    </div>
-                    <div style="background: #2a2a2a; padding: 1rem; border-radius: 8px;">
-                        <h5 style="color: #cc785c; margin-bottom: 0.5rem;">Rule Processing</h5>
-                        <ul style="font-size: 0.9rem; margin: 0; padding-left: 1rem;">
-                            <li><strong>Policy Automation</strong> - Convert regulations to executable rules</li>
-                            <li><strong>Compliance Checking</strong> - Real-time validation against standards</li>
-                            <li><strong>Decision Support</strong> - Explainable AI with complete audit trails</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h4>🔧 Technical Stack Integration</h4>
+                <h4>🔧 Technical Implementation</h4>
                 <div class="tech-stack">
-                    <span class="tech-tag">Better Rules</span>
-                    <span class="tech-tag">Drools Rules</span>
+                    <span class="tech-tag">txtai</span>
+                    <span class="tech-tag">Vector Embeddings</span>
+                    <span class="tech-tag">Domain Training</span>
                     <span class="tech-tag">Knowledge Graphs</span>
-                    <span class="tech-tag">Legal-BERT</span>
-                    <span class="tech-tag">OWL Ontologies</span>
-                    <span class="tech-tag">Expert Systems</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Machine Learning</span>
                 </div>
 
-                <h4>🧠 Advanced Capabilities</h4>
+                <h4>📊 Training Methodology</h4>
                 <ul>
-                    <li><strong>Semantic + Symbolic Reasoning</strong> - Document understanding with Prolog logical inference and formal rule validation</li>
-                    <li><strong>Legal Knowledge Graphs</strong> - LKIF/LegalRuleML ontologies with Neo4j relationship modeling</li>
-                    <li><strong>Hierarchical Text Parsing</strong> - DocParser/GROBID integration maintaining document structure and legal hierarchy</li>
-                    <li><strong>Formal Verification</strong> - Alloy/Z3 model checking for rule consistency validation and mathematical guarantees</li>
-                    <li><strong>Explainable AI</strong> - Complete reasoning traces from document analysis to rule application with audit trails</li>
+                    <li><strong>Structured Rules</strong> - Define domain-specific rules and relationships</li>
+                    <li><strong>Embedding Generation</strong> - Create high-quality vector representations</li>
+                    <li><strong>Similarity Matching</strong> - Advanced similarity algorithms for retrieval</li>
+                    <li><strong>Continuous Learning</strong> - Iterative improvement with new domain data</li>
                 </ul>
 
-                <h4>⚖️ Legal AI Research Foundation</h4>
+                <h4>🎯 Applications</h4>
                 <ul>
-                    <li><strong>Enterprise Rule Engines</strong> - Drools ReteOO algorithm handling 1.5M+ rules in production</li>
-                    <li><strong>Legal Ontologies</strong> - FIBO financial standards and LKIF deontic logic implementation</li>
-                    <li><strong>Document Processing</strong> - ETH Zurich DocParser achieving F1 > 0.92 for hierarchical structures</li>
-                    <li><strong>Verification Tools</strong> - Formal methods ensuring mathematical guarantees for critical decisions</li>
-                    <li><strong>Audit Compliance</strong> - Complete traceability from source documents to final conclusions</li>
+                    <li>Legal document analysis and case law research</li>
+                    <li>Medical diagnosis support and clinical decision making</li>
+                    <li>Financial regulation compliance and risk assessment</li>
+                    <li>Technical documentation and knowledge base systems</li>
                 </ul>
 
-                <h4>🎯 Implementation Focus Areas</h4>
-                <ul>
-                    <li>Financial regulatory compliance with FIBO ontology integration</li>
-                    <li>Contract analysis combining semantic similarity with formal rule validation</li>
-                    <li>Multi-jurisdictional legal research with cross-reference reasoning</li>
-                    <li>Real-time compliance monitoring with automated policy checking</li>
-                    <li>Legal knowledge management with explainable AI decision support</li>
-                </ul>
+                <p>This project demonstrates how modern embedding techniques can be enhanced with domain-specific rules to create more accurate and reliable AI systems for specialized applications.</p>
 
-                <h4>📈 Production Readiness</h4>
-                <p>This expert system architecture addresses critical legal AI requirements identified through comprehensive research: combining Better Rules structured methodology with deterministic rule engines ensures both natural language understanding and formal logical precision for enterprise deployment.</p>
-                
-                <p>The hybrid approach bridges the gap between foundational rule-writing frameworks (Better Rules Q-COE) and advanced automated interpretation systems, providing the explainability and auditability essential for legal applications while handling existing complex legal documents at scale.</p>
-
-                <a href="research.html" class="project-link">
-                    <i class="fas fa-file-alt"></i> Full Research Paper
-                </a>
                 <a href="#" class="project-link">
-                    <i class="fas fa-code"></i> Architecture Implementation
-                </a>
-                <a href="#" class="project-link">
-                    <i class="fas fa-balance-scale"></i> Legal AI Framework
+                    <i class="fas fa-code"></i> View Implementation
                 </a>
             `
         },

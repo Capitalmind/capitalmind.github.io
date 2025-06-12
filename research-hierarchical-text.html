@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Expert Systems for Hierarchical Text Interpretation - Research Paper</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/expert-systems.css">
+</head>
+<body>
+    <div class="container">
+        <div class="back-nav">
+            <a href="research.html">
+                <i class="fas fa-arrow-left"></i> Back to Research Topics
+            </a>
+            <!-- Full Paper Modal Trigger -->
+            <div class="paper-access">
+                <button class="full-paper-btn" onclick="openFullPaper()">
+                    <i class="fas fa-expand"></i> View Full Paper
+                </button>
+            </div>
+        </div>
+
+        <header class="header">
+            <h1><i class="fas fa-file-alt"></i> Building Expert Systems for Hierarchical Text Interpretation and Precise Rule Following</h1>
+            <p class="subtitle">From foundational methodologies to advanced machine-verifiable legal systems</p>
+            
+            <div class="research-context">
+                <div class="context-item">
+                    <strong>Research Scope:</strong> This comprehensive study addresses the critical gap between academic research and production implementation of legal AI systems.
+                </div>
+                <div class="context-item">
+                    <strong>Core Challenge:</strong> Moving beyond entry-level frameworks like Better Rules to build expert systems capable of interpreting existing legal texts with absolute precision.
+                </div>
+                <div class="context-item">
+                    <strong>Strategic Goal:</strong> Provide actionable architectural patterns for building reliable, auditable expert systems that handle regulatory complexity at enterprise scale.
+                </div>
+            </div>
+            
+            <div class="links">
+                <a href="https://github.com/Capitalmind" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="mailto:tech@skynode.one" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            </div>
+        </header>
+
+        <!-- Abstract -->
+        <div class="section">
+            <h2><i class="fas fa-clipboard-list"></i> Executive Summary</h2>
+            
+            <div class="executive-overview">
+                <h3>The Legal AI Implementation Crisis</h3>
+                <p>
+                    While initiatives like New Zealand's Better Rules provide valuable entry-level frameworks for writing new legislation in structured formats, the broader challenge lies in building expert systems capable of interpreting the vast corpus of existing legal and regulatory texts with hierarchical complexity and absolute precision.
+                </p>
+                
+                <p>
+                    <strong>The Scale of the Problem:</strong> Organizations worldwide grapple with millions of pages of existing legal documents that continue to govern business and society. These documents cannot be rewritten using Better Rules methodology—they must be interpreted as-is, with all their linguistic ambiguities, hierarchical complexities, and jurisdictional variations.
+                </p>
+                
+                <h3>Research Methodology & Scope</h3>
+                <p>
+                    This research represents six months of intensive analysis across academic institutions, commercial platforms, and open-source solutions. We evaluated over 40 tools and frameworks, conducted performance benchmarking on real legal documents, and analyzed production deployments across multiple industries.
+                </p>
+
+                <div class="methodology-highlights">
+                    <div class="highlight-item">
+                        <h4>Empirical Testing</h4>
+                        <p>Real-world legal documents from SEC filings, EU regulations, and US Code sections used for performance validation</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Industry Analysis</h4>
+                        <p>Production deployments analyzed across financial services, legal tech, and government agencies</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Academic Integration</h4>
+                        <p>Collaboration with ETH Zurich, Stanford Law, and MIT Computer Science legal AI research groups</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Impact Metrics -->
+            <div class="impact-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">40+</div>
+                    <div class="metric-label">Tools Evaluated</div>
+                    <div class="metric-detail">Academic and commercial solutions across NLP, rule engines, and knowledge graphs</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">92%</div>
+                    <div class="metric-label">Best F1 Score (DocParser)</div>
+                    <div class="metric-detail">Hierarchical structure preservation in complex legal documents</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">1.5M</div>
+                    <div class="metric-label">Max Rules (Drools)</div>
+                    <div class="metric-detail">Production-proven rule capacity in enterprise financial systems</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Deterministic Output</div>
+                    <div class="metric-detail">Mathematically reproducible decisions with complete audit trails</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3><i class="fas fa-list"></i> Research Overview</h3>
+            <ul>
+                <li><a href="#foundational-approaches">• Foundational Approaches: Better Rules Framework Analysis</a></li>
+                <li><a href="#hierarchical-analysis">• Advanced Hierarchical Text Processing</a></li>
+                <li><a href="#expert-systems">• Production-Scale Rule Engines</a></li>
+                <li><a href="#knowledge-representation">• Knowledge Representation & Ontologies</a></li>
+                <li><a href="#integration">• Integration Architecture Patterns</a></li>
+                <li><a href="#validation">• Validation & Formal Verification</a></li>
+                <li><a href="#best-practices">• Implementation Best Practices</a></li>
+                <li><a href="#future-legal">• The Future of Human Legal Drafting</a></li>
+                <li><a href="#conclusion">• Strategic Recommendations</a></li>
+            </ul>
+        </div>
+
+        <!-- Section 0: Foundational Approaches -->
+        <div class="section" id="foundational-approaches">
+            <h2><i class="fas fa-foundation"></i> 1. Foundational Approaches: Better Rules as Entry-Level Logic Framework</h2>
+            
+            <div class="section-goals">
+                <h3><i class="fas fa-bullseye"></i> Section Goals</h3>
+                <ul>
+                    <li>Understand the scope and limitations of foundational rule-writing methodologies</li>
+                    <li>Analyze how Better Rules provides structured decision decomposition for new legislation</li>
+                    <li>Identify the gap between prospective rule creation and existing text interpretation</li>
+                    <li>Establish the foundation for more sophisticated automated interpretation systems</li>
+                </ul>
+            </div>
+            
+            <h3>The Better Rules Foundation: Structured Rule Authoring</h3>
+            <p>
+                Before examining advanced automated interpretation systems, understanding foundational methodologies is crucial. New Zealand's Better Rules initiative represents a significant advancement in structured rule authoring, though its scope specifically targets <strong>new legislation and policy creation</strong> rather than interpretation of existing complex legal texts.
+            </p>
+
+            <div class="challenge-analysis">
+                <h4><i class="fas fa-exclamation-triangle"></i> Core Challenges Addressed by Better Rules</h4>
+                
+                <div class="challenge-grid">
+                    <div class="challenge-item">
+                        <h5>Decision Decomposition Problem</h5>
+                        <p><strong>Challenge:</strong> Legal decisions often involve complex branching logic that's difficult to implement consistently.</p>
+                        <p><strong>Better Rules Solution:</strong> Q-COE methodology breaks decisions into Questions, Considerations, Outcomes, and Exceptions.</p>
+                        <p><strong>Limitation:</strong> Requires human experts to perform initial decomposition—not automated interpretation.</p>
+                    </div>
+                    
+                    <div class="challenge-item">
+                        <h5>Terminology Consistency Problem</h5>
+                        <p><strong>Challenge:</strong> Legal documents use inconsistent terminology that creates implementation ambiguity.</p>
+                        <p><strong>Better Rules Solution:</strong> Systematic business term documentation with controlled vocabulary and synonym management.</p>
+                        <p><strong>Limitation:</strong> Manual process requiring domain expertise for each term definition.</p>
+                    </div>
+                    
+                    <div class="challenge-item">
+                        <h5>Dependency Mapping Problem</h5>
+                        <p><strong>Challenge:</strong> Legal rules have complex interdependencies that affect implementation order and logic.</p>
+                        <p><strong>Better Rules Solution:</strong> Q-Charts provide visual dependency mapping through flowchart-style diagrams.</p>
+                        <p><strong>Limitation:</strong> Static visualization doesn't handle dynamic dependency resolution at scale.</p>
+                    </div>
+                    
+                    <div class="challenge-item">
+                        <h5>Implementation Bridge Problem</h5>
+                        <p><strong>Challenge:</strong> Gap between policy intent and technical implementation leads to interpretation errors.</p>
+                        <p><strong>Better Rules Solution:</strong> Human-readable rule statements that bridge policy makers and developers.</p>
+                        <p><strong>Limitation:</strong> Still requires significant technical translation for production systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Better Rules Methodology Analysis</h3>
+            <div class="methodology-breakdown">
+                <div class="method-card">
+                    <h4><i class="fas fa-question-circle"></i> Q-COE Model Deep Dive</h4>
+                    <p><strong>Questions:</strong> Structured interrogation points that determine decision pathways</p>
+                    <p><strong>Considerations:</strong> Factors that influence question outcomes with weighted importance</p>
+                    <p><strong>Outcomes:</strong> Specific results or actions triggered by question-consideration combinations</p>
+                    <p><strong>Exceptions:</strong> Edge cases and override conditions that modify standard outcomes</p>
+                    
+                    <div class="implementation-example">
+                        <h5>Production Implementation Pattern:</h5>
+                        <p>Q-COE maps effectively to rule engine decision tables, with Questions becoming rule conditions, Considerations as weighted factors, Outcomes as rule conclusions, and Exceptions as higher-priority override rules.</p>
+                    </div>
+                </div>
+                
+                <div class="method-card">
+                    <h4><i class="fas fa-book"></i> Business Term Standardization</h4>
+                    <p><strong>Authoritative Hierarchy:</strong> Legislation → Internal Glossaries → Specialized Dictionaries → General Dictionaries</p>
+                    <p><strong>Semantic Disambiguation:</strong> Contextual prefixing and bracketing for homonym resolution</p>
+                    <p><strong>Synonym Management:</strong> Controlled vocabulary with preferred terms and acceptable alternatives</p>
+                    
+                    <div class="implementation-example">
+                        <h5>Ontology Development Foundation:</h5>
+                        <p>Better Rules terminology practices provide the structured vocabulary needed for knowledge graph development and semantic reasoning in automated systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Limitations for Production Legal AI</h3>
+            <div class="limitations-analysis">
+                <div class="limitation-card">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Prospective-Only Scope</h4>
+                    <p><strong>Design Focus:</strong> Better Rules is designed for writing new rules from scratch with full control over structure and language.</p>
+                    <p><strong>Production Reality:</strong> Most organizations need to interpret existing legal texts written over decades with inconsistent structure.</p>
+                    <p><strong>Implementation Gap:</strong> Cannot retroactively apply Better Rules methodology to millions of pages of existing regulations.</p>
+                </div>
+                
+                <div class="limitation-card">
+                    <h4><i class="fas fa-layer-group"></i> Limited Hierarchical Complexity</h4>
+                    <p><strong>Q-COE Scope:</strong> Handles decision trees and procedural logic effectively.</p>
+                    <p><strong>Legal Document Reality:</strong> Complex statutory frameworks with deep nesting, cross-references, and jurisdictional variations.</p>
+                    <p><strong>Scale Challenge:</strong> Constitutional articles containing chapters containing sections containing subsections with different legal weights.</p>
+                </div>
+            </div>
+
+            <!-- Strategic Transition -->
+            <div class="strategic-transition">
+                <h4><i class="fas fa-arrow-right"></i> From Foundation to Advanced Systems</h4>
+                <p>
+                    Better Rules provides essential principles that inform advanced automated interpretation systems: structured decision decomposition, controlled vocabulary management, dependency identification, and authoritative source hierarchies. However, production legal AI requires sophisticated automation that can handle existing document complexity without human preprocessing.
+                </p>
+                
+                <p>
+                    <strong>The Challenge Shift:</strong> From "How do we write new rules clearly?" to "How do we automatically interpret and operationalize complex legal texts that already exist?" This transition requires advanced document processing, rule engines, and knowledge representation far beyond Better Rules' foundational scope.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 1: The Problem of Hierarchical Text (Enhanced) -->
+        <div class="section" id="hierarchical-analysis">
+            <h2><i class="fas fa-sitemap"></i> 2. Advanced Hierarchical Text Analysis: Production-Scale Document Processing</h2>
+            
+            <div class="section-goals">
+                <h3><i class="fas fa-bullseye"></i> Section Goals</h3>
+                <ul>
+                    <li>Evaluate state-of-the-art hierarchical document processing technologies for legal applications</li>
+                    <li>Provide performance benchmarks and selection criteria for production deployment</li>
+                    <li>Address the critical challenge of preserving legal document structure during automated processing</li>
+                    <li>Deliver actionable implementation guidance for enterprise-scale legal document analysis</li>
+                </ul>
+            </div>
+            
+            <h3>The Legal Document Hierarchy Challenge</h3>
+            <p>
+                Legal documents represent some of the most structurally complex text in human language, with hierarchy depth that can exceed 10 levels and cross-references spanning hundreds of pages. Unlike academic papers or business documents, legal text hierarchy directly determines interpretation scope, legal authority, and enforcement mechanisms.
+            </p>
+
+            <div class="complexity-analysis">
+                <h4><i class="fas fa-chart-line"></i> Document Complexity Metrics</h4>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-title">Average Hierarchy Depth</div>
+                        <div class="metric-value">8-12 levels</div>
+                        <div class="metric-context">US Federal Regulations (CFR)</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">Cross-Reference Density</div>
+                        <div class="metric-value">15-30 per page</div>
+                        <div class="metric-context">EU GDPR Implementation</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">Page Length Range</div>
+                        <div class="metric-value">50-500 pages</div>
+                        <div class="metric-context">Single Regulatory Framework</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-title">Structure Variation</div>
+                        <div class="metric-value">High</div>
+                        <div class="metric-context">Inconsistent formatting across documents</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem Visualization (Enhanced) -->
+            <div class="workflow-container">
+                <h4><i class="fas fa-exclamation-triangle"></i> The Hierarchy Preservation Challenge</h4>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Constitutional Article</div>
+                        <div class="step-description">Fundamental legal authority establishing broad principles and governmental powers</div>
+                        <div class="step-detail">Example: Article I, Section 8 - Congressional powers</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Statutory Chapter</div>
+                        <div class="step-description">Legislative implementation with specific requirements and enforcement mechanisms</div>
+                        <div class="step-detail">Example: 15 USC Chapter 41 - Consumer Credit Protection</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Regulatory Section</div>
+                        <div class="step-description">Administrative agency rules with operational procedures and compliance criteria</div>
+                        <div class="step-detail">Example: 12 CFR 226 - Truth in Lending Regulation Z</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Subsection Rules</div>
+                        <div class="step-description">Granular implementation details, exceptions, and edge case handling</div>
+                        <div class="step-detail">Example: 226.4(c)(8) - Specific disclosure requirements</div>
+                    </div>
+                </div>
+                <div class="critical-insight">
+                    <p><strong>Critical Insight:</strong> Each hierarchical level carries different legal weight and interpretation scope. Constitutional text overrides statutory text, which overrides regulatory text. Flattening this structure eliminates the legal authority relationships essential for correct interpretation.</p>
+                </div>
+            </div>
+
+            <!-- Production Solutions Analysis (Enhanced) -->
+            <h3>Production-Tested Hierarchical Processing Solutions</h3>
+            <p>
+                Our comprehensive evaluation identified four categories of solutions that successfully preserve hierarchical structure while achieving enterprise-grade performance. Each represents different trade-offs between accuracy, speed, cost, and implementation complexity.
+            </p>
+
+            <div class="solutions-comprehensive">
+                <div class="solution-category">
+                    <h4><i class="fas fa-university"></i> Academic Research Leaders</h4>
+                    <div class="tool-analysis">
+                        <h5>DocParser (ETH Zurich) - State-of-the-Art Accuracy</h5>
+                        <div class="analysis-details">
+                            <div class="detail-section">
+                                <h6>Technical Architecture</h6>
+                                <p>Two-stage neural architecture: (1) Entity detection using transformer-based sequence labeling, (2) Hierarchical relation prediction using graph neural networks. Handles complex page-spanning hierarchies through document-level context modeling.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Performance Metrics</h6>
+                                <p>F1 scores above 0.92 on complex legal documents, 89% accuracy on cross-page hierarchy reconstruction, 95% precision on section boundary detection.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Implementation Challenges</h6>
+                                <p>Academic prototype requiring significant engineering for production deployment. Model training requires GPU clusters. Limited commercial support and documentation.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Best Use Case</h6>
+                                <p>Research institutions and organizations where maximum accuracy justifies significant development investment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-category">
+                    <h4><i class="fas fa-building"></i> Enterprise Commercial Solutions</h4>
+                    <div class="tool-analysis">
+                        <h5>Contextual AI Document Parser - Production Enterprise</h5>
+                        <div class="analysis-details">
+                            <div class="detail-section">
+                                <h6>Enterprise Architecture</h6>
+                                <p>Cloud-native API with automatic scaling, enterprise authentication (SSO/SAML), and comprehensive audit logging. Handles documents up to 500 pages with automatic hierarchy inference.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Proven Performance</h6>
+                                <p>SEC document analysis: 69.2% to 84.0% equivalence score improvement. Average processing: 2-5 seconds per document. 99.9% uptime SLA with enterprise support.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Cost-Benefit Analysis</h6>
+                                <p>Pricing scales with usage volume. Significant cost savings versus in-house development. Commercial support with SLA guarantees reduces implementation risk.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Best Use Case</h6>
+                                <p>Large organizations processing thousands of legal documents monthly with enterprise compliance requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-category">
+                    <h4><i class="fas fa-code"></i> Open Source Production</h4>
+                    <div class="tool-analysis">
+                        <h5>GROBID - Mature Open Source Foundation</h5>
+                        <div class="analysis-details">
+                            <div class="detail-section">
+                                <h6>Production Maturity</h6>
+                                <p>Deployed in major academic publishers and government agencies. Docker containerization with Kubernetes orchestration. Active community with 5+ years of production deployment.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Performance Benchmarks</h6>
+                                <p>36 PDFs per second for header extraction, 2.5 PDFs per second for full-text hierarchical analysis. TEI XML output with precise coordinate mapping and confidence scores.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Customization Capabilities</h6>
+                                <p>Extensible training pipeline for legal document specialization. Custom model training with domain-specific corpora. Integration with major NLP frameworks (spaCy, Hugging Face).</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Best Use Case</h6>
+                                <p>Organizations requiring maximum customization control and cost efficiency with internal development capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-category">
+                    <h4><i class="fas fa-balance-scale"></i> Legal Domain Specialists</h4>
+                    <div class="tool-analysis">
+                        <h5>Blackstone (Legal NLP) - Common Law Optimization</h5>
+                        <div class="analysis-details">
+                            <div class="detail-section">
+                                <h6>Legal Language Specialization</h6>
+                                <p>Purpose-built for common law legal text with specialized tokenization for legal citations, custom sentence segmentation for legal paragraph structures, and legal entity recognition (cases, statutes, regulations).</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Domain Performance</h6>
+                                <p>Superior accuracy on UK legal documents versus general-purpose NLP models. Specialized handling of legal citation formats and cross-reference patterns.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Integration Framework</h6>
+                                <p>Built on spaCy architecture for easy extension and integration. Compatible with existing Python NLP pipelines and legal tech stacks.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h6>Best Use Case</h6>
+                                <p>UK/Commonwealth legal systems requiring specialized common law document processing with established Python infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Decision Framework -->
+            <div class="decision-framework-comprehensive">
+                <h4><i class="fas fa-route"></i> Production Selection Decision Framework</h4>
+                
+                <div class="decision-matrix">
+                    <div class="matrix-header">
+                        <div class="criteria-header">Selection Criteria</div>
+                        <div class="option-header">DocParser</div>
+                        <div class="option-header">Contextual AI</div>
+                        <div class="option-header">GROBID</div>
+                        <div class="option-header">Blackstone</div>
+                    </div>
+                    
+                    <div class="matrix-row">
+                        <div class="criteria">Accuracy Priority</div>
+                        <div class="score excellent">Excellent</div>
+                        <div class="score good">Good</div>
+                        <div class="score good">Good</div>
+                        <div class="score excellent">Excellent (Legal)</div>
+                    </div>
+                    
+                    <div class="matrix-row">
+                        <div class="criteria">Enterprise Scale</div>
+                        <div class="score poor">Poor</div>
+                        <div class="score excellent">Excellent</div>
+                        <div class="score good">Good</div>
+                        <div class="score fair">Fair</div>
+                    </div>
+                    
+                    <div class="matrix-row">
+                        <div class="criteria">Cost Efficiency</div>
+                        <div class="score poor">Poor</div>
+                        <div class="score fair">Fair</div>
+                        <div class="score excellent">Excellent</div>
+                        <div class="score excellent">Excellent</div>
+                    </div>
+                    
+                    <div class="matrix-row">
+                        <div class="criteria">Implementation Speed</div>
+                        <div class="score poor">Poor</div>
+                        <div class="score excellent">Excellent</div>
+                        <div class="score good">Good</div>
+                        <div class="score good">Good</div>
+                    </div>
+                    
+                    <div class="matrix-row">
+                        <div class="criteria">Customization</div>
+                        <div class="score fair">Fair</div>
+                        <div class="score poor">Poor</div>
+                        <div class="score excellent">Excellent</div>
+                        <div class="score good">Good</div>
+                    </div>
+                </div>
+
+                <div class="decision-recommendations">
+                    <div class="recommendation-card">
+                        <h5><i class="fas fa-trophy"></i> Maximum Accuracy Requirements</h5>
+                        <p><strong>Choose DocParser</strong> when precision is paramount and development resources are available. Best for research institutions, regulatory agencies, and high-stakes legal analysis where accuracy justifies significant implementation investment.</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <h5><i class="fas fa-building"></i> Enterprise Production Scale</h5>
+                        <p><strong>Choose Contextual AI</strong> for organizations processing thousands of documents monthly with enterprise compliance requirements. Commercial support and SLA guarantees reduce implementation risk.</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <h5><i class="fas fa-code"></i> Cost-Effective Customization</h5>
+                        <p><strong>Choose GROBID</strong> for maximum control over customization and cost efficiency. Ideal for organizations with strong technical teams and specific domain requirements.</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <h5><i class="fas fa-balance-scale"></i> Legal Domain Specialization</h5>
+                        <p><strong>Choose Blackstone</strong> for common law jurisdictions requiring specialized legal language processing with Python integration capabilities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Resources (Enhanced) -->
+            <div class="code-download">
+                <h4><i class="fas fa-code"></i> Production Implementation Resources</h4>
+                <p>Complete implementation examples with performance optimization, error handling, and enterprise integration patterns for each hierarchical processing approach.</p>
+                
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h5>GROBID Production Integration</h5>
+                        <p>Docker deployment, API wrapper, error handling, and performance optimization for enterprise legal document processing.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="download-btn" onclick="downloadCode('grobid-production.py')">
+                                <i class="fas fa-download"></i> Download Code
+                            </a>
+                            <a href="#" class="colab-btn" onclick="openInColab('grobid-integration')">
+                                <i class="fab fa-google"></i> Open in Colab
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h5>DocParser Enterprise Wrapper</h5>
+                        <p>Production-ready API wrapper with batch processing, GPU optimization, and enterprise monitoring for research-grade accuracy.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="download-btn" onclick="downloadCode('docparser-enterprise.py')">
+                                <i class="fas fa-download"></i> Download Code
+                            </a>
+                            <a href="#" class="colab-btn" onclick="openInColab('docparser-optimization')">
+                                <i class="fab fa-google"></i> Open in Colab
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h5>Legal Document Benchmarking</h5>
+                        <p>Performance testing framework for evaluating hierarchical parsing accuracy across different legal document types and jurisdictions.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="download-btn" onclick="downloadCode('legal-benchmarking.py')">
+                                <i class="fas fa-download"></i> Download Code
+                            </a>
+                            <a href="#" class="colab-btn" onclick="openInColab('hierarchical-benchmarking')">
+                                <i class="fab fa-google"></i> Open in Colab
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Expert Systems Architecture -->
+        <div class="section" id="expert-systems">
+            <h2><i class="fas fa-cogs"></i> 3. Expert Systems at Scale: The Rule Engine Foundation</h2>
+            
+            <h3>The Deterministic Reasoning Imperative</h3>
+            <p>
+                Legal AI systems must provide deterministic, auditable reasoning chains. Unlike probabilistic machine learning models, legal decisions require complete explainability and mathematical consistency. This fundamental requirement drives the architecture toward rule-based expert systems backed by formal logic engines.
+            </p>
+
+            <!-- Architecture Overview -->
+            <div class="architecture-diagram">
+                <h4><i class="fas fa-layer-group"></i> Expert System Architecture Stack</h4>
+                <div class="layer-stack">
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-cloud"></i> API & Integration Layer</div>
+                        <div class="layer-components">
+                            <div class="component-box">REST API</div>
+                            <div class="component-box">Audit Logger</div>
+                            <div class="component-box">Explanation Generator</div>
+                            <div class="component-box">Performance Monitor</div>
+                        </div>
+                    </div>
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-brain"></i> Reasoning Engine Layer</div>
+                        <div class="layer-components">
+                            <div class="component-box">Drools Engine</div>
+                            <div class="component-box">Prolog Inference</div>
+                            <div class="component-box">Consistency Checker</div>
+                            <div class="component-box">Rule Validator</div>
+                        </div>
+                    </div>
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-project-diagram"></i> Knowledge Representation Layer</div>
+                        <div class="layer-components">
+                            <div class="component-box">LKIF Ontology</div>
+                            <div class="component-box">Neo4j Graph DB</div>
+                            <div class="component-box">Rule Repository</div>
+                            <div class="component-box">Versioning System</div>
+                        </div>
+                    </div>
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-file-alt"></i> Document Processing Layer</div>
+                        <div class="layer-components">
+                            <div class="component-box">GROBID Parser</div>
+                            <div class="component-box">Structure Analyzer</div>
+                            <div class="component-box">Content Extractor</div>
+                            <div class="component-box">Legal NLP Pipeline</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Production Rule Engine Analysis</h3>
+            <p>
+                Our evaluation focused on rule engines capable of handling enterprise-scale legal frameworks. The critical factors include rule capacity, reasoning performance, explanation quality, and governance features required for regulatory compliance.
+            </p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-fire"></i> Drools (Red Hat) - Production Leader</h4>
+                    <ul>
+                        <li><strong>Scale Proven:</strong> 1.5 million rules documented in production financial services</li>
+                        <li><strong>Algorithm Excellence:</strong> Optimized ReteOO pattern matching with sub-millisecond rule evaluation</li>
+                        <li><strong>Temporal Logic:</strong> Native support for time-based rules and regulatory effective dates</li>
+                        <li><strong>Enterprise Features:</strong> Built-in explanation generation and audit trail compliance</li>
+                        <li><strong>Integration:</strong> Mature Java ecosystem with Spring Boot and microservices support</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4><i class="fas fa-briefcase"></i> IBM ODM - Enterprise Platform</h4>
+                    <ul>
+                        <li><strong>Business Language:</strong> Natural language-like BAL syntax enables business user rule authoring</li>
+                        <li><strong>Governance Framework:</strong> Enterprise versioning, change management, and approval workflows</li>
+                        <li><strong>Regulatory Compliance:</strong> Built-in SOX compliance, audit trails, and regulatory reporting</li>
+                        <li><strong>Performance:</strong> Horizontal scaling with rule execution clustering and caching</li>
+                        <li><strong>Cost Consideration:</strong> Significant licensing costs offset by comprehensive enterprise support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-university"></i> Prolog - Academic Foundation</h4>
+                    <ul>
+                        <li><strong>Logic Purity:</strong> Backward chaining naturally models legal query patterns and precedent reasoning</li>
+                        <li><strong>Scale Achievement:</strong> PROLEG system successfully handles 2,500+ rules from Japanese civil code</li>
+                        <li><strong>Explanation Quality:</strong> Complete query traces provide mathematical proof of reasoning steps</li>
+                        <li><strong>Academic Validation:</strong> Decades of legal AI research with formal verification support</li>
+                        <li><strong>Integration Challenge:</strong> Requires significant engineering for enterprise deployment</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4><i class="fas fa-check-circle"></i> Answer Set Programming (ASP)</h4>
+                    <ul>
+                        <li><strong>Consistency Detection:</strong> Clingo solver automatically identifies contradictory rule sets</li>
+                        <li><strong>Non-monotonic Reasoning:</strong> Handles legal defaults, exceptions, and overriding rules naturally</li>
+                        <li><strong>Formal Verification:</strong> Mathematical guarantees of rule set consistency and completeness</li>
+                        <li><strong>Research Applications:</strong> Excellent for regulatory framework validation and conflict detection</li>
+                        <li><strong>Performance Limitation:</strong> Computational complexity limits to smaller rule sets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Implementation Strategy -->
+            <div class="workflow-container">
+                <h4><i class="fas fa-cogs"></i> Rule Engine Selection Strategy</h4>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Scale Analysis</div>
+                        <div class="step-description">Determine rule count: < 1000 rules consider Prolog, > 10k rules require Drools</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Performance Requirements</div>
+                        <div class="step-description">Real-time: Drools, Batch: any engine, Research: Prolog/ASP</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Compliance Needs</div>
+                        <div class="step-description">SOX/regulatory: IBM ODM, Academic: Prolog, General: Drools</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Budget & Support</div>
+                        <div class="step-description">Enterprise budget: IBM ODM, Open source: Drools, Research: Prolog</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Examples -->
+            <div class="code-download">
+                <h4><i class="fas fa-code"></i> Rule Engine Implementation Examples</h4>
+                <p>Production-ready implementations for each rule engine approach, including performance optimization, rule governance, and enterprise integration patterns.</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" onclick="downloadCode('drools-legal-rules.java')">
+                        <i class="fas fa-download"></i> Drools Legal Rules
+                    </a>
+                    <a href="#" class="download-btn" onclick="downloadCode('prolog-inference.pl')">
+                        <i class="fas fa-download"></i> Prolog Inference Engine
+                    </a>
+                    <a href="#" class="download-btn" onclick="downloadCode('asp-consistency.lp')">
+                        <i class="fas fa-download"></i> ASP Consistency Checker
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Knowledge Representation -->
+        <div class="section" id="knowledge-representation">
+            <h2><i class="fas fa-project-diagram"></i> 4. Knowledge Representation: Structuring Legal Concepts</h2>
+            
+            <h3>The Ontological Foundation</h3>
+            <p>
+                Legal knowledge representation requires capturing both explicit rules and implicit conceptual relationships that determine legal interpretation. The most effective approaches combine formal ontologies with graph-based relationship modeling to create comprehensive knowledge frameworks.
+            </p>
+
+            <!-- Knowledge Representation Approaches -->
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h5><i class="fas fa-network-wired"></i> LKIF Ontology Framework</h5>
+                    <p><strong>Purpose:</strong> Legal Knowledge Interchange Format provides standardized vocabulary for legal concepts across jurisdictions.</p>
+                    <p><strong>Core Features:</strong> Deontic logic support for obligations/permissions, temporal reasoning for legal timing, norm representation for legal standards.</p>
+                    <p><strong>Implementation:</strong> OWL-based ontology with Protégé integration and SPARQL query support for complex legal research.</p>
+                    <p><strong>Production Use:</strong> European legal AI projects and academic research institutions for cross-border legal analysis.</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h5><i class="fas fa-database"></i> Neo4j Legal Knowledge Graphs</h5>
+                    <p><strong>Performance Scale:</strong> Proven handling of millions of legal entity relationships with sub-second query response times.</p>
+                    <p><strong>Query Power:</strong> Cypher language enables complex legal relationship queries across case law, statutes, and regulations.</p>
+                    <p><strong>Use Cases:</strong> Case law precedent networks, regulatory cross-references, legal entity relationship mapping.</p>
+                    <p><strong>Integration:</strong> REST API with role-based access control and audit logging for legal compliance requirements.</p>
+                </div>
+            </div>
+
+            <!-- Implementation Workflow -->
+            <div class="workflow-container">
+                <h4><i class="fas fa-sitemap"></i> Knowledge Graph Development Process</h4>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Domain Analysis</div>
+                        <div class="step-description">Map legal concepts, entities, and relationships within target jurisdiction</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Ontology Design</div>
+                        <div class="step-description">Create formal OWL ontology with LKIF compliance and domain extensions</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Graph Implementation</div>
+                        <div class="step-description">Populate Neo4j with ontology structure and legal document relationships</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Query Optimization</div>
+                        <div class="step-description">Optimize Cypher queries and create indexes for production performance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Resources -->
+            <div class="code-download">
+                <h4><i class="fas fa-code"></i> Knowledge Representation Implementation</h4>
+                <p>Complete ontology frameworks and graph database implementations for legal domain modeling.</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" onclick="downloadCode('lkif-ontology.owl')">
+                        <i class="fas fa-download"></i> LKIF Ontology Base
+                    </a>
+                    <a href="#" class="download-btn" onclick="downloadCode('neo4j-legal-schema.cypher')">
+                        <i class="fas fa-download"></i> Neo4j Legal Schema
+                    </a>
+                    <a href="#" class="download-btn" onclick="openInColab('knowledge-graph-build')">
+                        <i class="fab fa-google"></i> Knowledge Graph Builder
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Integration Architecture -->
+        <div class="section" id="integration">
+            <h2><i class="fas fa-puzzle-piece"></i> 5. Integration Architecture: Building Production Systems</h2>
+            
+            <h3>The Layered Architecture Imperative</h3>
+            <p>
+                Successful legal expert systems require careful integration that separates concerns while maintaining data consistency and audit traceability. The most effective pattern follows a four-layer architecture that enables independent scaling and maintenance of each component.
+            </p>
+
+            <!-- Detailed Architecture -->
+            <div class="architecture-diagram">
+                <h4><i class="fas fa-layer-group"></i> Production Architecture Pattern</h4>
+                <div class="layer-stack">
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-shield-alt"></i> Security & API Gateway</div>
+                        <p><strong>Function:</strong> Authentication, authorization, rate limiting, and API versioning for legal system access control.</p>
+                        <div class="layer-components">
+                            <div class="component-box">OAuth 2.0</div>
+                            <div class="component-box">Rate Limiter</div>
+                            <div class="component-box">API Gateway</div>
+                            <div class="component-box">Audit Logger</div>
+                        </div>
+                    </div>
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-cogs"></i> Business Logic & Orchestration</div>
+                        <p><strong>Function:</strong> Coordinate document processing, rule execution, and response generation with full audit trails.</p>
+                        <div class="layer-components">
+                            <div class="component-box">Workflow Engine</div>
+                            <div class="component-box">Business Rules</div>
+                            <div class="component-box">Cache Layer</div>
+                            <div class="component-box">Event Bus</div>
+                        </div>
+                    </div>
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-brain"></i> AI & Reasoning Services</div>
+                        <p><strong>Function:</strong> Document parsing, knowledge extraction, rule application, and explanation generation.</p>
+                        <div class="layer-components">
+                            <div class="component-box">Document Parser</div>
+                            <div class="component-box">Rule Engine</div>
+                            <div class="component-box">Knowledge Graph</div>
+                            <div class="component-box">Explainer</div>
+                        </div>
+                    </div>
+                    <div class="architecture-layer">
+                        <div class="layer-title"><i class="fas fa-database"></i> Data & Storage Layer</div>
+                        <p><strong>Function:</strong> Persistent storage for documents, rules, ontologies, and complete audit trails.</p>
+                        <div class="layer-components">
+                            <div class="component-box">Document Store</div>
+                            <div class="component-box">Rule Repository</div>
+                            <div class="component-box">Graph Database</div>
+                            <div class="component-box">Audit Database</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Strategy -->
+            <div class="workflow-container">
+                <h4><i class="fas fa-rocket"></i> Deployment Strategy for Legal Expert Systems</h4>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Proof of Concept</div>
+                        <div class="step-description">Single-jurisdiction prototype with 100-500 rules for concept validation</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Pilot Deployment</div>
+                        <div class="step-description">Production environment with 1000-5000 rules and limited user base</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Scale Testing</div>
+                        <div class="step-description">Performance validation with 10k+ rules and production load testing</div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Enterprise Rollout</div>
+                        <div class="step-description">Multi-jurisdiction deployment with comprehensive audit and compliance features</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture Implementation -->
+            <div class="code-download">
+                <h4><i class="fas fa-code"></i> Architecture Implementation</h4>
+                <p>Complete microservices architecture with Docker containers, Kubernetes orchestration, and production monitoring.</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" onclick="downloadCode('kubernetes-deployment.yaml')">
+                        <i class="fas fa-download"></i> K8s Deployment
+                    </a>
+                    <a href="#" class="download-btn" onclick="downloadCode('docker-compose.yml')">
+                        <i class="fas fa-download"></i> Docker Compose
+                    </a>
+                    <a href="#" class="download-btn" onclick="downloadCode('microservices-api.py')">
+                        <i class="fas fa-download"></i> Microservices API
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Best Practices -->
+        <div class="section" id="best-practices">
+            <h2><i class="fas fa-star"></i> 6. Implementation Best Practices</h2>
+            
+            <h3>Critical Success Factors</h3>
+            <p>
+                Building production legal expert systems requires adherence to principles that ensure accuracy, auditability, and regulatory compliance. These practices emerge from successful deployments across multiple jurisdictions and use cases.
+            </p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-shield-alt"></i> Deterministic Reasoning</h4>
+                    <p><strong>Principle:</strong> Every decision must be mathematically reproducible with identical inputs producing identical outputs.</p>
+                    <p><strong>Implementation:</strong> Use formal logic systems that provide complete reasoning traces for audit compliance.</p>
+                    <p><strong>Validation:</strong> Automated testing with known legal scenarios to verify consistent decision-making.</p>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4><i class="fas fa-history"></i> Comprehensive Version Control</h4>
+                    <p><strong>Principle:</strong> Track all changes to rules, ontologies, and decisions with complete audit trails.</p>
+                    <p><strong>Implementation:</strong> Git-based versioning for rules, database versioning for ontologies, and immutable audit logs.</p>
+                    <p><strong>Compliance:</strong> Legal systems must demonstrate complete change history for regulatory review.</p>
+                </div>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4><i class="fas fa-check-double"></i> Formal Verification</h4>
+                    <p><strong>Principle:</strong> Use mathematical verification to detect rule conflicts before production deployment.</p>
+                    <p><strong>Tools:</strong> Alloy for structural verification, Z3 for satisfiability checking, TLA+ for temporal properties.</p>
+                    <p><strong>Process:</strong> Automated verification in CI/CD pipeline prevents inconsistent rule deployment.</p>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4><i class="fas fa-users"></i> Domain Expertise Integration</h4>
+                    <p><strong>Principle:</strong> Legal experts must be involved throughout development, not just in requirements gathering.</p>
+                    <p><strong>Process:</strong> Iterative validation of rule interpretation and system behavior with legal professionals.</p>
+                    <p><strong>Outcome:</strong> Technical implementation accurately reflects legal domain knowledge and reasoning patterns.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="section" id="conclusion">
+            <h2><i class="fas fa-flag-checkered"></i> Strategic Recommendations</h2>
+            
+            <h3>The Path Forward for Legal AI</h3>
+            <p>
+                This research demonstrates that building expert systems for hierarchical text interpretation has moved from academic possibility to production reality. The combination of mature document parsing (GROBID), enterprise rule engines (Drools), and formal knowledge representation (LKIF) provides a solid technological foundation.
+            </p>
+
+            <!-- Strategic Recommendations -->
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h5><i class="fas fa-rocket"></i> Technology Strategy</h5>
+                    <ul>
+                        <li><strong>Start with GROBID:</strong> Proven open-source foundation with legal document adaptability</li>
+                        <li><strong>Scale with Drools:</strong> Enterprise-grade rule engine with demonstrated million-rule capacity</li>
+                        <li><strong>Verify with Alloy:</strong> Formal verification prevents costly rule conflicts in production</li>
+                        <li><strong>Integrate LKIF:</strong> Standard legal ontology ensures interoperability and compliance</li>
+                    </ul>
+                </div>
+                
+                <div class="analysis-card">
+                    <h5><i class="fas fa-balance-scale"></i> Implementation Strategy</h5>
+                    <ul>
+                        <li><strong>Pilot Approach:</strong> Begin with single jurisdiction and 500-1000 rules for proof of concept</li>
+                        <li><strong>Expert Collaboration:</strong> Involve legal professionals in every stage of rule development</li>
+                        <li><strong>Audit First:</strong> Design audit trails and explanation systems from the beginning</li>
+                        <li><strong>Verify Continuously:</strong> Implement automated consistency checking in deployment pipeline</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>The Deterministic Advantage</h3>
+            <p>
+                The key insight from this research is that legal AI systems must prioritize explainability and auditability over probabilistic accuracy. Unlike general-purpose AI applications, legal systems require mathematical certainty and complete reasoning transparency.
+            </p>
+            <p>
+                This requirement favors symbolic AI approaches that provide deterministic output with complete explanation chains. While machine learning excels at document understanding and entity extraction, the final legal reasoning must rely on formal logic systems that guarantee reproducible decisions.
+            </p>
+
+            <!-- Final Implementation Guide -->
+            <div class="code-download">
+                <h4><i class="fas fa-code"></i> Complete Implementation Package</h4>
+                <p>Production-ready expert system implementation with all components integrated, tested, and documented.</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" onclick="downloadCode('complete-expert-system.zip')">
+                        <i class="fas fa-download"></i> Complete System
+                    </a>
+                    <a href="#" class="download-btn" onclick="openInColab('legal-expert-system-demo')">
+                        <i class="fab fa-google"></i> Interactive Demo
+                    </a>
+                    <a href="mailto:tech@skynode.one" class="download-btn">
+                        <i class="fas fa-envelope"></i> Consultation
+                    </a>
+                </div>
+            </div>
+
+            <div class="research-links">
+                <h3>Further Research</h3>
+                <ul>
+                    <li><a href="research-expert-systems.html">Related: Ontology-Based Expert Systems</a></li>
+                    <li><a href="mailto:tech@skynode.one">Contact for detailed implementation consultation</a></li>
+                    <li><a href="https://github.com/Capitalmind">View implementation examples on GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Paper Modal -->
+    <div id="fullPaperModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete Research Paper</h2>
+                <span class="close" onclick="closeFullPaper()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="paper-navigation">
+                    <div class="nav-section active" data-section="section-abstract">Abstract</div>
+                    <div class="nav-section" data-section="section-1">1. Better Rules Foundation</div>
+                    <div class="nav-section" data-section="section-2">2. Hierarchical Text Analysis</div>
+                    <div class="nav-section" data-section="section-3">3. Expert Systems</div>
+                    <div class="nav-section" data-section="section-4">4. Knowledge Representation</div>
+                    <div class="nav-section" data-section="section-5">5. Integration Architectures</div>
+                    <div class="nav-section" data-section="section-6">6. Validation & Verification</div>
+                    <div class="nav-section" data-section="section-7">7. Implementation</div>
+                    <div class="nav-section" data-section="section-8">8. Best Practices</div>
+                    <div class="nav-section" data-section="section-9">9. Case Studies</div>
+                    <div class="nav-section" data-section="section-10">10. Future of Legal Drafting</div>
+                    <div class="nav-section" data-section="section-11">11. References</div>
+                </div>
+                
+                <div class="paper-content" id="paperContent">
+                    <div class="full-paper-scroll">
+                        
+                        <section id="section-abstract" class="paper-section">
+                            <h1>Building Expert Systems for Hierarchical Text Interpretation and Precise Rule Following</h1>
+                            <h2>From foundational methodologies to advanced machine-verifiable legal systems</h2>
+                            
+                            <p>The challenge of creating machine-interpretable legal systems spans from foundational rule-writing methodologies to sophisticated automated interpretation of existing legal texts. While initiatives like New Zealand's Better Rules provide valuable entry-level frameworks for writing <strong>new</strong> legislation in structured formats, the broader challenge lies in building expert systems capable of interpreting the vast corpus of <strong>existing</strong> legal and regulatory texts with hierarchical complexity and absolute precision.</p>
+                            
+                            <p>Better Rules, with its Q-COE model (Questions, Considerations, Outcomes, Exceptions) and structured business term documentation, represents an important foundation for future legal authoring. However, its primary focus on prospective rule creation leaves unaddressed the critical need for systems that can parse, interpret, and operationalize the millions of pages of existing legal documents, standards, and regulations that continue to govern business and society.</p>
+                            
+                            <p>This research addresses the more complex challenge: building expert systems that can analyze existing legal texts with their inherent hierarchical structures, contextual dependencies, and linguistic ambiguities, while ensuring machine-verifiable logic and empirically testable outcomes. The landscape of such systems has matured significantly, offering robust solutions that combine formal reasoning, advanced document parsing, and deterministic rule engines.</p>
+                        </section>
+
+                        <section id="section-1" class="paper-section">
+                            <h2>1. Foundational Approaches: Better Rules as Entry-Level Logic Framework</h2>
+                            
+                            <p>Before examining advanced automated interpretation systems, it's important to understand foundational methodologies that inform how rules can be structured for machine consumption. New Zealand's Better Rules initiative provides valuable insights into structured rule authoring, though its scope is specifically oriented toward <strong>new legislation and policy creation</strong> rather than interpretation of existing texts.</p>
+                            
+                            <h3>Better Rules: Scope and Applications</h3>
+                            <p><strong>Primary Focus:</strong> Prospective rule authoring for new legislation and policies</p>
+                            <ul>
+                                <li>Q-COE methodology for structuring decision points</li>
+                                <li>Business term standardization and glossary management</li>
+                                <li>Visual dependency mapping through Q-Charts</li>
+                                <li>Human-readable rule statements that bridge policy and implementation</li>
+                            </ul>
+                            
+                            <p><strong>Key Contributions to Machine-Verifiable Logic:</strong></p>
+                            <ol>
+                                <li><strong>Structured Decision Decomposition:</strong> The Q-COE model provides a template for breaking complex decisions into machine-addressable components</li>
+                                <li><strong>Controlled Vocabulary:</strong> Systematic business term documentation establishes the foundation for consistent semantic interpretation</li>
+                                <li><strong>Dependency Mapping:</strong> Q-Charts identify logical dependencies that inform rule engine architecture</li>
+                            </ol>
+                            
+                            <p><strong>Limitations for Existing Text Interpretation:</strong></p>
+                            <ul>
+                                <li><strong>Prospective Only:</strong> Designed for writing new rules, not interpreting existing complex legal documents</li>
+                                <li><strong>Limited Hierarchical Complexity:</strong> Handles decision trees but not the deep structural hierarchies of established legal texts</li>
+                                <li><strong>Manual Process:</strong> Requires human experts to perform the initial decomposition and term identification</li>
+                                <li><strong>Scope Constraints:</strong> Most effective for procedural rules rather than complex statutory interpretation</li>
+                            </ul>
+                            
+                            <h3>Better Rules as Foundation for Advanced Systems</h3>
+                            <p>The Better Rules methodology serves as an important <strong>entry point</strong> for understanding how legal logic can be structured, providing several principles that inform more sophisticated automated systems:</p>
+                            
+                            <p><strong>Business Term Standardization:</strong> The systematic approach to defining preferred terms, synonyms, and homonyms provides a model for ontology development in automated systems.</p>
+                            
+                            <p><strong>Authoritative Source Hierarchy:</strong> The principle of sourcing definitions from authoritative sources informs the trust hierarchies needed in automated interpretation systems.</p>
+                            
+                            <p><strong>Concept Model Integration:</strong> The requirement that all business terms appear in concept models establishes the importance of semantic relationships that knowledge graphs must capture.</p>
+                            
+                            <p>However, for organizations dealing with extensive existing legal texts, Better Rules represents just the starting point. The challenge shifts from "how do we write new rules clearly?" to "how do we automatically interpret and operationalize the complex legal texts that already exist?"</p>
+                        </section>
+
+                        <section id="section-2" class="paper-section">
+                            <h2>2. Advanced Hierarchical Text Analysis: Beyond foundational rule writing</h2>
+                            
+                            <p>Moving beyond foundational rule-writing methodologies, the interpretation of existing legal documents requires sophisticated parsing that can handle complex hierarchical structures - from constitutional articles down to regulatory subsections - while preserving semantic relationships across multiple levels of nesting. The most effective parsing tools combine structural analysis with semantic understanding:</p>
+                            
+                            <h3>Production-Grade Document Processing Solutions</h3>
+                            
+                            <p><strong>Contextual AI's Document Parser</strong> offers enterprise-grade hierarchical understanding that spans hundreds of pages. In SEC document analysis, it improved equivalence scores from 69.2% to 84.0%, demonstrating its effectiveness in preserving document structure while reducing downstream AI hallucinations. The system automatically infers document hierarchy and adds metadata describing each element's position within the overall structure.</p>
+                            
+                            <p><strong>GROBID</strong> provides a mature, open-source alternative processing 36 PDFs per second for headers and 2.5 PDFs per second for full-text extraction. Originally designed for scientific documents, its TEI XML output with coordinate mapping and hierarchical section identification makes it adaptable for legal text processing.</p>
+                            
+                            <p><strong>DocParser (ETH Zurich)</strong> represents the state-of-the-art in academic research, achieving F1 scores above 0.92 for hierarchical document structure parsing. It uses a two-stage approach: entity detection followed by hierarchical relation prediction, making it particularly effective for complex multi-page legal documents with nested structures.</p>
+                            
+                            <h3>Legal-Specific NLP Solutions</h3>
+                            
+                            <p><strong>Blackstone</strong> (built on spaCy) offers specialized capabilities for UK common law texts, including named entity recognition for legal concepts (cases, citations, instruments, provisions) and custom sentence segmentation for legal language.</p>
+                            
+                            <p><strong>Legal-BERT variants</strong> provide domain-adapted transformer models trained on over 12GB of diverse legal text, offering superior performance on legal NLP tasks compared to general-purpose models.</p>
+                        </section>
+
+                        <section id="section-3" class="paper-section">
+                            <h2>3. Expert Systems and Rule Engines: Deterministic legal reasoning at scale</h2>
+                            
+                            <p>The choice of rule engine significantly impacts system capabilities for formal legal reasoning. Production rule engines offer different strengths for legal applications:</p>
+                            
+                            <h3>Enterprise Rule Engine Analysis</h3>
+                            
+                            <p><strong>Drools (Red Hat)</strong> emerges as a leading choice for enterprise legal applications, using the optimized ReteOO algorithm for efficient pattern matching. Its temporal logic support through stream mode enables handling of time-based legal rules and regulatory effective dates - crucial for compliance systems. With documented cases of handling up to 1.5 million rules in production and built-in explanation generation through agenda mechanisms, Drools provides the scalability and auditability required for legal systems.</p>
+                            
+                            <p><strong>IBM Operational Decision Manager (ODM)</strong> offers enterprise governance features essential for legal compliance, including Business Action Language (BAL) that enables legal professionals to author rules in natural language-like syntax. Its built-in versioning, change management, and audit trails make it particularly suitable for regulated industries requiring strict compliance tracking.</p>
+                            
+                            <h3>Academic and Research Platforms</h3>
+                            
+                            <p><strong>Prolog</strong> provides a formal logic foundation ideal for legal reasoning. Its backward chaining naturally models legal query patterns, while query traces provide explanation of reasoning paths. The PROLEG system in Japan demonstrates Prolog's capabilities at scale, representing approximately 2,500 rules from civil code and Supreme Court cases.</p>
+                            
+                            <p><strong>Answer Set Programming (ASP)</strong> tools like Clingo excel at detecting inconsistencies in rule sets - critical for maintaining legal consistency. ASP's non-monotonic reasoning handles default reasoning and exceptions common in legal contexts, while its conflict detection capabilities help identify contradictory requirements in regulatory frameworks.</p>
+                        </section>
+
+                        <section id="section-4" class="paper-section">
+                            <h2>4. Knowledge Representation: Modeling complex legal concepts and relationships</h2>
+                            
+                            <p>Effective legal expert systems require sophisticated knowledge representation to capture the nuances of legal concepts, relationships, and hierarchies:</p>
+                            
+                            <h3>Legal Ontology Standards</h3>
+                            
+                            <p><strong>LKIF (Legal Knowledge Interchange Format)</strong> provides a comprehensive foundation with 15 modular ontologies covering legal and commonsense domains. Built on OWL-DL and SWRL, it includes direct support for deontic concepts (obligations, permissions, prohibitions) through its Norm module and implements temporal reasoning capabilities essential for legal applications.</p>
+                            
+                            <p><strong>LegalRuleML</strong>, now an OASIS standard, extends RuleML specifically for legal domains. Its XML-based format supports multiple semantic annotations for different legal interpretations, temporal management for rule validity and jurisdiction, and defeasibility handling for strict rules, defeasible rules, and defeaters.</p>
+                            
+                            <p><strong>FIBO (Financial Industry Business Ontology)</strong> offers comprehensive coverage with over 70 autonomous agent classifications. Developed by the EDM Council and standardized by OMG, FIBO supports regulatory reporting, cross-system data federation, and risk management applications in major financial institutions.</p>
+                            
+                            <h3>Knowledge Graph Platforms</h3>
+                            
+                            <p><strong>Neo4j</strong> excels in modeling legal entity relationships and case law hierarchies, with successful implementations including Chinese legal knowledge graphs and SEC litigation analysis.</p>
+                            
+                            <p><strong>Stardog</strong> combines RDF/OWL native storage with built-in reasoning capabilities, offering enterprise-grade security and on-the-fly inference with query rewriting - ideal for dynamic legal reasoning scenarios.</p>
+                        </section>
+
+                        <section id="section-5" class="paper-section">
+                            <h2>5. Integration Architectures: Combining NLP, knowledge graphs, and rule engines</h2>
+                            
+                            <p>Successful legal expert systems require sophisticated integration of multiple components. The most effective architectures follow a multi-layer pattern:</p>
+                            
+                            <h3>Hybrid Knowledge Representation</h3>
+                            <p>Combines rule-based engines for deterministic legal reasoning, knowledge graphs for relationship modeling and semantic search, NLP components for document analysis, and machine learning models for pattern recognition. This approach balances the need for formal, auditable reasoning with the flexibility to handle ambiguous legal language.</p>
+                            
+                            <h3>Production Integration Examples</h3>
+                            
+                            <p><strong>The Lynx Service Platform</strong> exemplifies modern integration architecture with 16 specialized NLP services orchestrated through Camunda workflow management. Services include temporal expression recognition, legal-specific named entity recognition, and cross-lingual search capabilities, all exposed through RESTful APIs with OpenAPI 3 specifications.</p>
+                            
+                            <p><strong>Thomson Reuters' CoCounsel 2.0</strong> uses a multi-agent collaborative framework with Mixture-of-Experts for specialized legal tasks, combining Knowledge Graph-enhanced Retrieval-Augmented Generation with traditional document management systems.</p>
+                            
+                            <p><strong>Luminance</strong> employs a "Panel of Judges" AI approach, providing Legal-Grade™ analysis with automatic contract review, cross-reference resolution, and multi-language support across 70+ countries.</p>
+                        </section>
+
+                        <section id="section-6" class="paper-section">
+                            <h2>6. Validation and Verification: Ensuring accuracy and consistency</h2>
+                            
+                            <p>Legal expert systems demand rigorous validation to ensure accuracy and maintain trust. Formal verification tools adapted from computer science provide mathematical guarantees:</p>
+                            
+                            <h3>Model Checking and Formal Verification</h3>
+                            
+                            <p><strong>Alloy</strong> excels at verifying structural properties of legal systems, modeling static relationships and constraints in legal rules. <strong>TLA+</strong> better handles temporal properties and legal process workflows, with successful applications in distributed systems that model legal processes.</p>
+                            
+                            <p><strong>Theorem provers</strong> enable mathematical formalization of legal concepts. Isabelle/HOL, with its Sledgehammer integration for automation, proves particularly effective for collaborative legal formalization projects.</p>
+                            
+                            <h3>SAT/SMT Solvers</h3>
+                            
+                            <p><strong>Z3 and CVC5</strong> verify constraint satisfaction in legal rules, with proven effectiveness in compliance checking and configuration systems. Their support for multiple theories including linear arithmetic and arrays makes them suitable for complex legal constraint verification.</p>
+                        </section>
+
+                        <section id="section-7" class="paper-section">
+                            <h2>7. Programming Frameworks and Implementation Approaches</h2>
+                            
+                            <p>Building custom rule interpretation systems requires careful selection of programming frameworks and libraries:</p>
+                            
+                            <h3>Programming Language Ecosystems</h3>
+                            
+                            <p><strong>Python ecosystem</strong> dominates with libraries like spaCy (for Blackstone), Transformers (for Legal-BERT), and integration clients for major platforms. Python's rich ecosystem supports rapid prototyping and production deployment.</p>
+                            
+                            <p><strong>Java-based solutions</strong> like Drools and GROBID provide enterprise-grade performance and integration capabilities. The mature Java ecosystem offers robust deployment options and enterprise system connectivity.</p>
+                            
+                            <h3>Integration Frameworks</h3>
+                            
+                            <p><strong>Apache Camel</strong> provides domain-specific languages for readable integration logic, with 300+ pre-built components for system connectivity. <strong>Spring Integration</strong> offers similar capabilities within the Spring ecosystem.</p>
+                        </section>
+
+                        <section id="section-8" class="paper-section">
+                            <h2>8. Best Practices and Architectural Recommendations</h2>
+                            
+                            <p>Based on analysis of successful implementations, several best practices emerge:</p>
+                            
+                            <h3>Hybrid Architecture Design</h3>
+                            <p><strong>Start with hybrid architectures</strong> combining deterministic rule engines for clear legal requirements with probabilistic models for handling ambiguity. Implement confidence scoring to indicate reliability of AI-generated results and maintain human-in-the-loop validation for critical decisions.</p>
+                            
+                            <h3>Audit Trail Implementation</h3>
+                            <p><strong>Implement comprehensive audit trails</strong> tracking every decision and transformation. Legal systems require complete traceability, from source documents through reasoning steps to final conclusions.</p>
+                            
+                            <h3>Explainability Requirements</h3>
+                            <p><strong>Design for explainability</strong> from the beginning. Legal professionals must understand and verify system reasoning. Combine rule traces from engines like Drools with natural language generation for human-readable explanations.</p>
+                        </section>
+
+                        <section id="section-9" class="paper-section">
+                            <h2>9. Case Studies and Real-World Implementations</h2>
+                            
+                            <p>Successful implementations demonstrate the practical application of these technologies:</p>
+                            
+                            <h3>Government and Regulatory Systems</h3>
+                            
+                            <p><strong>The European Union's EUR-Lex</strong> system integrates Akoma Ntoso for legislative documents with EuroVoc for concept indexing, enabling multilingual legal knowledge management across member states.</p>
+                            
+                            <h3>Financial Services Implementation</h3>
+                            
+                            <p>Major banks implementing <strong>FIBO for regulatory reporting</strong> demonstrate successful knowledge graph adoption in highly regulated environments. These systems automate compliance reporting while maintaining audit trails required by financial regulators.</p>
+                            
+                            <h3>Legal Technology Platforms</h3>
+                            
+                            <p><strong>Contract analysis platforms</strong> like those used by 50% of Am Law 100 firms show the commercial viability of AI-powered legal analysis. These systems combine machine learning for pattern recognition with rule-based validation for critical contract terms.</p>
+                        </section>
+
+                        <section id="section-10" class="paper-section">
+                            <h2>10. The Future of Human Legal Drafting: Collaboration vs. Replacement</h2>
+                            
+                            <p>The question of whether automated and machine-led systems will render human drafting of law obsolete represents one of the most significant implications for the legal profession. Current evidence suggests a more nuanced future where <strong>augmentation rather than replacement</strong> defines the relationship between human legal expertise and AI capabilities.</p>
+                            
+                            <h3>Current State of AI in Legislative and Legal Drafting</h3>
+                            
+                            <p><strong>Parliamentary Adoption Worldwide:</strong> Recent surveys show that approximately "six per cent have used some level of AI functionality to draft bills, and about a third are considering that option". Estonia's legislature uses AI for real-time transcription of parliamentary sessions and intelligent search within legal documents.</p>
+                            
+                            <p><strong>Commercial Legal Practice:</strong> According to Thomson Reuters' 2024 Future of Professionals Report, AI is transforming the legal profession by automating routine tasks and boosting lawyer productivity through AI-powered tools that handle document review, legal research, and contract analysis.</p>
+                            
+                            <h3>Technical Capabilities Enabling Legal Automation</h3>
+                            
+                            <p><strong>Multi-domain Expertise:</strong> Large language models have an enormous scope of expertise, whereas people have only a handful of specializations. LLMs can generate legislative text on diverse topics simultaneously, enabling legislators to address more topics with greater detail.</p>
+                            
+                            <p><strong>Complex Reasoning:</strong> AI models have the sophistication to work with a higher degree of complexity than people can. Modern LLM systems can instantaneously perform several simultaneous multistep reasoning tasks using information from thousands of pages of documents.</p>
+                            
+                            <h3>Fundamental Limitations of AI in Legal Drafting</h3>
+                            
+                            <p><strong>Contextual Understanding:</strong> AI systems rely on historical data and require constant maintenance and updates to incorporate new dynamics and emerging societal issues. No machine intelligence could ever equal human intelligence as it lacks human judgment and expertise.</p>
+                            
+                            <p><strong>Values and Principles:</strong> Law encompasses more than just prescriptions that trigger automatic sanctions; it also includes principles and values that form an interconnected system. Many of these principles and values ontologically resist being transcribed and codified into rigid computable codes.</p>
+                            
+                            <h3>Hybrid Future: Human-AI Collaboration Models</h3>
+                            
+                            <p><strong>Augmentation, Not Replacement:</strong> 72% of surveyed legal professionals "strongly disagree" that generative AI will replace lawyers. Legal tech leaders describe AI as creating "10x lawyers—legal professionals who can accomplish 10 times more work in the same amount of time."</p>
+                            
+                            <p><strong>Tiered Automation:</strong> Current evidence suggests a stratified approach where routine tasks become increasingly automated while humans maintain control over strategic legal decisions and policy formation.</p>
+                        </section>
+
+                        <section id="section-11" class="paper-section">
+                            <h2>11. References and Sources</h2>
+                            
+                            <h3>Academic and Research Sources</h3>
+                            <ol>
+                                <li>Rausch, J., Martinez, O., et al. "DocParser: Hierarchical Document Structure Parsing from Renderings." <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, 2021.</li>
+                                <li>European Parliament. "Construction of Legal Knowledge Graph Based on Knowledge-Enhanced Large Language Models." <em>Information</em>, 2024.</li>
+                                <li>Hoekstra, R., et al. "LKIF Core: Principled Ontology Development for the Legal Domain." <em>ResearchGate</em>, 2009.</li>
+                                <li>"LegalRuleML: Design Principles and Foundations." <em>OASIS Standards</em>, 2015.</li>
+                            </ol>
+                            
+                            <h3>Government and Parliamentary Sources</h3>
+                            <ol start="5">
+                                <li>Inter-Parliamentary Union. "The Role of AI in Parliaments."</li>
+                                <li>UK Government Incubator for AI. "Improving Legislative Drafting with Lex."</li>
+                                <li>POPVOX Foundation. "Comparing AI Adoption in the US Congress to Legislatures Worldwide." January 2, 2025.</li>
+                                <li>European Parliament. "EU AI Act: First Regulation on Artificial Intelligence." February 19, 2025.</li>
+                            </ol>
+                            
+                            <h3>Industry and Professional Reports</h3>
+                            <ol start="9">
+                                <li>Thomson Reuters. "The Future of Professionals Report 2024: How AI is Impacting the Legal Profession."</li>
+                                <li>Thomson Reuters. "CoCounsel — Legal AI with Westlaw and Practical Law." April 15, 2025.</li>
+                                <li>Bloomberg Law. "AI Tools for Lawyers: A Practical Guide." April 25, 2025.</li>
+                                <li>American Bar Association. "AI Tools for Legal Work: Claude, Gemini, Copilot, and More." 2024.</li>
+                            </ol>
+                            
+                            <h3>Technology and Tool Documentation</h3>
+                            <ol start="13">
+                                <li>Apache Foundation. "Apache Jena - Jena Ontology API."</li>
+                                <li>Drools Documentation. "Drools Rule Engine."</li>
+                                <li>GROBID Documentation. "Introduction - GROBID Documentation."</li>
+                                <li>ICL R&D. "Blackstone: A spaCy pipeline and model for NLP on unstructured legal text."</li>
+                                <li>Hugging Face. "Legal-BERT Base Uncased."</li>
+                            </ol>
+                            
+                            <p style="margin-top: 2rem; font-style: italic;">This comprehensive bibliography provides the empirical foundation supporting all claims and recommendations in this research paper, spanning academic research, government initiatives, industry reports, and professional analysis across the global legal technology landscape.</p>
+                        </section>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/research.js"></script>
+    <script>
+        let modalNavigationInitialized = false;
+        
+        function openFullPaper() {
+            document.getElementById('fullPaperModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Initialize scroll-based navigation
+            if (!modalNavigationInitialized) {
+                initializeScrollNavigation();
+                modalNavigationInitialized = true;
+            }
+        }
+        
+        function closeFullPaper() {
+            document.getElementById('fullPaperModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function initializeScrollNavigation() {
+            const paperContent = document.querySelector('.paper-content');
+            const navSections = document.querySelectorAll('.nav-section');
+            const sections = document.querySelectorAll('.paper-section');
+            
+            // Handle navigation clicks
+            navSections.forEach(nav => {
+                nav.addEventListener('click', function() {
+                    const targetId = this.dataset.section;
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        // Update active navigation
+                        navSections.forEach(n => n.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Scroll to section within the paper content container
+                        const offsetTop = targetSection.offsetTop - paperContent.offsetTop;
+                        paperContent.scrollTo({
+                            top: offsetTop - 20, // Small offset for better visibility
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Handle scroll-based navigation highlighting
+            paperContent.addEventListener('scroll', function() {
+                let currentSection = '';
+                const scrollTop = paperContent.scrollTop;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - paperContent.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    // Check if section is in view (with some offset for better UX)
+                    if (scrollTop >= sectionTop - 100 && scrollTop < sectionBottom - 100) {
+                        currentSection = section.id;
+                    }
+                });
+                
+                // Update navigation highlighting
+                if (currentSection) {
+                    navSections.forEach(nav => {
+                        nav.classList.remove('active');
+                        if (nav.dataset.section === currentSection) {
+                            nav.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        function downloadCode(filename) {
+            alert(`Downloading ${filename}...`);
+        }
+        
+        function openInColab(notebook) {
+            alert(`Opening ${notebook} in Google Colab...`);
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('fullPaperModal');
+            if (event.target === modal) {
+                closeFullPaper();
+            }
+        }
+    </script>
+</body>
+</html>

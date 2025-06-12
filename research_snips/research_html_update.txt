@@ -1,0 +1,140 @@
+        <div class="research-container">
+            <!-- Comprehensive Research Paper - Featured -->
+            <div class="research-card available" onclick="openResearch('hierarchical-text')">
+                <div class="status-badge status-available">Featured Research</div>
+                
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="research-title">Building Expert Systems for Hierarchical Text Interpretation</h3>
+                </div>
+                
+                <div class="research-meta">
+                    <span><i class="fas fa-clock"></i> Comprehensive Survey</span>
+                    <span><i class="fas fa-chart-line"></i> Advanced</span>
+                    <span><i class="fas fa-code"></i> Multi-Framework Analysis</span>
+                </div>
+                
+                <p class="research-description">
+                    Comprehensive analysis of expert systems for legal and regulatory text interpretation combining deterministic reasoning with domain expertise. This research evaluates hierarchical document parsing, formal rule engines, and knowledge representation for precise rule following in legal applications.
+                </p>
+                
+                <div class="research-importance">
+                    <h4>Research Impact:</h4>
+                    <p>Bridges the gap between academic research and production implementation for legal AI. Provides actionable framework selection criteria and architectural patterns for building reliable, auditable expert systems that handle complex regulatory text with mathematical precision.</p>
+                </div>
+                
+                <div class="preview-content">
+                    <div class="code-preview">
+# Hybrid architecture combining semantic and symbolic reasoning
+class LegalExpertSystem:
+    def __init__(self):
+        # Document parsing with hierarchical preservation
+        self.parser = DocParser()  # F1 > 0.92 ETH Zurich
+        
+        # Rule engines for deterministic reasoning
+        self.drools_engine = DroolsEngine()  # 1.5M+ rules
+        self.prolog_engine = PrologEngine()  # Logic inference
+        
+        # Knowledge graphs for relationships
+        self.knowledge_graph = Neo4jGraph()
+        self.ontology = LKIFOntology()  # Legal concepts
+        
+        # Formal verification for consistency
+        self.verifier = AlloyVerifier()
+        
+    def process_legal_document(self, document):
+        # Preserve hierarchical structure
+        structure = self.parser.extract_hierarchy(document)
+        
+        # Apply formal rules with audit trail
+        decisions = self.drools_engine.evaluate(structure)
+        
+        # Verify consistency
+        verification = self.verifier.check_consistency(decisions)
+        
+        return {
+            'decisions': decisions,
+            'reasoning_trace': self.generate_explanation(),
+            'verification_status': verification,
+            'confidence': 100  # Deterministic
+        }
+                    </div>
+                </div>
+                
+                <div class="tech-tags">
+                    <span class="tech-tag">Drools</span>
+                    <span class="tech-tag">LKIF Ontology</span>
+                    <span class="tech-tag">DocParser</span>
+                    <span class="tech-tag">Neo4j</span>
+                    <span class="tech-tag">Alloy Verification</span>
+                    <span class="tech-tag">Legal AI</span>
+                </div>
+                
+                <div class="click-hint">
+                    <i class="fas fa-mouse-pointer"></i> Click to read the complete research paper with implementation frameworks and case studies
+                </div>
+            </div>
+
+            <!-- Expert Systems Research - Most Active -->
+            <div class="research-card available" onclick="openResearch('expert-systems')">
+                <div class="status-badge status-available">Available</div>
+                
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3 class="research-title">Ontology-Based Expert Systems</h3>
+                </div>
+                
+                <div class="research-meta">
+                    <span><i class="fas fa-clock"></i> Ongoing - Started Jan 2025</span>
+                    <span class="fas fa-chart-line"></i> Advanced</span>
+                    <span><i class="fas fa-code"></i> OWL, Prolog, Python</span>
+                </div>
+                
+                <p class="research-description">
+                    Developing comprehensive frameworks for building ontology-driven expert systems that can encode complex rule sets from games, legal standards, and regulatory compliance. This research focuses on creating deterministic, explainable AI systems that bridge symbolic reasoning with natural language interfaces.
+                </p>
+                
+                <div class="research-importance">
+                    <h4>Research Significance:</h4>
+                    <p>Expert systems represent the future of trustworthy AI—deterministic, explainable, and auditable. Unlike black box models, these systems provide transparent reasoning chains essential for legal, medical, and regulatory applications.</p>
+                </div>
+                
+                <div class="preview-content">
+                    <div class="code-preview">
+# Ontology-driven rule engine framework
+class ExpertSystem:
+    def __init__(self, ontology_path, rules_path):
+        self.ontology = load_owl_ontology(ontology_path)
+        self.rules = parse_rule_set(rules_path)
+        self.inference_engine = build_inference_engine()
+    
+    def query(self, question, context):
+        # Convert natural language to structured query
+        structured_query = self.nl_to_logic(question, context)
+        
+        # Apply rules with full traceability
+        result = self.inference_engine.solve(structured_query)
+        
+        # Return answer with explanation chain
+        return {
+            'answer': result.conclusion,
+            'confidence': result.certainty,
+            'reasoning': result.trace_path,
+            'sources': result.applied_rules
+        }
+                    </div>
+                </div>
+                
+                <div class="tech-tags">
+                    <span class="tech-tag">Semantic Web</span>
+                    <span class="tech-tag">OWL Ontologies</span>
+                    <span class="tech-tag">Rule Engines</span>
+                    <span class="tech-tag">Legal Tech</span>
+                    <span class="tech-tag">Symbolic AI</span>
+                    <span class="tech-tag">Knowledge Graphs</span>
+                </div>
+                
+                <div class="click-hint">
+                    <i class="fas fa-mouse-pointer"></i> Click to explore the complete framework for building deterministic expert systems
+                </div>
+            </div>
