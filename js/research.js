@@ -20,6 +20,7 @@ function initializeResearchPage() {
 function openResearch(researchKey) {
     const researchPages = {
         'expert-systems': 'research-expert-systems.html',
+        'stablecoin-analysis': 'stablecoin-analysis.html',
         'hierarchical-text': 'research-hierarchical-text.html',
         'debt-analysis': 'research-debt-analysis.html', 
         'trading-system': 'research-trading-system.html'
@@ -28,7 +29,7 @@ function openResearch(researchKey) {
     const targetPage = researchPages[researchKey];
     if (targetPage) {
         // Available research pages
-        if (researchKey === 'expert-systems' || researchKey === 'hierarchical-text') {
+        if (researchKey === 'expert-systems' || researchKey === 'hierarchical-text' || researchKey === 'stablecoin-analysis') {
             showLoadingIndicator();
             // Navigate to research detail page after loading animation
             setTimeout(() => {
