@@ -100,11 +100,17 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
     border: 1px solid #3a3a3a;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(204, 120, 92, 0.2);
+    border-color: #cc785c;
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-card h3 {
