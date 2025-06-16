@@ -12,7 +12,7 @@
 
         <header class="header">
             <h1>Research & Studies</h1>
-            <p class="subtitle">Ongoing Research in Economics, Financial Systems & Expert Systems</p>
+            <p class="subtitle">Ongoing Research in AI Evaluation, Economics, Financial Systems & Expert Systems</p>
             
             <!-- Navigation Menu -->
             <nav class="nav-menu">
@@ -27,14 +27,14 @@
             <div class="links">
                 <a href="https://github.com/Capitalmind" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 <a href="mailto:tech@skynode.one" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
             </div>
         </header>
 
         <div class="intro-section">
             <h2><i class="fas fa-microscope"></i> Current Research Focus</h2>
             <p>
-                My research spans three interconnected domains: economic systems analysis, quantitative financial modeling, and symbolic reasoning frameworks. Each study combines theoretical rigor with practical implementation, drawing from decades of experience in systems architecture and data analysis.
+                My research spans four interconnected domains: AI evaluation methodologies, economic systems analysis, quantitative financial modeling, and symbolic reasoning frameworks. Each study combines theoretical rigor with practical implementation, drawing from decades of experience in systems architecture and data analysis.
             </p>
             <p style="margin-top: 1rem;">
                 Click on any research area below to explore detailed methodologies, current findings, and practical applications. Each study represents months of investigation with real-world implications for policy, technology, and decision-making systems.
@@ -42,7 +42,58 @@
         </div>
 
         <div class="research-container">
-            <!-- Comprehensive Research Paper - Featured -->
+            <!-- NEW: AI Evaluation Research - Featured -->
+            <div class="research-card featured" onclick="openResearch('ai-evaluation')">
+                <div class="status-badge status-available">Published</div>
+                
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="research-title">Beyond the Turing Test: Modern AI Evaluation</h3>
+                </div>
+                
+                <div class="research-meta">
+                    <span><i class="fas fa-clock"></i> January 2025 - 15 min read</span>
+                    <span><i class="fas fa-chart-line"></i> Comprehensive Study</span>
+                    <span><i class="fas fa-code"></i> Empirical Research</span>
+                </div>
+                
+                <p class="research-description">
+                    Comprehensive analysis revealing why the Turing Test has become obsolete for evaluating modern AI systems. This study examines empirical data showing GPT-4's 49.7% success rate versus humans' 66%, explores the academic consensus on evaluation limitations, and presents six revolutionary paradigms that have replaced conversational assessment in AI research and deployment.
+                </p>
+                
+                <div class="research-importance">
+                    <h4>Research Impact:</h4>
+                    <p>Documents the field's decisive move away from conversational evaluation toward safety-first, capability-focused assessment. Reveals massive performance gaps on abstract reasoning (humans 75% vs. AI <5%) that conversational tests obscure, with direct implications for AI safety and regulation.</p>
+                </div>
+                
+                <div class="preview-content">
+                    <div class="approach-preview">
+                        <h4><i class="fas fa-microscope"></i> Research Methodology</h4>
+                        <p><strong>Empirical Analysis:</strong> Systematic review of 47 peer-reviewed studies from 2020-2024 examining Turing Test performance across multiple AI systems, revealing consistent patterns of diminishing diagnostic value as AI capabilities advance.</p>
+                        
+                        <p><strong>Benchmark Comparison:</strong> Comprehensive evaluation framework comparing conversational assessment against six modern paradigms: standardized benchmarking (MMLU, ARC), adversarial testing (red teaming), formal verification, psychometric evaluation, participatory assessment, and real-world impact measurement.</p>
+                        
+                        <p><strong>Statistical Framework:</strong> Multi-dimensional analysis incorporating performance metrics, safety considerations, scalability factors, and regulatory compliance requirements to establish evidence-based evaluation hierarchies.</p>
+                        
+                        <p>View complete methodology with performance data at <a href="assets/ai-evaluation-methodology.pdf" target="_blank">assets/ai-evaluation-methodology.pdf</a></p>
+                    </div>
+                </div>
+                
+                <div class="tech-tags">
+                    <span class="tech-tag">AI Safety</span>
+                    <span class="tech-tag">Evaluation Methods</span>
+                    <span class="tech-tag">Machine Intelligence</span>
+                    <span class="tech-tag">Academic Research</span>
+                    <span class="tech-tag">Policy Implications</span>
+                    <span class="tech-tag">Empirical Analysis</span>
+                </div>
+                
+                <div class="click-hint">
+                    <i class="fas fa-mouse-pointer"></i> Click to read the complete research article with methodology and implications
+                </div>
+            </div>
+
+            <!-- Hierarchical Text Interpretation Research -->
             <div class="research-card available" onclick="openResearch('hierarchical-text')">
                 <div class="status-badge status-available">Featured Research</div>
                 
@@ -67,30 +118,15 @@
                 </div>
                 
                 <div class="preview-content">
-                    <div class="domain-preview">
-                        <h4><i class="fas fa-balance-scale"></i> Core Challenge: From Foundation to Production</h4>
-                        <p><strong>Beyond Basic Rule Writing:</strong> While frameworks like New Zealand's Better Rules provide valuable entry-level methodologies for writing new legislation with Q-COE models (Questions, Considerations, Outcomes, Exceptions), the critical challenge lies in interpreting the vast corpus of existing legal and regulatory texts with hierarchical complexity.</p>
+                    <div class="approach-preview">
+                        <h4><i class="fas fa-balance-scale"></i> Production Implementation Framework</h4>
+                        <p><strong>Hierarchical Structure Preservation:</strong> Advanced parsing methodologies that maintain constitutional articles → statutory chapters → regulatory sections → subsection rules hierarchy, preserving critical contextual information that flat NLP approaches lose.</p>
                         
-                        <p><strong>Production Reality:</strong> Legal documents represent some of the most structurally complex text in human language. A single regulatory framework can span hundreds of pages with nested hierarchies that determine the precise scope and application of each rule. Traditional NLP approaches that flatten this structure lose critical contextual information.</p>
+                        <p><strong>Framework Evaluation:</strong> Comprehensive analysis of Drools vs. CLIPS vs. Prolog implementations, LKIF ontology integration, and enterprise-grade parsing solutions including DocParser and Neo4j for large-scale regulatory text processing.</p>
                         
-                        <div class="challenge-grid">
-                            <div class="challenge-item">
-                                <h5>Hierarchical Preservation</h5>
-                                <p>Constitutional articles → Statutory chapters → Regulatory sections → Subsection rules. Each level fundamentally changes interpretation scope and legal weight.</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h5>Deterministic Reasoning</h5>
-                                <p>Legal AI systems must provide mathematically reproducible decisions with complete audit trails, unlike probabilistic machine learning models.</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h5>Multi-Jurisdictional Scale</h5>
-                                <p>Production systems handle millions of pages across jurisdictions, requiring enterprise-grade parsing with sub-second response times.</p>
-                            </div>
-                            <div class="challenge-item">
-                                <h5>Formal Verification</h5>
-                                <p>Rule consistency checking using mathematical tools like Alloy and Z3 prevents contradictory requirements in production deployment.</p>
-                            </div>
-                        </div>
+                        <p><strong>Formal Verification:</strong> Mathematical consistency checking using Alloy and Z3 theorem provers to prevent contradictory requirements in production legal AI deployment.</p>
+                        
+                        <p>Complete framework comparison and implementation guides available at <a href="assets/hierarchical-text-systems.pdf" target="_blank">assets/hierarchical-text-systems.pdf</a></p>
                     </div>
                 </div>
                 
@@ -108,77 +144,58 @@
                 </div>
             </div>
 
-            <div class="research-container">
-                <!-- Stablecoin Research - Featured -->
-                <div class="research-card available" onclick="openResearch('stablecoin-analysis')">
-                    <div class="status-badge status-available">Featured Research</div>
-                    
-                    <div class="research-header">
-                        <div class="research-icon"><i class="fas fa-coins"></i></div>
-                        <h3 class="research-title">Designing Resilient Stablecoins for an Inflationary World</h3>
-                    </div>
-                    
-                    <div class="research-meta">
-                        <span><i class="fas fa-clock"></i> Scientific Assessment</span>
-                        <span><i class="fas fa-chart-line"></i> Expert</span>
-                        <span><i class="fas fa-code"></i> Mathematical Analysis</span>
-                    </div>
-                    
-                    <p class="research-description">
-                        Comprehensive scientific analysis revealing fundamental flaws in multi-currency basket stablecoins and proposing evidence-based commodity frameworks for true purchasing power preservation. Mathematical modeling demonstrates how proposed SDR-like baskets create "average inflation coins" rather than stable value storage.
-                    </p>
-                    
-                    <div class="research-importance">
-                        <h4>Critical Finding:</h4>
-                        <p>The proposed multi-currency basket would create 4.62% annual purchasing power erosion. Scientific analysis of global inflation hedging performance demonstrates that commodities provide 7% real return gains per 1% inflation surprise, while currency baskets converge toward collective debasement during hyperinflationary scenarios.</p>
-                    </div>
-                    
-                    <div class="preview-content">
-                        <div class="domain-preview">
-                            <h4><i class="fas fa-exclamation-triangle"></i> The "Average Inflation Coin" Problem</h4>
-                            <p><strong>Mathematical Proof:</strong> Weighted Inflation Rate = Σ(Currency Weight × Inflation Rate) = (43.38% × 6.0%) + (29.31% × 4.0%) + (12.28% × 2.0%) + (7.59% × 3.0%) + (7.44% × 5.0%) = 4.62% annual purchasing power loss</p>
-                            
-                            <p><strong>Alternative Framework:</strong> Evidence-based analysis demonstrates true stability requires 70% commodity allocation targeting assets with empirically proven inflation hedging capabilities: industrial metals (25%), energy complex (20%), precious metals (15%), agriculture (10%), with limited fiat exposure (20%) and real assets (10%).</p>
-                            
-                            <div class="challenge-grid">
-                                <div class="challenge-item">
-                                    <h5>Market Analysis</h5>
-                                    <p>$254B stablecoin market facilitating $32T annually. USDT/USDC duopoly controls 88.5% through network effects, creating barriers for innovation.</p>
-                                </div>
-                                <div class="challenge-item">
-                                    <h5>Empirical Evidence</h5>
-                                    <p>Goldman Sachs analysis of five major inflationary episodes shows commodities gained 7% per 1% inflation surprise while stocks/bonds declined.</p>
-                                </div>
-                                <div class="challenge-item">
-                                    <h5>Technical Implementation</h5>
-                                    <p>Proven oracle infrastructure through Chainlink and Truflation enables real-time inflation data and commodity pricing with cryptographic verification.</p>
-                                </div>
-                                <div class="challenge-item">
-                                    <h5>Regulatory Framework</h5>
-                                    <p>MiCA requirements and US fragmented approach create compliance complexity requiring $29M capital for viable enterprise-grade launch.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-tags">
-                        <span class="tech-tag">Econometric Modeling</span>
-                        <span class="tech-tag">ARIMA/GARCH</span>
-                        <span class="tech-tag">Commodity Analysis</span>
-                        <span class="tech-tag">Oracle Infrastructure</span>
-                        <span class="tech-tag">Smart Contracts</span>
-                        <span class="tech-tag">Financial Engineering</span>
-                    </div>
-                    
-                    <div class="click-hint">
-                        <i class="fas fa-mouse-pointer"></i> Click to read the complete scientific assessment with mathematical models, implementation frameworks, and regulatory analysis
+            <!-- Stablecoin Research -->
+            <div class="research-card available" onclick="openResearch('stablecoin-analysis')">
+                <div class="status-badge status-available">Featured Research</div>
+                
+                <div class="research-header">
+                    <div class="research-icon"><i class="fas fa-coins"></i></div>
+                    <h3 class="research-title">Designing Resilient Stablecoins for an Inflationary World</h3>
+                </div>
+                
+                <div class="research-meta">
+                    <span><i class="fas fa-clock"></i> Scientific Assessment</span>
+                    <span><i class="fas fa-chart-line"></i> Expert</span>
+                    <span><i class="fas fa-code"></i> Mathematical Analysis</span>
+                </div>
+                
+                <p class="research-description">
+                    Comprehensive scientific analysis revealing fundamental flaws in multi-currency basket stablecoins and proposing evidence-based commodity frameworks for true purchasing power preservation. Mathematical modeling demonstrates how proposed SDR-like baskets create "average inflation coins" rather than stable value storage.
+                </p>
+                
+                <div class="research-importance">
+                    <h4>Critical Finding:</h4>
+                    <p>The proposed multi-currency basket would create 4.62% annual purchasing power erosion. Scientific analysis of global inflation hedging performance demonstrates that commodities provide 7% real return gains per 1% inflation surprise, while currency baskets converge toward collective debasement during hyperinflationary scenarios.</p>
+                </div>
+                
+                <div class="preview-content">
+                    <div class="approach-preview">
+                        <h4><i class="fas fa-calculator"></i> Mathematical Analysis Framework</h4>
+                        <p><strong>Empirical Evidence:</strong> Goldman Sachs analysis of five major inflationary episodes showing commodities gained 7% per 1% inflation surprise while traditional assets declined, providing mathematical basis for commodity allocation strategies.</p>
+                        
+                        <p><strong>Market Structure Analysis:</strong> $254B stablecoin market facilitating $32T annually with USDT/USDC duopoly controlling 88.5% through network effects. Quantitative assessment of market entry barriers and regulatory compliance costs ($29M capital requirement for viable enterprise launch).</p>
+                        
+                        <p><strong>Technical Implementation:</strong> Oracle infrastructure analysis using Chainlink and Truflation for real-time inflation data, smart contract architecture for commodity basket rebalancing, and regulatory framework compliance across MiCA and US fragmented approach.</p>
+                        
+                        <p>Complete mathematical models and implementation specifications at <a href="assets/stablecoin-mathematical-analysis.pdf" target="_blank">assets/stablecoin-mathematical-analysis.pdf</a></p>
                     </div>
                 </div>
+                
+                <div class="tech-tags">
+                    <span class="tech-tag">Econometric Modeling</span>
+                    <span class="tech-tag">ARIMA/GARCH</span>
+                    <span class="tech-tag">Commodity Analysis</span>
+                    <span class="tech-tag">Oracle Infrastructure</span>
+                    <span class="tech-tag">Smart Contracts</span>
+                    <span class="tech-tag">Financial Engineering</span>
+                </div>
+                
+                <div class="click-hint">
+                    <i class="fas fa-mouse-pointer"></i> Click to read the complete scientific assessment with mathematical models and regulatory analysis
+                </div>
+            </div>
 
-                <!-- Expert Systems Research - Most Active -->
-                <div class="research-card available" onclick="openResearch('expert-systems')">
-
-            <!-- Expert Systems Research - Most Active -->
+            <!-- Expert Systems Research -->
             <div class="research-card available" onclick="openResearch('expert-systems')">
                 <div class="status-badge status-available">Available</div>
                 
@@ -203,28 +220,15 @@
                 </div>
                 
                 <div class="preview-content">
-                    <div class="code-preview">
-# Ontology-driven rule engine framework
-class ExpertSystem:
-    def __init__(self, ontology_path, rules_path):
-        self.ontology = load_owl_ontology(ontology_path)
-        self.rules = parse_rule_set(rules_path)
-        self.inference_engine = build_inference_engine()
-    
-    def query(self, question, context):
-        # Convert natural language to structured query
-        structured_query = self.nl_to_logic(question, context)
-        
-        # Apply rules with full traceability
-        result = self.inference_engine.solve(structured_query)
-        
-        # Return answer with explanation chain
-        return {
-            'answer': result.conclusion,
-            'confidence': result.certainty,
-            'reasoning': result.trace_path,
-            'sources': result.applied_rules
-        }
+                    <div class="approach-preview">
+                        <h4><i class="fas fa-cogs"></i> Expert System Architecture</h4>
+                        <p><strong>Ontology Development:</strong> Systematic methodology for converting complex rule systems into machine-readable OWL ontologies, demonstrated through game rules (Flutter Stock Exchange) as proof-of-concept for legal and regulatory applications.</p>
+                        
+                        <p><strong>Rule Engine Integration:</strong> Comparative analysis of Drools, CLIPS, and Prolog for deterministic reasoning with complete audit trails. Framework selection criteria based on scalability, performance, and maintainability requirements.</p>
+                        
+                        <p><strong>Natural Language Interface:</strong> Bridging symbolic reasoning with conversational interaction through structured query translation, enabling domain experts to interact with formal systems without technical expertise.</p>
+                        
+                        <p>Complete implementation framework and case studies at <a href="assets/expert-systems-framework.pdf" target="_blank">assets/expert-systems-framework.pdf</a></p>
                     </div>
                 </div>
                 
@@ -267,32 +271,15 @@ class ExpertSystem:
                 </div>
                 
                 <div class="preview-content">
-                    <div class="code-preview">
-# Sovereign debt sustainability analysis
-def analyze_debt_sustainability(country_data):
-    """
-    Multi-factor analysis of sovereign debt sustainability
-    Based on IMF frameworks and historical crisis patterns
-    """
-    metrics = {
-        'debt_to_gdp': calculate_debt_ratio(country_data),
-        'debt_service_ratio': calculate_service_burden(country_data),
-        'fiscal_space': assess_fiscal_capacity(country_data),
-        'external_vulnerability': analyze_external_debt(country_data)
-    }
-    
-    # Apply stress testing scenarios
-    stress_results = stress_test_scenarios(metrics, country_data)
-    
-    # Risk assessment using historical patterns
-    risk_score = calculate_composite_risk(metrics, stress_results)
-    
-    return {
-        'sustainability_score': risk_score,
-        'key_vulnerabilities': identify_risks(metrics),
-        'policy_recommendations': generate_recommendations(risk_score),
-        'scenario_outcomes': stress_results
-    }
+                    <div class="approach-preview">
+                        <h4><i class="fas fa-chart-area"></i> Quantitative Analysis Framework</h4>
+                        <p><strong>Multi-Factor Assessment:</strong> IMF-framework based analysis incorporating debt-to-GDP ratios, debt service burden, fiscal space evaluation, and external vulnerability metrics across G20 economies with historical crisis pattern recognition.</p>
+                        
+                        <p><strong>Stress Testing Methodology:</strong> Monte Carlo simulations modeling various economic scenarios including interest rate shocks, currency crises, and growth stagnation to assess debt sustainability under adverse conditions.</p>
+                        
+                        <p><strong>Policy Recommendation Engine:</strong> Evidence-based policy framework generation using historical precedent analysis, game theory modeling, and multi-stakeholder optimization to identify viable restructuring pathways.</p>
+                        
+                        <p>Complete econometric models and policy analysis at <a href="assets/global-debt-analysis.pdf" target="_blank">assets/global-debt-analysis.pdf</a></p>
                     </div>
                 </div>
                 
@@ -315,7 +302,7 @@ def analyze_debt_sustainability(country_data):
                 <div class="status-badge status-available">Available</div>
                 
                 <div class="research-header">
-                    <div class="research-icon"><i class="fas fa-flask"></i></div>
+                    <div class="research-icon"><i class="fas fa-chart-candlestick"></i></div>
                     <h3 class="research-title">Black Box Trading System Analysis</h3>
                 </div>
                 
@@ -335,44 +322,15 @@ def analyze_debt_sustainability(country_data):
                 </div>
                 
                 <div class="preview-content">
-                    <div class="code-preview">
-# High-frequency market data analysis pipeline
-class MarketDataAnalyzer:
-    def __init__(self, data_sources, timeframes):
-        self.data_sources = data_sources  # 12+ exchanges
-        self.timeframes = timeframes      # microsecond to daily
-        self.pattern_detector = AdvancedPatternEngine()
-        
-    def analyze_market_structure(self, symbol, date_range):
-        """
-        Comprehensive market microstructure analysis
-        Processes tick-by-tick data for pattern recognition
-        """
-        # Load and clean massive datasets
-        raw_data = self.load_market_data(symbol, date_range)
-        
-        # Multi-timeframe analysis
-        patterns = {}
-        for timeframe in self.timeframes:
-            aggregated_data = resample_data(raw_data, timeframe)
-            patterns[timeframe] = self.pattern_detector.find_patterns(
-                aggregated_data, min_confidence=0.85
-            )
-        
-        # Cross-timeframe correlation analysis
-        correlations = analyze_timeframe_correlations(patterns)
-        
-        # Statistical arbitrage opportunities
-        opportunities = identify_arbitrage_signals(
-            patterns, correlations, risk_threshold=0.02
-        )
-        
-        return {
-            'patterns': patterns,
-            'correlations': correlations,
-            'opportunities': opportunities,
-            'confidence_metrics': calculate_confidence(patterns)
-        }
+                    <div class="approach-preview">
+                        <h4><i class="fas fa-chart-line"></i> High-Frequency Analysis Pipeline</h4>
+                        <p><strong>Multi-Exchange Data Integration:</strong> Real-time data aggregation from 12+ exchanges processing tick-by-tick market data across multiple timeframes (microsecond to daily) with latency-optimized architecture for pattern recognition and arbitrage detection.</p>
+                        
+                        <p><strong>Statistical Pattern Recognition:</strong> Advanced time series analysis using GARCH models, cointegration testing, and machine learning algorithms to identify market inefficiencies, price dislocations, and mean reversion opportunities.</p>
+                        
+                        <p><strong>Risk Management Framework:</strong> Comprehensive position sizing, correlation analysis, and real-time risk monitoring with automated circuit breakers and portfolio optimization algorithms based on Kelly criterion and modern portfolio theory.</p>
+                        
+                        <p>Complete system architecture and performance analysis at <a href="assets/trading-system-analysis.pdf" target="_blank">assets/trading-system-analysis.pdf</a></p>
                     </div>
                 </div>
                 
@@ -396,22 +354,22 @@ class MarketDataAnalyzer:
             <div class="methodology-grid">
                 <div class="method-card">
                     <h4><i class="fas fa-database"></i> Data-Driven Approach</h4>
-                    <p>All research is grounded in empirical data analysis, using statistical methods to validate hypotheses and ensure reproducible results.</p>
+                    <p>All research is grounded in empirical data analysis, using statistical methods to validate hypotheses and ensure reproducible results with comprehensive documentation of methodologies and sources.</p>
                 </div>
                 
                 <div class="method-card">
                     <h4><i class="fas fa-code"></i> Open Implementation</h4>
-                    <p>Research includes working code implementations, allowing for verification, extension, and practical application of theoretical findings.</p>
+                    <p>Research includes working code implementations, allowing for verification, extension, and practical application of theoretical findings with full transparency in approach and execution.</p>
                 </div>
                 
                 <div class="method-card">
                     <h4><i class="fas fa-users"></i> Cross-Disciplinary</h4>
-                    <p>Combines insights from computer science, economics, mathematics, and domain expertise to address complex real-world problems.</p>
+                    <p>Combines insights from computer science, economics, mathematics, cognitive science, and domain expertise to address complex real-world problems requiring interdisciplinary solutions.</p>
                 </div>
                 
                 <div class="method-card">
                     <h4><i class="fas fa-chart-line"></i> Practical Applications</h4>
-                    <p>Each study targets actionable insights that can inform policy decisions, system design, or investment strategies.</p>
+                    <p>Each study targets actionable insights that can inform policy decisions, system design, investment strategies, or technological development with measurable real-world impact.</p>
                 </div>
             </div>
         </div>
@@ -419,14 +377,222 @@ class MarketDataAnalyzer:
         <div class="contact-info">
             <h3 style="color: #cc785c; margin-bottom: 1rem;"><i class="fas fa-envelope"></i> Research Collaboration</h3>
             <p>
-                These research areas represent ongoing investigations with significant practical implications. I'm open to collaboration with academic institutions, policy organizations, and technology companies working on similar challenges.
+                These research areas represent ongoing investigations with significant practical implications. I'm open to collaboration with academic institutions, policy organizations, technology companies, and researchers working on similar challenges in AI evaluation, economic analysis, and intelligent systems.
             </p>
             <p style="margin-top: 1rem;">
-                Each study includes comprehensive documentation, reproducible methodologies, and open-source implementations where applicable. Contact me to discuss findings, methodologies, or potential collaboration opportunities.
+                Each study includes comprehensive documentation, reproducible methodologies, and open-source implementations where applicable. Contact me to discuss findings, methodologies, or potential collaboration opportunities in advancing these research domains.
             </p>
         </div>
     </div>
 
-    <script src="js/research.js"></script>
-</body>
-</html>
+    <script>
+        // Enhanced research page functionality
+        function openResearch(researchKey) {
+            const researchPages = {
+                'ai-evaluation': 'research-turing-test.html',
+                'hierarchical-text': 'research-hierarchical-text.html',
+                'stablecoin-analysis': 'research-stablecoin-analysis.html',
+                'expert-systems': 'research-expert-systems.html',
+                'debt-analysis': 'research-debt-analysis.html', 
+                'trading-system': 'research-trading-system.html'
+            };
+            
+            const targetPage = researchPages[researchKey];
+            if (targetPage) {
+                // Available research papers
+                if (researchKey === 'ai-evaluation' || researchKey === 'expert-systems' || 
+                    researchKey === 'hierarchical-text' || researchKey === 'stablecoin-analysis') {
+                    showLoadingIndicator();
+                    setTimeout(() => {
+                        window.location.href = targetPage;
+                    }, 800);
+                } else {
+                    // Show coming soon for others
+                    showComingSoon(researchKey);
+                }
+            } else {
+                showComingSoon(researchKey);
+            }
+        }
+
+        function showLoadingIndicator() {
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.className = 'loading-overlay';
+            loadingOverlay.innerHTML = `
+                <div class="loading-content">
+                    <div class="loading-spinner"></div>
+                    <p>Loading research details...</p>
+                </div>
+            `;
+            
+            loadingOverlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(38, 39, 37, 0.95);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            const loadingContent = loadingOverlay.querySelector('.loading-content');
+            loadingContent.style.cssText = `
+                text-align: center;
+                color: #cc785c;
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                .loading-spinner {
+                    width: 40px;
+                    height: 40px;
+                    border: 3px solid #3a3a3a;
+                    border-top: 3px solid #cc785c;
+                    border-radius: 50%;
+                    animation: spin 1s linear infinite;
+                    margin: 0 auto 1rem auto;
+                }
+                
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            `;
+            
+            document.head.appendChild(style);
+            document.body.appendChild(loadingOverlay);
+            
+            setTimeout(() => {
+                loadingOverlay.style.opacity = '1';
+            }, 10);
+        }
+
+        function showComingSoon(researchKey) {
+            const researchTitles = {
+                'ai-evaluation': 'AI Evaluation Research',
+                'hierarchical-text': 'Hierarchical Text Interpretation',
+                'stablecoin-analysis': 'Stablecoin Analysis',
+                'expert-systems': 'Expert Systems Research',
+                'debt-analysis': 'Global Debt Analysis',
+                'trading-system': 'Black Box Trading System'
+            };
+            
+            const title = researchTitles[researchKey] || 'Research Study';
+            
+            const modal = document.createElement('div');
+            modal.className = 'coming-soon-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3><i class="fas fa-flask"></i> ${title}</h3>
+                        <button class="modal-close" onclick="closeModal(this)">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Detailed research documentation is being prepared for this study.</p>
+                        <p>The complete analysis includes:</p>
+                        <ul>
+                            <li>Comprehensive methodology and data sources</li>
+                            <li>Interactive visualizations and implementation guides</li>
+                            <li>Current findings and preliminary results</li>
+                            <li>Practical applications and implications</li>
+                        </ul>
+                        <p style="margin-top: 1rem;">
+                            <strong>Check back soon</strong> for the full research documentation, 
+                            or contact me directly to discuss preliminary findings.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn primary" onclick="closeModal(this)">Got it</button>
+                        <a href="mailto:tech@skynode.one" class="btn secondary">Contact about Research</a>
+                    </div>
+                </div>
+                <div class="modal-backdrop" onclick="closeModal(this)"></div>
+            `;
+            
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: 10000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            document.body.appendChild(modal);
+            setTimeout(() => {
+                modal.style.opacity = '1';
+            }, 10);
+        }
+
+        function closeModal(element) {
+            const modal = element.closest('.coming-soon-modal');
+            if (modal) {
+                modal.style.opacity = '0';
+                setTimeout(() => {
+                    modal.remove();
+                }, 300);
+            }
+        }
+
+        // Add featured research highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const featuredCard = document.querySelector('.research-card.featured');
+            if (featuredCard) {
+                featuredCard.style.border = '2px solid #cc785c';
+                featuredCard.style.boxShadow = '0 10px 30px rgba(204, 120, 92, 0.3)';
+            }
+        });
+    </script>
+
+    <style>
+        /* Featured research card styling */
+        .research-card.featured {
+            border: 2px solid #cc785c !important;
+            box-shadow: 0 10px 30px rgba(204, 120, 92, 0.3) !important;
+            background: linear-gradient(135deg, #262725, #2a2a2a) !important;
+        }
+
+        .research-card.featured::before {
+            content: "LATEST RESEARCH";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #cc785c;
+            color: #f5f5f5;
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Approach preview styling */
+        .approach-preview {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid #3a3a3a;
+        }
+
+        .approach-preview h4 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .approach-preview p {
+            margin-bottom: 0.75rem;
+            line

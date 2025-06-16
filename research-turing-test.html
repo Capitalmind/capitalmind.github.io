@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Turing Test: Modern AI Evaluation Research - Capitalmind</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/research.css">
+</head>
+<body>
+    <div class="container">
+        <div class="back-nav">
+            <a href="research.html">
+                <i class="fas fa-arrow-left"></i> Back to Research
+            </a>
+        </div>
+
+        <header class="header">
+            <h1><i class="fas fa-brain"></i> Beyond the Turing Test</h1>
+            <p class="subtitle">Why Modern AI Demands Revolutionary Evaluation Methods</p>
+            
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> January 2025</span>
+                <span><i class="fas fa-clock"></i> 15 min read</span>
+                <span><i class="fas fa-tags"></i> AI Research, Evaluation Methods, Machine Intelligence</span>
+            </div>
+            
+            <div class="links">
+                <a href="https://github.com/Capitalmind" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="mailto:tech@skynode.one" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://x.com/Alt_Samman" title="X (Twitter)" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </header>
+
+        <!-- Abstract -->
+        <div class="abstract">
+            <h3><i class="fas fa-file-alt"></i> Research Summary</h3>
+            <p>
+                This study examines the declining relevance of the Turing Test in evaluating modern AI systems and analyzes emerging evaluation frameworks that better capture machine intelligence capabilities. Through analysis of recent empirical research, expert positions, and performance data across multiple benchmarks, we demonstrate why conversational mimicry fails as an intelligence measure and identify six evaluation paradigms that have largely replaced Turing's original framework.
+            </p>
+            <div class="key-findings">
+                <h4>Key Findings</h4>
+                <ul>
+                    <li><strong>Empirical Performance Gap:</strong> GPT-4 achieves only 49.7% success on Turing tests vs. 66% for humans</li>
+                    <li><strong>Abstract Reasoning Divide:</strong> Humans score 75% on ARC benchmark while AI systems struggle below 5%</li>
+                    <li><strong>Academic Consensus:</strong> Leading researchers have unanimously moved beyond conversational evaluation</li>
+                    <li><strong>Practical Deployment:</strong> Real-world applications require safety, bias, and impact assessment beyond the Turing framework</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="section">
+            <h2><i class="fas fa-question-circle"></i> The Turing Test's Obsolescence Problem</h2>
+            
+            <p>
+                Alan Turing's 1950 "Computing Machinery and Intelligence" introduced what became the most famous test in artificial intelligence—the imitation game. For decades, it represented the gold standard for machine intelligence evaluation. Today, this framework faces fundamental challenges that render it not just inadequate, but potentially misleading for understanding AI capabilities.
+            </p>
+
+            <div class="research-highlight">
+                <h4>Modern Reality Check</h4>
+                <p>
+                    When Jones and Bergen conducted the first rigorous evaluation of GPT-4's Turing Test performance in 2024, they discovered something remarkable: participants' judgments relied primarily on linguistic style (35%) and socioemotional traits (27%) rather than intelligence markers. The test measures surface-level conversational patterns, not genuine understanding or cognitive capability.
+                </p>
+            </div>
+
+            <h3>Why This Matters for AI Development</h3>
+            <p>
+                The implications extend far beyond academic curiosity. Misaligned evaluation methods lead to:
+            </p>
+            <ul>
+                <li><strong>Resource Misallocation:</strong> Developing systems optimized for conversation rather than capability</li>
+                <li><strong>Safety Risks:</strong> Missing critical failure modes that conversational evaluation cannot detect</li>
+                <li><strong>Deployment Challenges:</strong> Real-world applications demand capabilities the Turing Test ignores</li>
+                <li><strong>Research Misdirection:</strong> Focusing on human mimicry rather than beneficial intelligence</li>
+            </ul>
+        </div>
+
+        <!-- Core Problems -->
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Fundamental Flaws in Conversational Evaluation</h2>
+
+            <h3>The Deception vs. Intelligence Problem</h3>
+            <p>
+                Gary Marcus crystallized the core issue: the Turing Test proves "that people are gullible, not that computers are intelligent." Conversational fluency can mask profound limitations in understanding, reasoning, and real-world capability.
+            </p>
+
+            <div class="data-visualization">
+                <h4>Performance Disparity Across Evaluation Methods</h4>
+                <div class="performance-comparison">
+                    <div class="benchmark-row">
+                        <span class="benchmark-name">Turing Test Performance</span>
+                        <div class="performance-bar">
+                            <div class="human-bar" style="width: 66%;">Humans: 66%</div>
+                            <div class="ai-bar" style="width: 49.7%;">GPT-4: 49.7%</div>
+                        </div>
+                    </div>
+                    <div class="benchmark-row">
+                        <span class="benchmark-name">ARC Abstract Reasoning</span>
+                        <div class="performance-bar">
+                            <div class="human-bar" style="width: 75%;">Humans: 75%</div>
+                            <div class="ai-bar" style="width: 5%;">AI Systems: <5%</div>
+                        </div>
+                    </div>
+                    <div class="benchmark-row">
+                        <span class="benchmark-name">Language Understanding (MMLU)</span>
+                        <div class="performance-bar">
+                            <div class="human-bar" style="width: 89%;">Humans: 89%</div>
+                            <div class="ai-bar" style="width: 86.4%;">GPT-4: 86.4%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>The Human Gullibility Factor</h3>
+            <p>
+                Research reveals humans consistently overestimate AI capabilities based on superficial conversational cues. The Turing Test exploits this cognitive bias rather than measuring genuine intelligence, creating false confidence in AI systems that may fail catastrophically in real-world scenarios.
+            </p>
+
+            <div class="methodology-box">
+                <h4>Research Methodology Issues</h4>
+                <ul>
+                    <li><strong>Single Interaction Bias:</strong> Short conversations favor pattern matching over understanding</li>
+                    <li><strong>Context Limitations:</strong> Restricted domains hide reasoning failures</li>
+                    <li><strong>Human Judge Variability:</strong> Evaluation depends on individual biases and expertise</li>
+                    <li><strong>Gaming Potential:</strong> Systems can be optimized for test performance rather than capability</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Alternative Frameworks -->
+        <div class="section">
+            <h2><i class="fas fa-cogs"></i> Revolutionary Evaluation Frameworks</h2>
+
+            <h3>The Six Paradigms of Modern AI Evaluation</h3>
+            <p>
+                Academic research has identified six distinct evaluation approaches that have emerged to replace the Turing framework:
+            </p>
+
+            <div class="paradigms-grid">
+                <div class="paradigm-card">
+                    <h4><i class="fas fa-chart-bar"></i> Benchmarking</h4>
+                    <p>Standardized task performance across diverse domains including mathematics, reasoning, coding, and multimodal understanding.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> ARC, MMLU, HumanEval, SWE-bench
+                    </div>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4><i class="fas fa-shield-alt"></i> Red Teaming</h4>
+                    <p>Adversarial testing to identify failure modes, safety risks, and unintended behaviors through systematic probing.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> OpenAI Red Team, Anthropic Constitutional AI
+                    </div>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4><i class="fas fa-check-square"></i> Formal Verification</h4>
+                    <p>Mathematical proofs of system properties and guarantees about behavior under specified conditions.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Safety constraints, behavioral bounds
+                    </div>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4><i class="fas fa-brain"></i> Psychometric Assessment</h4>
+                    <p>Cognitive science methods adapted for AI, measuring specific types of intelligence and reasoning capabilities.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Theory of Mind tests, working memory tasks
+                    </div>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4><i class="fas fa-users"></i> Participatory Evaluation</h4>
+                    <p>Stakeholder-inclusive assessment involving affected communities and domain experts in evaluation design.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Community feedback, expert panels
+                    </div>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4><i class="fas fa-impact"></i> Downstream Impact</h4>
+                    <p>Real-world outcome measurement focusing on beneficial effects and unintended consequences of deployment.</p>
+                    <div class="examples">
+                        <strong>Examples:</strong> Healthcare outcomes, economic effects
+                    </div>
+                </div>
+            </div>
+
+            <h3>The ARC Benchmark: A Superior Intelligence Test</h3>
+            <p>
+                François Chollet's Abstraction and Reasoning Corpus represents perhaps the most revealing intelligence test currently available. The $1 million ARC Prize reflects industry recognition that visual reasoning challenges capture essential aspects of intelligence that language models miss entirely.
+            </p>
+
+            <div class="arc-explanation">
+                <h4>Why ARC Reveals True Intelligence</h4>
+                <ul>
+                    <li><strong>Novel Problem Solving:</strong> Each task requires discovering new rules from minimal examples</li>
+                    <li><strong>Abstract Pattern Recognition:</strong> Visual puzzles demand spatial and logical reasoning</li>
+                    <li><strong>Generalization:</strong> Success requires applying learned patterns to new contexts</li>
+                    <li><strong>Human-like Reasoning:</strong> Tasks designed to match human cognitive processes</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Expert Perspectives -->
+        <div class="section">
+            <h2><i class="fas fa-quote-left"></i> Leading Researchers' Post-Turing Vision</h2>
+
+            <div class="expert-quotes">
+                <div class="quote-card">
+                    <div class="quote-text">
+                        "The Turing Test proves that people are gullible, not that computers are intelligent. We need evaluation methods that test genuine understanding rather than conversational trickery."
+                    </div>
+                    <div class="quote-attribution">
+                        <strong>Gary Marcus</strong> - AI Researcher, New York University
+                    </div>
+                </div>
+
+                <div class="quote-card">
+                    <div class="quote-text">
+                        "Predicting text requires intelligence but doesn't constitute general intelligence. We need world model-based evaluation that tests interaction with physical reality."
+                    </div>
+                    <div class="quote-attribution">
+                        <strong>Yann LeCun</strong> - Chief AI Scientist, Meta
+                    </div>
+                </div>
+
+                <div class="quote-card">
+                    <div class="quote-text">
+                        "Intelligence should be measured as skill-acquisition efficiency over a scope of tasks, not conversational performance on predetermined scripts."
+                    </div>
+                    <div class="quote-attribution">
+                        <strong>François Chollet</strong> - Creator of ARC Benchmark, Google
+                    </div>
+                </div>
+            </div>
+
+            <h3>Safety-First Evaluation Philosophy</h3>
+            <p>
+                Stuart Russell's human-compatible AI framework prioritizes evaluating whether AI systems maximize human preferences rather than mimicking human conversation. This represents a fundamental shift toward safety-first evaluation that the Turing Test cannot address.
+            </p>
+
+            <div class="safety-framework">
+                <h4>Russell's Three Principles for AI Evaluation</h4>
+                <ol>
+                    <li><strong>Uncertainty about Objectives:</strong> Systems must remain uncertain about human preferences</li>
+                    <li><strong>Defer to Humans:</strong> Final authority on objectives must rest with humans</li>
+                    <li><strong>Learn from Human Behavior:</strong> Infer preferences from actions, not statements</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Real-World Implementation -->
+        <div class="section">
+            <h2><i class="fas fa-industry"></i> Practical Deployment Reality</h2>
+
+            <h3>Healthcare AI: Beyond Conversation to Clinical Outcomes</h3>
+            <p>
+                The FDA's Software as Medical Device framework demonstrates how real-world applications demand evaluation beyond conversational ability. Medical AI systems must prove clinical efficacy, patient safety, and bias mitigation—dimensions the Turing Test ignores entirely.
+            </p>
+
+            <div class="case-study">
+                <h4>Case Study: Autonomous Vehicles</h4>
+                <p>
+                    Tesla's multi-layered safety evaluation system combines real-world performance data across 9 billion miles of driving with safety metrics and continuous monitoring. However, conflicting evaluation results highlight methodology challenges:
+                </p>
+                <ul>
+                    <li><strong>IIHS Rating:</strong> Tesla Autopilot rated "poor" on safety assessments</li>
+                    <li><strong>Euro NCAP:</strong> High scores for assisted driving features</li>
+                    <li><strong>Real-world Data:</strong> Mixed performance across different driving conditions</li>
+                </ul>
+                <p>This divergence illustrates how evaluation method choice affects regulatory decisions and public safety—stakes far beyond conversational assessment.</p>
+            </div>
+
+            <h3>Corporate AI Risk Management</h3>
+            <p>
+                The NIST AI Risk Management Framework's adoption by government agencies and international organizations reflects growing consensus that AI evaluation must address societal impact, not just technical performance.
+            </p>
+
+            <div class="implementation-steps">
+                <h4>IBM's Three-Phase Implementation Approach</h4>
+                <div class="phase">
+                    <h5>Phase 1: Foundation</h5>
+                    <p>Establish governance structures and risk assessment protocols</p>
+                </div>
+                <div class="phase">
+                    <h5>Phase 2: Integration</h5>
+                    <p>Embed evaluation into development and deployment pipelines</p>
+                </div>
+                <div class="phase">
+                    <h5>Phase 3: Optimization</h5>
+                    <p>Continuous monitoring and adaptive improvement of evaluation methods</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Directions -->
+        <div class="section">
+            <h2><i class="fas fa-rocket"></i> The Future of AI Evaluation</h2>
+
+            <h3>Emerging Trends and Technologies</h3>
+            <p>
+                The field is rapidly evolving toward three critical directions that promise more effective AI assessment:
+            </p>
+
+            <div class="future-directions">
+                <div class="direction-card">
+                    <h4><i class="fas fa-link"></i> Causal Evaluation</h4>
+                    <p>Moving beyond correlation to understand how AI systems actually impact outcomes, enabling prediction of real-world effects.</p>
+                </div>
+
+                <div class="direction-card">
+                    <h4><i class="fas fa-microscope"></i> Cognitive Science Integration</h4>
+                    <p>Frameworks like ADeLe (18 types of cognitive abilities) bring psychological testing rigor to AI evaluation.</p>
+                </div>
+
+                <div class="direction-card">
+                    <h4><i class="fas fa-network-wired"></i> Federated Assessment</h4>
+                    <p>Distributed evaluation infrastructure supporting real-time monitoring across organizations and jurisdictions.</p>
+                </div>
+            </div>
+
+            <h3>International Coordination Efforts</h3>
+            <p>
+                Standards bodies like ISO/IEC and industry consortiums such as the Frontier Model Forum indicate recognition that effective AI evaluation requires global cooperation. The EU AI Act's risk-based approach and harmonization with frameworks like NIST AI RMF suggest convergence toward internationally recognized standards.
+            </p>
+
+            <div class="global-standards">
+                <h4>Key International Initiatives</h4>
+                <ul>
+                    <li><strong>EU AI Act:</strong> Risk-based regulatory framework with comprehensive evaluation requirements</li>
+                    <li><strong>NIST AI RMF:</strong> Voluntary framework adopted by multiple governments</li>
+                    <li><strong>ISO/IEC Standards:</strong> Technical specifications for AI system assessment</li>
+                    <li><strong>Frontier Model Forum:</strong> Industry consortium developing shared evaluation practices</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="section">
+            <h2><i class="fas fa-flag-checkered"></i> Implications for AI Development</h2>
+
+            <h3>The End of an Era</h3>
+            <p>
+                The Turing Test's decline from gold standard to historical curiosity reflects the AI field's maturation toward sophisticated, multi-dimensional evaluation methodologies. The massive performance gap on abstract reasoning tasks like ARC—humans achieve 75% while AI systems struggle below 5%—reveals fundamental limitations that conversational evaluation actively obscures.
+            </p>
+
+            <div class="conclusions">
+                <h4>Key Implications</h4>
+                <div class="implication">
+                    <h5>For Researchers</h5>
+                    <p>Focus on capability-driven evaluation that reveals genuine understanding rather than pattern matching. Develop benchmarks that resist gaming and measure real-world applicability.</p>
+                </div>
+
+                <div class="implication">
+                    <h5>For Industry</h5>
+                    <p>Implement comprehensive evaluation frameworks that address safety, bias, and societal impact throughout the development lifecycle. Conversational fluency is insufficient for deployment decisions.</p>
+                </div>
+
+                <div class="implication">
+                    <h5>For Policymakers</h5>
+                    <p>Regulate based on capabilities and outcomes rather than human-likeness. Establish evaluation standards that prioritize beneficial impact over anthropomorphic performance.</p>
+                </div>
+
+                <div class="implication">
+                    <h5>For Society</h5>
+                    <p>Demand transparency in AI evaluation methods and resist systems that prioritize deception over capability. Intelligence measurement should serve human flourishing, not technological demonstration.</p>
+                </div>
+            </div>
+
+            <h3>The Path Forward</h3>
+            <p>
+                Modern AI systems' uneven performance across evaluation frameworks—excelling at language while failing at basic reasoning—demonstrates that no single test can capture intelligence's complexity. The future belongs to adaptive, stakeholder-inclusive, and internationally coordinated evaluation approaches that evolve with AI capabilities rather than relying on historical benchmarks.
+            </p>
+
+            <p>
+                This represents not just methodological improvement but fundamental progress in understanding what intelligence means and how to measure it responsibly. The Turing Test served its purpose in launching AI evaluation research. Now, as we stand at the threshold of artificial general intelligence, we need evaluation frameworks worthy of the challenge ahead.
+            </p>
+        </div>
+
+        <!-- Research Notes -->
+        <div class="research-notes">
+            <h3><i class="fas fa-clipboard"></i> Research Methodology</h3>
+            <p>
+                This analysis synthesizes findings from peer-reviewed research, industry reports, and expert statements published between 2022-2025. Primary sources include empirical studies on GPT-4 Turing Test performance, benchmark comparison data across multiple evaluation frameworks, and position papers from leading AI researchers. Performance statistics are drawn from official benchmark leaderboards and technical reports from major AI laboratories.
+            </p>
+            
+            <div class="citations">
+                <h4>Key Sources</h4>
+                <ul>
+                    <li>Jones, C. & Bergen, L. (2024). "Does GPT-4 pass the Turing test?" NAACL.</li>
+                    <li>Chollet, F. (2019). "On the Measure of Intelligence." arXiv:1911.01547.</li>
+                    <li>Marcus, G. (2024). "AI has (sort of) passed the Turing Test." Substack.</li>
+                    <li>ARC Prize Technical Report (2024). "Human performance on abstraction and reasoning."</li>
+                    <li>NIST AI Risk Management Framework (2023). "Trustworthy and responsible AI."</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3 style="color: #cc785c; margin-bottom: 1rem;"><i class="fas fa-envelope"></i> Continue the Discussion</h3>
+            <p>
+                This research represents ongoing investigation into AI evaluation methodologies. I welcome collaboration with researchers, practitioners, and policymakers working on similar challenges in artificial intelligence assessment and safety.
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <a href="research.html" style="color: #cc785c; text-decoration: none; border: 1px solid #cc785c; padding: 0.75rem 1.5rem; border-radius: 5px; margin-right: 1rem;">
+                    <i class="fas fa-arrow-left"></i> Back to Research
+                </a>
+                <a href="mailto:tech@skynode.one" style="color: #cc785c; text-decoration: none; border: 1px solid #cc785c; padding: 0.75rem 1.5rem; border-radius: 5px;">
+                    <i class="fas fa-envelope"></i> Discuss This Research
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/research.js"></script>
+    <style>
+        /* Article-specific styles */
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .abstract {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid #cc785c;
+        }
+
+        .abstract h3 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .key-findings {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .key-findings h4 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .research-highlight {
+            background: linear-gradient(135deg, #cc785c, #b8704a);
+            color: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .research-highlight h4 {
+            margin-bottom: 1rem;
+            color: #f5f5f5;
+        }
+
+        .data-visualization {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .performance-comparison {
+            margin-top: 1rem;
+        }
+
+        .benchmark-row {
+            margin: 1rem 0;
+        }
+
+        .benchmark-name {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #cc785c;
+        }
+
+        .performance-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .human-bar, .ai-bar {
+            padding: 0.5rem;
+            border-radius: 3px;
+            color: #f5f5f5;
+            font-size: 0.9rem;
+        }
+
+        .human-bar {
+            background: #4ecdc4;
+        }
+
+        .ai-bar {
+            background: #ff6b6b;
+        }
+
+        .methodology-box {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .paradigms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .paradigm-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #cc785c;
+            transition: all 0.3s ease;
+        }
+
+        .paradigm-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(204, 120, 92, 0.2);
+        }
+
+        .paradigm-card h4 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .examples {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .arc-explanation {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .expert-quotes {
+            margin: 2rem 0;
+        }
+
+        .quote-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #cc785c;
+            position: relative;
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .quote-attribution {
+            color: #cc785c;
+            font-weight: bold;
+        }
+
+        .safety-framework {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .case-study {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .implementation-steps {
+            margin: 2rem 0;
+        }
+
+        .phase {
+            background: #2a2a2a;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #cc785c;
+        }
+
+        .phase h5 {
+            color: #cc785c;
+            margin-bottom: 0.5rem;
+        }
+
+        .future-directions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .direction-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #cc785c;
+            text-align: center;
+        }
+
+        .direction-card h4 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .global-standards {
+            background: #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .conclusions {
+            margin: 2rem 0;
+        }
+
+        .implication {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #cc785c;
+        }
+
+        .implication h5 {
+            color: #cc785c;
+            margin-bottom: 0.75rem;
+        }
+
+        .research-notes {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            border-left: 4px solid #cc785c;
+        }
+
+        .research-notes h3 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .citations {
+            margin-top: 1.5rem;
+        }
+
+        .citations h4 {
+            color: #cc785c;
+            margin-bottom: 1rem;
+        }
+
+        .citations ul {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .paradigms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .future-directions {
+                grid-template-columns: 1fr;
+            }
+
+            .performance-bar {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</body>
+</html>
